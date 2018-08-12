@@ -55,6 +55,7 @@ def parse_arguments():
         'name',
         help='Name of future microservice.'
     )
+    # TODO: validation for name
     parser.add_argument(
         '--redis',
         action='store_true',
@@ -77,4 +78,5 @@ def main():
     # TODO: added color print
     print('\n\nSuccessfully generated!\n')
     print(f'cd {args.name}/')
+    print(f'pip install -e ./')
     print('make run\n\n')

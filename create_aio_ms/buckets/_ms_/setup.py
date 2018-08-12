@@ -9,7 +9,11 @@ REGEXP = re.compile(r"^__version__\W*=\W*'([\d.abrc]+)'")
 
 def read_version():
 
-    init_py = os.path.join(os.path.dirname(__file__), '_ms_', '__init__.py')
+    init_py = os.path.join(
+        os.path.dirname(__file__),
+        '_ms_',
+        '__init__.py',
+    )
 
     with open(init_py) as f:
         for line in f:
@@ -25,14 +29,7 @@ install_requires = [
     'aiohttp',
     'aiopg[sa]',
     'aiohttp_jinja2',
-    'aiohttp_graphql',
-    'aioredis',
-    'aiodataloader',
     'trafaret_config',
-    'graphene',
-    'graphql-ws',
-    'psycopg2-binary',
-    'Faker',
 ]
 
 

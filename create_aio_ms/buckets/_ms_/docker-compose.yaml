@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    restart: always
+    volumes:
+      - .:/_ms_
+    ports:
+      - 8080:8080
+    command: ls && make run

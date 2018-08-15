@@ -4,3 +4,5 @@ mypy
 flake8
 pytest
 pytest-cov
+
+aiohttp-devtools

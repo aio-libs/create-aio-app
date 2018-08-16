@@ -6,8 +6,17 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ url('static', filename='styles/main.css') }}">
 </head>
 <body>
-    <h1>Hello world!</h1>
+    <header class="header">
+        <img class="logo" src="{{ url('static', filename='images/logo.png') }}" alt="logo">
+        <h1 class="title">Create aio ms</h1>
+        <p>Now it's easier to create a complex asynchronous web service.</p>
+    </header>
+    <main>
+        <p>{{ text|safe }}</p>
+    </main>
+    <footer class="footer"></footer>
 </body>
 </html>

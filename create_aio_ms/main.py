@@ -13,6 +13,9 @@ def find_replace(directory, find, replace):
             if '__pycache__' in filepath:
                 continue
 
+            if 'static' in filepath:
+                continue
+
             with open(filepath, mode="r", encoding="utf-8") as f:
                 s = f.read()
 

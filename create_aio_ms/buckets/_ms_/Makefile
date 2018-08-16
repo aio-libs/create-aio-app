@@ -5,7 +5,7 @@ PROJECT_NAME=_ms_
 all: run
 
 run:
-	@adev runserver $(PROJECT_NAME)
+	@adev runserver $(PROJECT_NAME)/__main__.py
 
 mypy:
 	@mypy $(PROJECT_NAME)

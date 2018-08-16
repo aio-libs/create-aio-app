@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: Helvetica , sans-serif;
+}
+
+main {
+    color: black;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.header {
+    background: #20232a;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+}
+
+.title {
+    margin-bottom: 0;
+    margin-top: 20px;
+    font-size: 55px;
+}
+
+.footer {
+    height: 50px;
+    background: #20232a;
+}

@@ -11,19 +11,6 @@ DEFAULT_CONFIG_PATH = PATH / 'config' / 'api.yml'
 
 
 CONFIG_TRAFARET = trafaret.Dict({
-    trafaret.Key('postgres'):
-        trafaret.Dict({
-            'user': trafaret.String(),
-            'password': trafaret.String(),
-            'database': trafaret.String(),
-            'host': trafaret.String(),
-            'port': trafaret.Int(),
-        }),
-    trafaret.Key('redis'):
-        trafaret.Dict({
-            'port': trafaret.Int(),
-            'host': trafaret.String(),
-        }),
     trafaret.Key('app'):
         trafaret.Dict({
             'host': trafaret.IP,

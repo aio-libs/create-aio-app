@@ -1,12 +1,16 @@
+import aiohttp_debugtoolbar
 from aiohttp import web
 
-from .app import create_app
+from .app import init_app
 
 
-def main():
-    app = create_app()
-    web.run_app(app)
+def create_app():
+    app = init_app()
+    aiohttp_debugtoolbar.setup(app)
+
+    return app
 
 
 if __name__ == '__main__':
-    main()
+    app = create_app()
+    web.run_app(app)

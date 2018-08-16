@@ -21,7 +21,7 @@ def init_jinja2(app: web.Application) -> None:
     )
 
 
-def create_app() -> web.Application:
+def init_app() -> web.Application:
     app = web.Application()
 
     init_jinja2(app)

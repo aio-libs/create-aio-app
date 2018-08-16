@@ -30,6 +30,7 @@ install_requires = [
     'aiopg[sa]',
     'aiohttp_jinja2',
     'trafaret_config',
+    'markdown2',
 ]
 
 

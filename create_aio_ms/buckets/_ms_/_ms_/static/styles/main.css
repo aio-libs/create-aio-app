@@ -1,34 +1,57 @@
+/* global */
+
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
-    color: #fff;
     font-family: Helvetica , sans-serif;
 }
 
-main {
-    color: black;
-    max-width: 1000px;
-    margin: auto;
-}
+/* header */
 
 .header {
-    background: #20232a;
-    text-align: center;
+    flex: initial;
     padding: 50px 0;
+    color: #fff;
+    text-align: center;
+    background: #20232a;
 }
 
-.logo {
+.banner-logo {
     display: block;
     margin: auto;
 }
 
-.title {
+.banner-title {
     margin-bottom: 0;
     margin-top: 20px;
     font-size: 55px;
 }
 
+/* content */
+
+main {
+    flex: 1;
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+    color: black;
+}
+
+/* footer */
+
 .footer {
+    flex: initial;
     height: 50px;
     background: #20232a;
+}
+
+/* github link */
+
+.fork-me-on-github {
+    position: absolute;
+    top: 0;
+    right: 0;
 }

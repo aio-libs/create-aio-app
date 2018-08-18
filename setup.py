@@ -41,18 +41,15 @@ def read_version():
 
 
 install_requires = [
-    'aiohttp',
-    'aiopg[sa]',
-    'aiohttp_jinja2',
-    'trafaret_config',
-    'psycopg2-binary',
+    'jinja2'
+    'trafaret',
 ]
 
 
 path = os.path.join(
         os.path.dirname(__file__),
         'create_aio_ms',
-        'buckets'
+        'template_project'
     )
 
 

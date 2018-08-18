@@ -5,7 +5,7 @@ services:
     build: .
     restart: always
     volumes:
-      - .:/_ms_
+      - .:/{{template_project}}
     ports:
       - 8080:8080
     command: ls && make run

@@ -1,6 +1,6 @@
 export PYTHONPATH=.
 
-PROJECT_NAME=_ms_
+PROJECT_NAME={{template_project}}
 
 all: run
 

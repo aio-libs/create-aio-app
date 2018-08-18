@@ -11,7 +11,7 @@ def read_version():
 
     init_py = os.path.join(
         os.path.dirname(__file__),
-        '_ms_',
+        'template_project',
         '__init__.py',
     )
 
@@ -35,9 +35,9 @@ install_requires = [
 
 
 setup(
-    name='_ms_',
+    name='{{template_project}}',
     version=read_version(),
-    description='_ms_',
+    description='{{template_project}}',
     platforms=['POSIX'],
     packages=find_packages(),
     package_data={

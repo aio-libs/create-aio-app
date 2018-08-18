@@ -1,5 +1,5 @@
 FROM python:3.6
 
-WORKDIR _ms_
+WORKDIR {{template_project}}
 
 #RUN ls && pip install -e .

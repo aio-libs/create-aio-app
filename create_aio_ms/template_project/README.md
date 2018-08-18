@@ -3,9 +3,7 @@ pip install -e .
 make run
 ```
 
-
 Features
-
 - CI
 - aiohttp application
     - boilerplate

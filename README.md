@@ -1,13 +1,13 @@
 # Create aio ms
----
 
-The simple boilerplate for microservices based on aiohttp.
-
+The tool that helps quickly create a basis for the microservice on aiohttp and prepare the development environment.
 
 # Create a microservices
 ``
 create-aio-ms my-microservices
 ``
+
+test for lib
 
 # Roadmap:
 - [ ] create new project

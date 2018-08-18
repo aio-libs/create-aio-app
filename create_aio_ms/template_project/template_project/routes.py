@@ -1,6 +1,6 @@
 import pathlib
 
-from _ms_.main.views import index
+from {{template_project}}.main.views import index
 
 
 PROJECT_PATH = pathlib.Path(__file__).parent

@@ -4,8 +4,8 @@ from aiohttp import web
 import aiohttp_jinja2
 import jinja2
 
-from _ms_.routes import init_routes
-from _ms_.utils import init_config
+from {{template_project}}.routes import init_routes
+from {{template_project}}.utils import init_config
 
 
 path = Path(__file__).parent

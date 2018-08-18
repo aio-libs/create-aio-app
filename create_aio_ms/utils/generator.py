@@ -30,14 +30,14 @@ def rename_dirs(dir_name: str) -> None:
 
 
 def render_project_template(context: dict) -> None:
-    for root, dors, files in os.walk(f'./{context["name"]}'):
+    for root, dors, files in os.walk(f'{context["name"]}'):
         access_files = [
             _file for _file in files
-            if _file.spilt('.')[-1] in RENDER_ACCESS_FORMATS
+            if _file.split('.')[-1] in RENDER_ACCESS_FORMATS
         ]
 
         for file_path in access_files:
-            with open(file_path, 'w') as my_file:
+            with open(f"{root}/{file_path}", 'r+') as my_file:
                 body = my_file.read()
                 render_body = render_from_string(body).render(**context)
                 my_file.seek(0)

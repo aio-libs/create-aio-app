@@ -41,8 +41,7 @@ def read_version():
 
 
 install_requires = [
-    'jinja2'
-    'trafaret',
+    'Jinja2'
 ]
 
 

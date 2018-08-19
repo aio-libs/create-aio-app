@@ -1,15 +1,13 @@
-import pathlib
-
-from aiohttp import web
-import markdown2
 import aiohttp_jinja2
+import markdown2
+from aiohttp import web
 
-
-path = pathlib.Path(__file__).parent.parent.parent
+from {{ name }}.constants import PROJECT_DIR
 
 
 @aiohttp_jinja2.template('index.html')
 async def index(request: web.Request) -> dict:
-    with open(path / 'README.md') as my_file:
-        text = markdown2.markdown(my_file.read())
+    with open(PROJECT_DIR / 'README.md') as f:
+        text = markdown2.markdown(f.read())
+
     return {"text": text}

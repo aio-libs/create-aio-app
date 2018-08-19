@@ -2,14 +2,39 @@
 
 The tool that helps quickly create a basis for the microservice on aiohttp and prepare the development environment.
 
-# Create a microservices
-``
-create-aio-ms my-microservices
-``
+## Usage
+```bash
+pip install create-aio-ms
+create-aio-ms my_ms
+cd my_ms
+```
 
+
+## Project structure:
 test for lib
 
-# Roadmap:
+## What’s Included?
+
+## Commands:
+- [ ] lint
+- [ ] migrate
+- [ ] makemigrations
+- [ ] tests
+
+## Testing
+Testing is done with pytest.
+
+```bash
+
+```
+
+## Contributing
+
+
+## License
+This project is licensed under the MIT License.
+
+## Roadmap:
 - [ ] create new project
 - [ ] mypy
 - [ ] pytest
@@ -23,8 +48,18 @@ test for lib
 - [ ] admin
 - [ ] alembic
 
-# Commands:
-- [ ] lint
-- [ ] migrate
-- [ ] makemigrations
-- [ ] tests
+
+Features
+- CI
+- aiohttp application
+    - boilerplate
+    - auto reload
+    - flake8
+    - mypy
+    - docker
+    - py.test
+- postgres
+    - sqlAlchemy
+    - docker
+    - alembic
+    

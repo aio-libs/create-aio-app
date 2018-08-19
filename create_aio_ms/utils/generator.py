@@ -3,7 +3,10 @@ import shutil
 import os
 
 
-from jinja2 import Environment, BaseLoader
+from jinja2 import (
+    Environment,
+    BaseLoader,
+)
 
 
 from create_aio_ms.constants import (
@@ -43,25 +46,3 @@ def render_project_template(context: dict) -> None:
                 my_file.seek(0)
                 my_file.write(render_body)
                 my_file.truncate()
-
-
-
-#
-# def find_replace(directory, find, replace):
-#     for path, dirs, files in os.walk(os.path.abspath(directory)):
-#         for filename in files:
-#             filepath = os.path.join(path, filename)
-#
-#             if '__pycache__' in filepath:
-#                 continue
-#
-#             if 'static' in filepath:
-#                 continue
-#
-#             with open(filepath, mode="r", encoding="utf-8") as f:
-#                 s = f.read()
-#
-#             s = s.replace(find, replace)
-#
-#             with open(filepath, "w", encoding='utf-8') as f:
-#                 f.write(s)

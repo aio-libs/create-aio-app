@@ -46,10 +46,10 @@ install_requires = [
 
 
 path = os.path.join(
-        os.path.dirname(__file__),
-        'create_aio_ms',
-        'template_project'
-    )
+    os.path.dirname(__file__),
+    'create_aio_ms',
+    'template_project'
+)
 
 
 setup(

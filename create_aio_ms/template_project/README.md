@@ -1,18 +1,9 @@
-```bush
-pip install -e .
-make run
-```
+# {{ name }}
 
-Features
-- CI
-- aiohttp application
-    - boilerplate
-    - auto reload
-    - flake8
-    - mypy
-    - docker
-    - py.test
-- postgres
-    - sqlAlchemy
-    - docker
-    - alembic
+## Local development
+
+## Testing
+
+## Others
+
+## Software

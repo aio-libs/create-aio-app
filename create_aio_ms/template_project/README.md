@@ -6,4 +6,9 @@
 
 ## Others
 
+### Type checking
+```bash
+make mypy
+```
+
 ## Software

@@ -2,11 +2,12 @@ import pathlib
 
 from {{template_project}}.main.views import index
 
+from aiohttp import web
 
 PROJECT_PATH = pathlib.Path(__file__).parent
 
 
-def init_routes(app):
+def init_routes(app: web.Application) -> None:
     add_route = app.router.add_route
 
     add_route('*', '/', index, name='index')

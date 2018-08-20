@@ -19,6 +19,6 @@ def main():
     render_project_template(args)
 
     print('\n\nSuccessfully generated!\n')
-    print(f'cd {args.name}/')
+    print(f'cd {args["name"]}/')
     print(f'pip install -e ./')
     print('make run\n\n')

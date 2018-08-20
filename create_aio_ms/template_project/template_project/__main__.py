@@ -4,7 +4,7 @@ from aiohttp import web
 from .app import init_app
 
 
-def create_app():
+def create_app() -> web.Application:
     app = init_app()
     aiohttp_debugtoolbar.setup(app)
 

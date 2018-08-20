@@ -1,5 +1,6 @@
 import pathlib
 import argparse
+from typing import Any
 
 from aiohttp import web
 from trafaret_config import commandline
@@ -19,7 +20,7 @@ CONFIG_TRAFARET = trafaret.Dict({
 })
 
 
-def get_config(argv=None) -> dict:
+def get_config(argv: Any = None) -> Any:
     ap = argparse.ArgumentParser()
     commandline.standard_argparse_options(
         ap,

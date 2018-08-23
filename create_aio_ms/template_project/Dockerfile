@@ -1,5 +1,9 @@
-FROM python:3.6
+FROM python:3.7
 
-WORKDIR {{template_project}}
+WORKDIR /app
+ARG requirements=requirements/production.txt
 
-#RUN ls && pip install -e .
+ADD . /app
+
+RUN pip install --no-cache-dir -e .
+RUN pip install --no-cache-dir -r $requirements

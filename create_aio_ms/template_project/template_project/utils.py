@@ -1,5 +1,6 @@
 import pathlib
 import argparse
+import os
 from typing import Any
 
 from aiohttp import web
@@ -8,7 +9,8 @@ import trafaret
 
 
 PATH = pathlib.Path(__file__).parent.parent
-DEFAULT_CONFIG_PATH = PATH / 'config' / 'api.yml'
+settings_file = os.environ.get('SETTINGS_FILE')
+DEFAULT_CONFIG_PATH = PATH / 'config' / settings_file
 
 
 CONFIG_TRAFARET = trafaret.Dict({

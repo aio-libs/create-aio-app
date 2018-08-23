@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  app:
+    build:
+      args:
+        requirements: requirements/production.txt
+    environment:
+      # use in code
+      - SETTINGS_FILE=api.prod.yml
+    command: python3 -m {{ name }}

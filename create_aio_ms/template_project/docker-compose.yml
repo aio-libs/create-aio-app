@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        requirements: requirements/development.txt
+    container_name: {{ name }}
+    environment:
+      # use in code
+      - DEBUG=True
+      - SETTINGS_FILE=api.dev.yml
+    restart: always
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    command: adev runserver ./{{ name }}/__main__.py

@@ -6,13 +6,12 @@ all: run
 
 run:
 	@docker-compose up
-	# docker-compose run --rm app echo 1
 
 mypy:
-	@mypy $(PROJECT_NAME)
+	@docker-compose run --rm app mypy $(PROJECT_NAME)
 
 lint:
-	@flake8 $(PROJECT_NAME)
+	@docker-compose run --rm app flake8 $(PROJECT_NAME)
 
 test: lint
 	@py.test

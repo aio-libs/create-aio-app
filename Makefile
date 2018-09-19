@@ -1,5 +1,5 @@
 test:
 	rm -rf some_new/
 	pip install .
-	create-aio-ms some_new --redis
+	create-aio-ms some_new --without-postgres
 	cd some_new/ && docker-compose up

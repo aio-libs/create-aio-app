@@ -33,6 +33,7 @@ install_requires = [
     {% if not without_postgres %}
     'aiopg[sa]',
     'psycopg2-binary',
+    'alembic',
     {% endif %}
 ]
 

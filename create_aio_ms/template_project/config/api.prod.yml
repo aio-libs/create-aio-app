@@ -10,8 +10,7 @@ postgres:
   database: postgres
   port: 5432
   host: localhost
-{% endif %}
-{% if not redis %}
+{% endif %}{% if redis %}
 # redis
 redis:
   port: 6379

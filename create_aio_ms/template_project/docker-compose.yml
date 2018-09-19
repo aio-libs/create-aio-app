@@ -13,21 +13,21 @@ services:
       - SETTINGS_FILE=api.dev.yml
     restart: always
     volumes:
-      - .:/app
+      - .:/app:delegated
     ports:
-      - 8000:8000
-    command: adev runserver ./{{ name }}/__main__.py
+      - 8080:8080
+    command: adev runserver ./{{ name }}/__main__.py -p 8080
   {% if not without_postgres %}
   postgres:
       image: postgres:10
+      container_name: {{ name }}_postgres
       environment:
           - POSTGRES_USER=postgres
           - POSTGRES_PASSWORD=postgres
           - POSTGRES_DB=postgres
       ports:
           - 5432:5432
-  {% endif %}
-  {% if redis %}
+  {% endif %}{% if redis %}
   redis:
     image: redis:4
     ports:

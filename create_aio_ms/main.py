@@ -3,6 +3,7 @@ from create_aio_ms.utils.generator import (
     copy_template,
     rename_dirs,
     render_project_template,
+    remove_unnecessary_directories,
 )
 
 
@@ -15,6 +16,7 @@ def main():
 
     copy_template(args['name'])
     rename_dirs(args['name'])
+    remove_unnecessary_directories(args)
 
     render_project_template(args)
 

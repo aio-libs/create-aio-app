@@ -16,9 +16,26 @@ DEFAULT_CONFIG_PATH = PATH / 'config' / settings_file
 CONFIG_TRAFARET = trafaret.Dict({
     trafaret.Key('app'):
         trafaret.Dict({
-            'host': trafaret.IP,
+            'host': trafaret.String(),
             'port': trafaret.Int(),
         }),
+    {% if not without_postgres %}
+    trafaret.Key('postgres'):
+        trafaret.Dict({
+            'host': trafaret.String(),
+            'port': trafaret.Int(),
+            'user': trafaret.String(),
+            'password': trafaret.String(),
+            'database': trafaret.String(),
+        }),
+    {% endif %}
+    {% if redis %}
+    trafaret.Key('redis'):
+        trafaret.Dict({
+            'host': trafaret.String(),
+            'port': trafaret.Int(),
+        }),
+    {% endif %}
 })
 
 

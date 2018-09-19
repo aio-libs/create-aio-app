@@ -2,16 +2,15 @@ from distutils.dir_util import copy_tree
 import shutil
 import os
 
-
 from jinja2 import (
     Environment,
     BaseLoader,
 )
 
-
 from create_aio_ms.constants import (
     TEMPLATE_DIR,
     TEMPLATE_NAME,
+    DATABASE_TEMPLATE_DIRS,
 )
 from create_aio_ms.constants import RENDER_ACCESS_FORMATS
 
@@ -30,6 +29,12 @@ def copy_template(dir_name: str) -> None:
 
 def rename_dirs(dir_name: str) -> None:
     shutil.move(f"{dir_name}/{TEMPLATE_NAME}", f"{dir_name}/{dir_name}")
+
+
+def remove_unnecessary_directories(config: dict) -> None:
+    if config['without_postgres']:
+        for dir_name in DATABASE_TEMPLATE_DIRS:
+            shutil.rmtree(f"{config['name']}/{config['name']}/{dir_name}")
 
 
 def render_project_template(context: dict) -> None:

@@ -33,7 +33,7 @@ def rename_dirs(dir_name: str) -> None:
 
 
 def render_project_template(context: dict) -> None:
-    for root, dors, files in os.walk(f'{context["name"]}'):
+    for root, dirs, files in os.walk(f'{context["name"]}'):
         access_files = [
             _file for _file in files
             if _file.split('.')[-1] in RENDER_ACCESS_FORMATS

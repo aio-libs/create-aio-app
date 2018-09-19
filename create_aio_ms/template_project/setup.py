@@ -27,10 +27,13 @@ def read_version():
 
 install_requires = [
     'aiohttp',
-    'aiopg[sa]',
     'aiohttp_jinja2',
     'trafaret_config',
     'markdown2',
+    {% if not without_postgres %}
+    'aiopg[sa]',
+    'psycopg2-binary',
+    {% endif %}
 ]
 
 

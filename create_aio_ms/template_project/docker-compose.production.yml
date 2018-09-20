@@ -1,7 +1,7 @@
 version: '3.2'
 
 services:
-  app:
+  {{ name }}_app:
     build:
       args:
         requirements: requirements/production.txt

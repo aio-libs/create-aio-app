@@ -1,7 +1,7 @@
 version: '3.2'
 
 services:
-  app:
+  {{ name }}_app:
     build:
       context: .
       args:
@@ -16,6 +16,7 @@ services:
       - .:/app:delegated
     ports:
       - 8080:8080
+      - 8081:8081
     command: adev runserver ./{{ name }}/__main__.py -p 8080
   {% if not without_postgres %}
   postgres:

@@ -8,10 +8,10 @@ run:
 	@docker-compose up
 
 mypy:
-	@docker-compose run --rm app mypy $(PROJECT_NAME)
+	@docker-compose run --rm $(PROJECT_NAME)_app mypy $(PROJECT_NAME)
 
 lint:
-	@docker-compose run --rm app flake8 $(PROJECT_NAME)
+	@docker-compose run --rm $(PROJECT_NAME)_app flake8 $(PROJECT_NAME)
 
 test: lint
 	@py.test

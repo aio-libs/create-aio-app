@@ -34,7 +34,8 @@ install_requires = [
     'aiopg[sa]',
     'psycopg2-binary',
     'alembic',
-    {% endif %}
+    {% endif %}{% if redis%}
+    'aioredis'{% endif %}
 ]
 
 

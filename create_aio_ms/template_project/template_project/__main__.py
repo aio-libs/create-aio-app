@@ -7,7 +7,7 @@ def create_app() -> web.Application:
     import aiohttp_debugtoolbar
 
     app = init_app()
-    aiohttp_debugtoolbar.setup(app)
+    aiohttp_debugtoolbar.setup(app, check_host=False)
 
     return app
 

@@ -71,11 +71,11 @@ async def close_redis(app: web.Application) -> None:
     app['redis_pub'].close()
 {% endif %}
 
-def init_app() -> web.Application:
+def init_app(config: dict = None) -> web.Application:
     app = web.Application()
 
     init_jinja2(app)
-    init_config(app)
+    init_config(app, config=config)
     init_routes(app)
     {% if not without_postgres and redis %}
     app.on_startup.extend([

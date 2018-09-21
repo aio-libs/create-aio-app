@@ -14,6 +14,17 @@ services:
     restart: always
     volumes:
       - .:/app:delegated
+    {% if not without_postgres and redis %}
+    depends_on:
+      - postgres
+      - redis
+    {% elif not without_postgres %}
+    depends_on:
+      - postgres
+    {% elif redis %}
+    depends_on:
+      - redis
+    {% endif %}
     ports:
       - 8080:8080
       - 8081:8081

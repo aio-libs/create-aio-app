@@ -5,9 +5,9 @@ app:
 {% if not without_postgres %}
 # postgres
 postgres:
-  user: postgres
-  password: postgres
-  database: postgres
+  user: postgres_test
+  password: postgres_test
+  database: postgres_test
   port: 5432
   host: postgres
 {% endif %}{% if redis %}

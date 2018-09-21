@@ -1,10 +1,12 @@
 import pytest
 from sqlalchemy import create_engine
+import aiopg.sa
 
 from {{ name }}.utils import PATH, get_config
 # todo: if for db
 from {{ name }}.migrations import metadata
 from {{ name }}.app import init_app
+from {{ name }}.users.tables import users
 
 
 # constants
@@ -40,6 +42,19 @@ test_engine = create_engine(
     isolation_level='AUTOCOMMIT',
 )
 
+
+def init_sample_data(engine) -> None:
+    with engine.connect() as conn:
+        query = users\
+            .insert()\
+            .values([{
+                    'id': idx,
+                    'username': f'test#{idx}',
+                    'email': f'test#{idx}',
+                    'password': f'{idx}'} for idx in range(10)
+                ])
+
+        conn.execute(query)
 
 def setup_test_db(engine) -> None:
     '''
@@ -93,9 +108,9 @@ def db():
     '''
     The fixture for running and turn down database.
     '''
-    # setup_test_db(engine)
-    # yield
-    # teardown_test_db(engine)
+    setup_test_db(engine)
+    yield
+    teardown_test_db(engine)
 
 
 @pytest.yield_fixture(scope='session')
@@ -103,11 +118,18 @@ def tables(db):
     '''
     The fixture for create all tables and init simple data.
     '''
-    # metadata.create_all(test_engine)
-    # # init_sample_data(test_engine)
-    # yield
-    # metadata.drop_all(test_engine)
+    metadata.create_all(test_engine)
+    init_sample_data(test_engine)
+    yield
+    metadata.drop_all(test_engine)
 
+@pytest.fixture
+async def sa_engine(loop):
+    '''
+    The fixture initialize async engine for PostgresSQl.
+    '''
+
+    return await aiopg.sa.create_engine(**test_config['postgres'])
 
 @pytest.fixture
 async def client(aiohttp_client, tables):

@@ -53,7 +53,7 @@ path = os.path.join(
 
 
 setup(
-    name="create-api-ms",
+    name="create-aio-ms",
     version=read_version(),
     description="Mykhailo Havelia",
     platforms=["POSIX"],

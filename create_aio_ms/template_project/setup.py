@@ -34,8 +34,10 @@ install_requires = [
     'aiopg[sa]',
     'psycopg2-binary',
     'alembic',
-    {% endif %}{% if redis%}
-    'aioredis',{% endif %}
+    {% endif %}
+    {% if redis %}
+    'aioredis',
+    {% endif %}
     # todo: remove test requirements
     'pytest',
     'pytest-cov',

@@ -1,11 +1,11 @@
-import pathlib
 import argparse
 import os
+import pathlib
 from typing import Any
 
+import trafaret
 from aiohttp import web
 from trafaret_config import commandline
-import trafaret
 
 
 PATH = pathlib.Path(__file__).parent.parent

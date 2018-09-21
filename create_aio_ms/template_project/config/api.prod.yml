@@ -3,6 +3,7 @@ app:
   host: 0.0.0.0
   port: 8080
 {% if not without_postgres %}
+
 # postgres
 postgres:
   user: postgres
@@ -10,7 +11,9 @@ postgres:
   database: postgres
   port: 5432
   host: postgres
-{% endif %}{% if redis %}
+{% endif %}
+{% if redis %}
+
 # redis
 redis:
   port: 6379

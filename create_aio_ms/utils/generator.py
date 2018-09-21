@@ -20,7 +20,11 @@ __all__ = [
     'rename_dirs',
 ]
 
-render_from_string = Environment(loader=BaseLoader).from_string
+render_from_string = Environment(
+    loader=BaseLoader,
+    lstrip_blocks=True,
+    trim_blocks=True,
+).from_string
 
 
 def copy_template(dir_name: str) -> None:
@@ -49,5 +53,6 @@ def render_project_template(context: dict) -> None:
                 body = my_file.read()
                 render_body = render_from_string(body).render(**context)
                 my_file.seek(0)
-                my_file.write(render_body)
+                post_fix = '\n' if len(render_body) else ''
+                my_file.write(render_body + post_fix)
                 my_file.truncate()

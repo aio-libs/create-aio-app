@@ -1,8 +1,8 @@
 import pathlib
 
-from {{template_project}}.main.views import index
-
 from aiohttp import web
+
+from {{template_project}}.main.views import index
 
 PROJECT_PATH = pathlib.Path(__file__).parent
 

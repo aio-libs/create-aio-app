@@ -4,7 +4,6 @@ import aiohttp_jinja2
 import markdown2
 from aiohttp import web
 
-
 from {{ name }}.constants import PROJECT_DIR
 
 

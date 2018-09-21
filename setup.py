@@ -41,7 +41,7 @@ def read_version():
 
 
 install_requires = [
-    'Jinja2'
+    'Jinja2',
 ]
 
 

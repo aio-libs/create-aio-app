@@ -7,7 +7,7 @@ from sqlalchemy import engine_from_config, pool
 from {{ name }} import migrations
 
 # import here you table files for autodetect your tables by the alembic
-import {{ name }}.users.tables
+import {{ name }}.users.tables  # noqa
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -49,6 +49,7 @@ def run_migrations_offline():
     with context.begin_transaction():
         context.run_migrations()
 
+
 def run_migrations_online():
     """Run migrations in 'online' mode.
 
@@ -69,6 +70,7 @@ def run_migrations_online():
 
         with context.begin_transaction():
             context.run_migrations()
+
 
 if context.is_offline_mode():
     run_migrations_offline()

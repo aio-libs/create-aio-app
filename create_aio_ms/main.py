@@ -22,5 +22,4 @@ def main():
 
     print('\n\nSuccessfully generated!\n')
     print(f'cd {args["name"]}/')
-    print(f'pip install -e ./')
     print('make run\n\n')

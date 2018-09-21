@@ -1,9 +1,16 @@
 from pathlib import Path
+{% if redis %}
+from functools import partial
+{% endif %}
 
-from aiohttp import web
-{% if not without_postgres %}import aiopg.sa{% endif %}
-{% if redis %}import aioredis{% endif %}
 import aiohttp_jinja2
+{% if not without_postgres %}
+import aiopg.sa
+{% endif %}
+from aiohttp import web
+{% if redis %}
+import aioredis
+{% endif %}
 import jinja2
 
 from {{name}}.routes import init_routes
@@ -22,6 +29,8 @@ def init_jinja2(app: web.Application) -> None:
         loader=jinja2.FileSystemLoader(str(path / 'templates'))
     )
 {% if not without_postgres %}
+
+
 async def init_database(app: web.Application) -> None:
     '''
     This is signal for success creating connection with database
@@ -32,6 +41,8 @@ async def init_database(app: web.Application) -> None:
     app['db'] = engine
 {% endif %}
 {% if redis %}
+
+
 async def init_redis(app: web.Application) -> None:
     '''
     This is signal for success creating connection with redis
@@ -55,6 +66,8 @@ async def init_redis(app: web.Application) -> None:
     app['create_redis'] = create_redis
 {% endif %}
 {% if not without_postgres %}
+
+
 async def close_database(app: web.Application) -> None:
     '''
     This is signal for success closing connection with database before shutdown
@@ -63,6 +76,8 @@ async def close_database(app: web.Application) -> None:
     await app['db'].wait_closed()
 {% endif %}
 {% if redis %}
+
+
 async def close_redis(app: web.Application) -> None:
     '''
     This is signal for success closing connection with redis before shutdown
@@ -71,6 +86,7 @@ async def close_redis(app: web.Application) -> None:
     app['redis_pub'].close()
 {% endif %}
 
+
 def init_app(config: dict = None) -> web.Application:
     app = web.Application()
 
@@ -78,6 +94,7 @@ def init_app(config: dict = None) -> web.Application:
     init_config(app, config=config)
     init_routes(app)
     {% if not without_postgres and redis %}
+
     app.on_startup.extend([
         init_redis,
         init_database,
@@ -87,6 +104,7 @@ def init_app(config: dict = None) -> web.Application:
         init_database,
     ])
     {% elif not without_postgres %}
+
     app.on_startup.extend([
         init_database,
     ])
@@ -94,6 +112,7 @@ def init_app(config: dict = None) -> web.Application:
         init_database,
     ])
     {% elif redis %}
+
     app.on_startup.extend([
         init_redis,
     ])
@@ -101,4 +120,5 @@ def init_app(config: dict = None) -> web.Application:
         close_redis,
     ])
     {% endif %}
+
     return app

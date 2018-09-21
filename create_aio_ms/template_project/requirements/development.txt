@@ -4,6 +4,7 @@ mypy
 flake8
 pytest
 pytest-cov
+pytest-aiohttp
 
 aiohttp-devtools
 git+https://github.com/Arfey/aiohttp-debugtoolbar.git

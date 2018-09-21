@@ -55,6 +55,12 @@ The all settings connected with a `mypy` you can customize in `mypy.ini`.
 ___
 
 {% if not without_postgres %}
+
+### Testing
+```bash
+make test
+```
+
 ### Database
 Management of database (postgres) migrations takes place with the help of [alembic](http://alembic.zzzcomputing.com/en/latest/).
 

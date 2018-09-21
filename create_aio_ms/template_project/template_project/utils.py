@@ -50,5 +50,6 @@ def get_config(argv: Any = None) -> Any:
     return commandline.config_from_options(options, CONFIG_TRAFARET)
 
 
-def init_config(app: web.Application) -> None:
-    app['config'] = get_config(['-c', DEFAULT_CONFIG_PATH.as_posix()])
+def init_config(app: web.Application, *, config: dict = None) -> None:
+    app['config'] = \
+        config or get_config(['-c', DEFAULT_CONFIG_PATH.as_posix()])

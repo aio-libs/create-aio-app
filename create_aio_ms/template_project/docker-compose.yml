@@ -1,7 +1,7 @@
 version: '3.2'
 
 services:
-  {{ name }}_app:
+  {{ name }}_app: &app
     build:
       context: .
       args:
@@ -34,3 +34,9 @@ services:
     ports:
         - 6379:6379
   {% endif %}
+  test:
+    <<: *app
+    container_name: {{ name }}_test
+    ports:
+      - 8082:8082
+    command: make _test

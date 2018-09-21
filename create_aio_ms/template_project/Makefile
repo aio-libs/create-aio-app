@@ -13,8 +13,12 @@ mypy:
 lint:
 	@docker-compose run --rm $(PROJECT_NAME)_app flake8 $(PROJECT_NAME)
 
-test: lint
+_test:
 	@py.test
+
+test: lint
+	@docker-compose up test
+	@docker-compose stop test
 
 stop:
 	@docker-compose stop

@@ -1,8 +1,6 @@
 # Create aio app
 
-[![Python Versions][pyversion-button]][md-pypi]
-[![Latest Version][mdversion-button]][md-pypi]
-[![BSD License][bsdlicense-button]][mitlicense]
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 The tool that helps quickly create a basis for the microservice on aiohttp and prepare the development environment.
 

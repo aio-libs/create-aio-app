@@ -7,12 +7,12 @@ from jinja2 import (
     BaseLoader,
 )
 
-from create_aio_ms.constants import (
+from create_aio_app.constants import (
     TEMPLATE_DIR,
     TEMPLATE_NAME,
     DATABASE_TEMPLATE_DIRS,
 )
-from create_aio_ms.constants import RENDER_ACCESS_FORMATS
+from create_aio_app.constants import RENDER_ACCESS_FORMATS
 
 __all__ = [
     'copy_template',

@@ -10,7 +10,7 @@ REGEXP = re.compile(r"^__version__\W*=\W*'([\d.abrc]+)'")
 
 if sys.version_info < (3, 5):
     raise RuntimeError(
-        "create-aio-ms doesn't support Python version prior 3.5"
+        "create-aio-app doesn't support Python version prior 3.5"
     )
 
 
@@ -26,7 +26,7 @@ def read_version():
 
     init_py = os.path.join(
         os.path.dirname(__file__),
-        'create_aio_ms',
+        'create_aio_app',
         '__init__.py'
     )
 
@@ -47,13 +47,13 @@ install_requires = [
 
 path = os.path.join(
     os.path.dirname(__file__),
-    'create_aio_ms',
+    'create_aio_app',
     'template_project'
 )
 
 
 setup(
-    name="create-aio-ms",
+    name="create-aio-app",
     version=read_version(),
     description="Mykhailo Havelia",
     platforms=["POSIX"],
@@ -62,12 +62,11 @@ setup(
     author_email="misha.gavela@gmail.com",
     install_requires=install_requires,
     license="MIT",
-    # TODO: added url to github
-    url="",
+    url="https://github.com/Arfey/create-aio-app",
     package_data={
          '': package_files(path),
      },
     entry_points={
-        'console_scripts': ['create-aio-ms=create_aio_ms:main.main'],
+        'console_scripts': ['create-aio-app=create_aio_app:main.main'],
     },
 )

@@ -1,5 +1,5 @@
-from create_aio_ms.utils.config import parse_arguments
-from create_aio_ms.utils.generator import (
+from create_aio_app.utils.config import parse_arguments
+from create_aio_app.utils.generator import (
     copy_template,
     rename_dirs,
     render_project_template,

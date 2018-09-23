@@ -22,9 +22,9 @@ def parse_arguments() -> dict:
     Parse console arguments and return config object.
     """
     parser = argparse.ArgumentParser(
-        prog="create-aio-ms",
+        prog="create-aio-app",
         description=(
-            "create-aio-ms - a tool that helps quickly create a basis "
+            "create-aio-app - a tool that helps quickly create a basis "
             "for the microservice on aiohttp and prepare the development "
             "environment."
         )

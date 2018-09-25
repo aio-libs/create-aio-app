@@ -1,18 +1,18 @@
-from distutils.dir_util import copy_tree
-import shutil
 import os
+import shutil
+from distutils.dir_util import copy_tree
 
 from jinja2 import (
-    Environment,
     BaseLoader,
+    Environment
 )
 
 from create_aio_app.constants import (
-    TEMPLATE_DIR,
-    TEMPLATE_NAME,
     DATABASE_TEMPLATE_DIRS,
+    RENDER_ACCESS_FORMATS,
+    TEMPLATE_DIR,
+    TEMPLATE_NAME
 )
-from create_aio_app.constants import RENDER_ACCESS_FORMATS
 
 __all__ = [
     'copy_template',

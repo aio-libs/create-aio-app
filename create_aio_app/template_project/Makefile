@@ -12,6 +12,9 @@ run:
 stop:
 	@docker-compose stop
 
+clean:
+	@docker-compose down
+
 bash:
 	@docker exec -it {{ name }} bash
 

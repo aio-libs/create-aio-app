@@ -64,8 +64,8 @@ setup(
     license="MIT",
     url="https://github.com/Arfey/create-aio-app",
     package_data={
-         '': package_files(path),
-     },
+        '': package_files(path),
+    },
     entry_points={
         'console_scripts': ['create-aio-app=create_aio_app:main.main'],
     },

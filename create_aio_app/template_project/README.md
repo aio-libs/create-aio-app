@@ -47,6 +47,12 @@ For stop work of docker containers use:
 make stop
 ```
 
+For clean up work of docker containers use:
+
+```
+make clean
+```
+
 Interactive work inside container
 
 ```

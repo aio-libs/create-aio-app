@@ -1,4 +1,4 @@
-# {{ name }}
+# {{ cookiecutter.project_name }}
 
 ___
 
@@ -17,12 +17,12 @@ ___
 - docker-compose
 - aio devtools
 - aiohttp debug toolbar
-{% if not without_postgres %}
+{%- if cookiecutter.use_postgres == 'y' %}
 - postgres
 - alembic
 - aiopg
 - sqlAlchemy
-{% endif %}
+{%- endif %}
 
 
 ## Local development
@@ -78,7 +78,7 @@ make mypy
 The all settings connected with a `mypy` you can customize in `mypy.ini`.
 ___
 
-{% if not without_postgres %}
+{%- if cookiecutter.use_postgres == 'y' %}
 
 ### Testing
 ```
@@ -88,7 +88,7 @@ make test
 ### Database
 Management of database (postgres) migrations takes place with the help of [alembic](http://alembic.zzzcomputing.com/en/latest/).
 
-Create new migration (new file in `{{name}}/migrations/versions/`):
+Create new migration (new file in `{{ cookiecutter.project_name }}/migrations/versions/`):
 
 ```
 make migrations # the command must be running after `make run` 
@@ -100,10 +100,10 @@ Apply migrations:
 make migrate # the command must be running after `make run` 
 ```
 
-If u wanna create new file with tables u should import tables to `{{name}}/migrations/env.py`
+If u wanna create new file with tables u should import tables to `{{ cookiecutter.project_name }}/migrations/env.py`
 
 ```
-import {{ name }}.users.tables # import new files here
+import {{ cookiecutter.project_name }}.users.tables # import new files here
 ```
 
 If u need to make downgrade or other special things with alembic, use `make bash`
@@ -119,7 +119,7 @@ To connect to postgres, use the command below
 ```
 make psql # the command must be running after `make run` 
 ```
-{% endif %}
+{%- endif %}
 
 ## Production
 All production settings for application are in the `/config/api.prod.yml`.

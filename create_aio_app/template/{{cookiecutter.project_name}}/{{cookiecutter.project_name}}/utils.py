@@ -19,7 +19,7 @@ CONFIG_TRAFARET = trafaret.Dict({
             'host': trafaret.String(),
             'port': trafaret.Int(),
         }),
-    {% if not without_postgres %}
+    {%- if cookiecutter.use_postgres == 'y' %}
     trafaret.Key('postgres'):
         trafaret.Dict({
             'host': trafaret.String(),
@@ -28,14 +28,14 @@ CONFIG_TRAFARET = trafaret.Dict({
             'password': trafaret.String(),
             'database': trafaret.String(),
         }),
-    {% endif %}
-    {% if redis %}
+    {%- endif %}
+    {%- if cookiecutter.use_redis == 'y' %}
     trafaret.Key('redis'):
         trafaret.Dict({
             'host': trafaret.String(),
             'port': trafaret.Int(),
         }),
-    {% endif %}
+    {%- endif %}
 })
 
 

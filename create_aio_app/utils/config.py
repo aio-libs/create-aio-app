@@ -41,11 +41,6 @@ def parse_arguments() -> dict:
         help='added redis settings to the generating project'
     )
     parser.add_argument(
-        '--mongodb',
-        action='store_true',
-        help='added mongodb settings to the generating project'
-    )
-    parser.add_argument(
         '--without-postgres',
         action='store_true',
         help='generate project without postgres settings'

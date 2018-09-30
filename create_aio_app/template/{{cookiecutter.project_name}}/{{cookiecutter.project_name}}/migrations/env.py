@@ -4,10 +4,10 @@ from logging.config import fileConfig
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 
-from {{ name }} import migrations
+from {{ cookiecutter.project_name }} import migrations
 
 # import here you table files for autodetect your tables by the alembic
-import {{ name }}.users.tables  # noqa
+import {{ cookiecutter.project_name }}.users.tables  # noqa
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

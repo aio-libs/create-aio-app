@@ -1,20 +1,20 @@
 from pathlib import Path
-{% if redis %}
+{%- if cookiecutter.use_redis == 'y' %}
 from functools import partial
-{% endif %}
+{%- endif %}
 
 import aiohttp_jinja2
-{% if not without_postgres %}
+{%- if cookiecutter.use_postgres == 'y' %}
 import aiopg.sa
-{% endif %}
+{%- endif %}
 from aiohttp import web
-{% if redis %}
+{%- if cookiecutter.use_redis == 'y' %}
 import aioredis
-{% endif %}
+{%- endif %}
 import jinja2
 
-from {{name}}.routes import init_routes
-from {{name}}.utils import init_config
+from {{ cookiecutter.project_name }}.routes import init_routes
+from {{ cookiecutter.project_name }}.utils import init_config
 
 
 path = Path(__file__).parent
@@ -28,7 +28,7 @@ def init_jinja2(app: web.Application) -> None:
         app,
         loader=jinja2.FileSystemLoader(str(path / 'templates'))
     )
-{% if not without_postgres %}
+{%- if cookiecutter.use_postgres == 'y' %}
 
 
 async def init_database(app: web.Application) -> None:
@@ -39,8 +39,8 @@ async def init_database(app: web.Application) -> None:
 
     engine = await aiopg.sa.create_engine(**config)
     app['db'] = engine
-{% endif %}
-{% if redis %}
+{%- endif %}
+{%- if cookiecutter.use_redis == 'y' %}
 
 
 async def init_redis(app: web.Application) -> None:
@@ -64,8 +64,8 @@ async def init_redis(app: web.Application) -> None:
     app['redis_sub'] = sub
     app['redis_pub'] = pub
     app['create_redis'] = create_redis
-{% endif %}
-{% if not without_postgres %}
+{%- endif %}
+{%- if cookiecutter.use_postgres == 'y' %}
 
 
 async def close_database(app: web.Application) -> None:
@@ -75,7 +75,7 @@ async def close_database(app: web.Application) -> None:
     app['db'].close()
     await app['db'].wait_closed()
 {% endif %}
-{% if redis %}
+{%- if cookiecutter.use_redis == 'y' %}
 
 
 async def close_redis(app: web.Application) -> None:
@@ -84,7 +84,7 @@ async def close_redis(app: web.Application) -> None:
     '''
     app['redis_sub'].close()
     app['redis_pub'].close()
-{% endif %}
+{%- endif %}
 
 
 def init_app(config: dict = None) -> web.Application:
@@ -93,7 +93,7 @@ def init_app(config: dict = None) -> web.Application:
     init_jinja2(app)
     init_config(app, config=config)
     init_routes(app)
-    {% if not without_postgres and redis %}
+    {% if cookiecutter.use_postgres == 'y' and cookiecutter.use_redis == 'y' %}
 
     app.on_startup.extend([
         init_redis,
@@ -103,7 +103,7 @@ def init_app(config: dict = None) -> web.Application:
         close_redis,
         init_database,
     ])
-    {% elif not without_postgres %}
+    {% elif cookiecutter.use_postgres == 'y' %}
 
     app.on_startup.extend([
         init_database,
@@ -111,7 +111,7 @@ def init_app(config: dict = None) -> web.Application:
     app.on_cleanup.extend([
         init_database,
     ])
-    {% elif redis %}
+    {% elif cookiecutter.use_redis == 'y' %}
 
     app.on_startup.extend([
         init_redis,

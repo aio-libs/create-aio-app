@@ -1,6 +1,6 @@
 import pytest
 
-from {{ name }}.users.db_utils import select_user_by_id
+from {{ cookiecutter.project_name }}.users.db_utils import select_user_by_id
 
 
 @pytest.mark.asyncio

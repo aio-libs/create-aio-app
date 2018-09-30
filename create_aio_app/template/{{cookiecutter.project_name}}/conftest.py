@@ -1,16 +1,15 @@
 import pytest
-{% if not without_postgres %}
+{%- if cookiecutter.use_postgres == 'y' %}
 from sqlalchemy import create_engine
 import aiopg.sa
-{% endif %}
+{%- endif %}
 
-from {{ name }}.utils import PATH, get_config
-# todo: if for db
-from {{ name }}.app import init_app
-{% if not without_postgres %}
-from {{ name }}.migrations import metadata
-from {{ name }}.users.tables import users
-{% endif %}
+from {{ cookiecutter.project_name }}.utils import PATH, get_config
+from {{ cookiecutter.project_name }}.app import init_app
+{%- if cookiecutter.use_postgres == 'y' %}
+from {{ cookiecutter.project_name }}.migrations import metadata
+from {{ cookiecutter.project_name }}.users.tables import users
+{%- endif %}
 
 
 # constants
@@ -21,7 +20,7 @@ config = get_config(['-c', CONFIG_PATH.as_posix()])
 test_config = get_config(['-c', TEST_CONFIG_PATH.as_posix()])
 
 
-{% if not without_postgres %}
+{%- if cookiecutter.use_postgres == 'y' %}
 # helpers
 def get_db_url(config: dict) -> str:
     '''
@@ -135,10 +134,10 @@ async def sa_engine(loop):
     '''
 
     return await aiopg.sa.create_engine(**test_config['postgres'])
-{% endif %}
+{%- endif %}
 
 @pytest.fixture
-async def client(aiohttp_client{% if not without_postgres %}, tables{% endif %}):
+async def client(aiohttp_client{% if cookiecutter.use_postgres == 'y' %}, tables{% endif %}):
     '''
     The fixture for the initialize client.
     '''

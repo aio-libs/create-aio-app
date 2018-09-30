@@ -1,0 +1,5 @@
+{
+    "project_name": "app",
+    "use_postgres": "y",
+    "use_redis": "n"
+}

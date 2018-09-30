@@ -11,7 +11,7 @@ def read_version():
 
     init_py = os.path.join(
         os.path.dirname(__file__),
-        '{{name}}',
+        '{{ cookiecutter.project_name }}',
         '__init__.py',
     )
 
@@ -30,14 +30,14 @@ install_requires = [
     'aiohttp_jinja2',
     'trafaret_config',
     'markdown2',
-    {% if not without_postgres %}
+    {%- if cookiecutter.use_postgres == 'y' %}
     'aiopg[sa]',
     'psycopg2-binary',
     'alembic',
-    {% endif %}
-    {% if redis %}
+    {%- endif %}
+    {%- if cookiecutter.use_redis == 'y' %}
     'aioredis',
-    {% endif %}
+    {%- endif %}
     # todo: remove test requirements
     'pytest',
     'pytest-cov',
@@ -46,9 +46,9 @@ install_requires = [
 
 
 setup(
-    name='{{name}}',
+    name='{{ cookiecutter.project_name }}',
     version=read_version(),
-    description='{{name}}',
+    description='{{ cookiecutter.project_name }}',
     platforms=['POSIX'],
     packages=find_packages(),
     package_data={

@@ -2,12 +2,12 @@ version: '3.2'
 
 services:
 
-  {{ name }}_app: &app
+  {{ cookiecutter.project_name }}_app: &app
     build:
       context: .
       args:
         requirements: requirements/development.txt
-    container_name: {{ name }}
+    container_name: {{ cookiecutter.project_name }}
     environment:
       # use in code
       - DEBUG=True
@@ -15,44 +15,44 @@ services:
     restart: always
     volumes:
       - .:/app:delegated
-    {% if not without_postgres and redis %}
+    {%- if cookiecutter.use_postgres == 'y' and cookiecutter.use_redis == 'y' %}
     depends_on:
       - postgres
       - redis
-    {% elif not without_postgres %}
+    {% elif cookiecutter.use_postgres == 'y' %}
     depends_on:
       - postgres
-    {% elif redis %}
+    {%- elif cookiecutter.use_redis == 'y' %}
     depends_on:
       - redis
     {% endif %}
     ports:
       - 8080:8080
       - 8081:8081
-    command: adev runserver ./{{ name }}/__main__.py -p 8080
-  {% if not without_postgres %}
+    command: adev runserver ./{{ cookiecutter.project_name }}/__main__.py -p 8080
+  {%- if cookiecutter.use_postgres == 'y' %}
 
   postgres:
       image: postgres:10
-      container_name: {{ name }}_postgres
+      container_name: {{ cookiecutter.project_name }}_postgres
       environment:
           - POSTGRES_USER=postgres
           - POSTGRES_PASSWORD=postgres
           - POSTGRES_DB=postgres
       ports:
           - 5432:5432
-  {% endif %}
-  {% if redis %}
+  {%- endif %}
+  {%- if cookiecutter.use_redis == 'y' %}
 
   redis:
     image: redis:4
     ports:
         - 6379:6379
-  {% endif %}
+  {%- endif %}
 
   test:
     <<: *app
-    container_name: {{ name }}_test
+    container_name: {{ cookiecutter.project_name }}_test
     ports:
       - 8082:8082
     command: make _test

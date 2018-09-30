@@ -4,7 +4,7 @@ import aiohttp_jinja2
 import markdown2
 from aiohttp import web
 
-from {{ name }}.constants import PROJECT_DIR
+from {{ cookiecutter.project_name }}.constants import PROJECT_DIR
 
 
 @aiohttp_jinja2.template('index.html')

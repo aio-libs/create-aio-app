@@ -19,13 +19,13 @@ services:
     depends_on:
       - postgres
       - redis
-    {% elif cookiecutter.use_postgres == 'y' %}
+    {%- elif cookiecutter.use_postgres == 'y' %}
     depends_on:
       - postgres
     {%- elif cookiecutter.use_redis == 'y' %}
     depends_on:
       - redis
-    {% endif %}
+    {%- endif %}
     ports:
       - 8080:8080
       - 8081:8081

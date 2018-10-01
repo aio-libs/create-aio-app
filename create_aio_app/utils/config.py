@@ -32,6 +32,7 @@ def parse_arguments() -> dict:
     parser.add_argument(
         "name",
         type=name_type,
+        nargs='?',
         metavar="<project-name>",
         help='the name of the future project.'
     )

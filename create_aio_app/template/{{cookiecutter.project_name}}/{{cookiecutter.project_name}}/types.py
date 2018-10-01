@@ -5,4 +5,4 @@ from aiopg.sa.result import RowProxy
 
 
 RowsProxy = List[RowProxy]
-{%- endif %}
+{% endif %}

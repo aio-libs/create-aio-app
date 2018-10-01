@@ -74,7 +74,7 @@ async def close_database(app: web.Application) -> None:
     '''
     app['db'].close()
     await app['db'].wait_closed()
-{% endif %}
+{%- endif %}
 {%- if cookiecutter.use_redis == 'y' %}
 
 
@@ -93,7 +93,7 @@ def init_app(config: dict = None) -> web.Application:
     init_jinja2(app)
     init_config(app, config=config)
     init_routes(app)
-    {% if cookiecutter.use_postgres == 'y' and cookiecutter.use_redis == 'y' %}
+    {%- if cookiecutter.use_postgres == 'y' and cookiecutter.use_redis == 'y' %}
 
     app.on_startup.extend([
         init_redis,
@@ -103,7 +103,7 @@ def init_app(config: dict = None) -> web.Application:
         close_redis,
         init_database,
     ])
-    {% elif cookiecutter.use_postgres == 'y' %}
+    {%- elif cookiecutter.use_postgres == 'y' %}
 
     app.on_startup.extend([
         init_database,
@@ -111,7 +111,7 @@ def init_app(config: dict = None) -> web.Application:
     app.on_cleanup.extend([
         init_database,
     ])
-    {% elif cookiecutter.use_redis == 'y' %}
+    {%- elif cookiecutter.use_redis == 'y' %}
 
     app.on_startup.extend([
         init_redis,
@@ -119,6 +119,6 @@ def init_app(config: dict = None) -> web.Application:
     app.on_cleanup.extend([
         close_redis,
     ])
-    {% endif %}
+    {%- endif %}
 
     return app

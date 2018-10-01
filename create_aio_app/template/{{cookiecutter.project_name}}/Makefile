@@ -1,5 +1,3 @@
-export PYTHONPATH=.
-
 PROJECT_NAME={{ cookiecutter.project_name }}
 
 # Common

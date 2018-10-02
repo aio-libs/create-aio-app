@@ -32,6 +32,7 @@ def parse_arguments() -> dict:
     parser.add_argument(
         "name",
         type=name_type,
+        nargs='?',
         metavar="<project-name>",
         help='the name of the future project.'
     )
@@ -39,11 +40,6 @@ def parse_arguments() -> dict:
         '--redis',
         action='store_true',
         help='added redis settings to the generating project'
-    )
-    parser.add_argument(
-        '--mongodb',
-        action='store_true',
-        help='added mongodb settings to the generating project'
     )
     parser.add_argument(
         '--without-postgres',

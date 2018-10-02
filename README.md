@@ -21,6 +21,12 @@ pip install create-aio-app
 create-aio-app my_project
 ```
 
+or if u wanna use manual mode, enter only command below
+
+```bash
+create-aio-app
+``` 
+
 After that it will create new directory `my_project`.
 
 ```bash

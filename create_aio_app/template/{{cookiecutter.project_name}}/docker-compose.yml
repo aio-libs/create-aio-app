@@ -1,0 +1,58 @@
+version: '3.2'
+
+services:
+
+  {{ cookiecutter.project_name }}_app: &app
+    build:
+      context: .
+      args:
+        requirements: requirements/development.txt
+    container_name: {{ cookiecutter.project_name }}
+    environment:
+      # use in code
+      - DEBUG=True
+      - SETTINGS_FILE=api.dev.yml
+    restart: always
+    volumes:
+      - .:/app:delegated
+    {%- if cookiecutter.use_postgres == 'y' and cookiecutter.use_redis == 'y' %}
+    depends_on:
+      - postgres
+      - redis
+    {%- elif cookiecutter.use_postgres == 'y' %}
+    depends_on:
+      - postgres
+    {%- elif cookiecutter.use_redis == 'y' %}
+    depends_on:
+      - redis
+    {%- endif %}
+    ports:
+      - 8080:8080
+      - 8081:8081
+    command: adev runserver ./{{ cookiecutter.project_name }}/__main__.py -p 8080
+  {%- if cookiecutter.use_postgres == 'y' %}
+
+  postgres:
+      image: postgres:10
+      container_name: {{ cookiecutter.project_name }}_postgres
+      environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=postgres
+          - POSTGRES_DB=postgres
+      ports:
+          - 5432:5432
+  {%- endif %}
+  {%- if cookiecutter.use_redis == 'y' %}
+
+  redis:
+    image: redis:4
+    ports:
+        - 6379:6379
+  {%- endif %}
+
+  test:
+    <<: *app
+    container_name: {{ cookiecutter.project_name }}_test
+    ports:
+      - 8082:8082
+    command: make _test

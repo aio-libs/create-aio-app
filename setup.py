@@ -41,14 +41,14 @@ def read_version():
 
 
 install_requires = [
-    'Jinja2',
+    'cookiecutter'
 ]
 
 
 path = os.path.join(
     os.path.dirname(__file__),
     'create_aio_app',
-    'template_project'
+    'template'
 )
 
 

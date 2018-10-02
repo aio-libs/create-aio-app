@@ -1,13 +1,15 @@
-import os
+import pathlib
 
 from cookiecutter.main import cookiecutter
 
 from create_aio_app.utils.config import parse_arguments
 
+parent = pathlib.Path(__file__).parent
+
 
 def main():
     args = parse_arguments()
-    template_path = f'{os.path.dirname(os.path.abspath(__file__))}/template/'
+    template_path = str(parent / 'template')
 
     if not args.get('name'):
         cookiecutter(template_path)

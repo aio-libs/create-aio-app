@@ -1,7 +1,7 @@
 import argparse
 import os
 import pathlib
-from typing import Any, Optional, Dict
+from typing import Any, Optional, List
 
 import trafaret
 from aiohttp import web
@@ -53,7 +53,7 @@ def get_config(argv: Any = None) -> Any:
 def init_config(
         app: web.Application,
         *,
-        config: Optional[Dict[str, Dict[str, str]]] = None
+        config: Optional[List[str]] = None
 ) -> None:
     app['config'] = \
         get_config(config or ['-c', DEFAULT_CONFIG_PATH.as_posix()])

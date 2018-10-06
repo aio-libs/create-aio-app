@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Optional, Dict
+from typing import Optional, List
 
 {%- if cookiecutter.use_redis == 'y' %}
 from functools import partial
@@ -89,9 +89,7 @@ async def close_redis(app: web.Application) -> None:
 {%- endif %}
 
 
-def init_app(
-        config: Optional[Dict[str, Dict[str, str]]] = None
-) -> web.Application:
+def init_app(config: Optional[List[str]] = None) -> web.Application:
     app = web.Application()
 
     init_jinja2(app)

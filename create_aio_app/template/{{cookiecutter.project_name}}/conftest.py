@@ -22,6 +22,8 @@ test_config = get_config(['-c', TEST_CONFIG_PATH.as_posix()])
 
 {%- if cookiecutter.use_postgres == 'y' %}
 # helpers
+
+
 def get_db_url(config: dict) -> str:
     '''
     Generate a url for db connection from the config.
@@ -59,6 +61,7 @@ def init_sample_data(engine) -> None:
                 ])
 
         conn.execute(query)
+
 
 def setup_test_db(engine) -> None:
     '''
@@ -127,6 +130,7 @@ def tables(db):
     yield
     metadata.drop_all(test_engine)
 
+
 @pytest.fixture
 async def sa_engine(loop):
     '''
@@ -135,6 +139,7 @@ async def sa_engine(loop):
 
     return await aiopg.sa.create_engine(**test_config['postgres'])
 {%- endif %}
+
 
 @pytest.fixture
 async def client(aiohttp_client{% if cookiecutter.use_postgres == 'y' %}, tables{% endif %}):

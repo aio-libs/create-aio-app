@@ -1,5 +1,5 @@
 # Create aio app
-
+[![Build Status](https://travis-ci.com/aio-libs/create-aio-app.svg?branch=master)](https://travis-ci.com/aio-libs/create-aio-app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 The tool that helps quickly create a basis for the microservice on aiohttp and prepare the development environment.

@@ -59,3 +59,7 @@ and open in your browser `http://localhost:8080/`
 
 `--redis` - add redis to the template
 
+
+## License
+
+Create aio App is open source software <a href="https://github.com/aio-libs/create-aio-app/blob/master/LICENSE">licensed as MIT</a>. 

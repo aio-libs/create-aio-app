@@ -1,7 +1,7 @@
 import argparse
 import os
 import pathlib
-from typing import Any
+from typing import Any, Optional, Dict
 
 import trafaret
 from aiohttp import web
@@ -9,7 +9,7 @@ from trafaret_config import commandline
 
 
 PATH = pathlib.Path(__file__).parent.parent
-settings_file = os.environ.get('SETTINGS_FILE')
+settings_file = os.environ.get('SETTINGS_FILE', '')
 DEFAULT_CONFIG_PATH = PATH / 'config' / settings_file
 
 
@@ -50,6 +50,10 @@ def get_config(argv: Any = None) -> Any:
     return commandline.config_from_options(options, CONFIG_TRAFARET)
 
 
-def init_config(app: web.Application, *, config: list = None) -> None:
+def init_config(
+        app: web.Application,
+        *,
+        config: Optional[Dict[str, Dict[str, str]]] = None
+) -> None:
     app['config'] = \
         get_config(config or ['-c', DEFAULT_CONFIG_PATH.as_posix()])

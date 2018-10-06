@@ -12,7 +12,7 @@ def create_app() -> web.Application:
     return app
 
 
-def main():
+def main() -> None:
     app = init_app()
     app_settings = app['config']['app']
 

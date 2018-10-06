@@ -1,4 +1,7 @@
-async def test_view(client) -> None:
+from pytest_aiohttp import aiohttp_client
+
+
+async def test_view(client: aiohttp_client) -> None:
     resp = await client.get('/')
 
     assert resp.status == 200

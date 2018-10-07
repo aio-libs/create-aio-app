@@ -52,13 +52,30 @@ path = os.path.join(
 )
 
 
+classifiers = [
+    'License :: OSI Approved :: MIT License',
+    'Intended Audience :: Developers',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.5',
+    'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
+    'Operating System :: POSIX',
+    'Development Status :: 4 - Beta'
+    'Framework :: AsyncIO',
+]
+
+
 setup(
     name="create-aio-app",
     version=read_version(),
-    description="Mykhailo Havelia",
+    description=("The tool that helps quickly create a basis for "
+                 "the microservice on aiohttp and prepare the development "
+                 "environment."),
+    classifiers=classifiers,
     platforms=["POSIX"],
     packages=find_packages(exclude=["tests"]),
     include_package_data=True,
+    author="Mykhailo Havelia",
     author_email="misha.gavela@gmail.com",
     install_requires=install_requires,
     license="MIT",
@@ -69,4 +86,6 @@ setup(
     entry_points={
         'console_scripts': ['create-aio-app=create_aio_app:main.main'],
     },
+    keywords=['create-aio-app', 'cookiecutter', 'aiohttp'],
+    zip_safe=True,
 )

@@ -8,7 +8,7 @@ checkrst:
 pyroma:
 	pyroma -d .
 
-flake: checkrst bandit
+flake: checkrst bandit pyroma
 	flake8 create_aio_app setup.py --exclude create_aio_app/template
 
 test:

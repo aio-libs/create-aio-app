@@ -1,17 +1,25 @@
 import os
-import sys
+import pathlib
 import re
+import sys
 
 from setuptools import find_packages, setup
 
-
 REGEXP = re.compile(r"^__version__\W*=\W*'([\d.abrc]+)'")
+parent = pathlib.Path(__file__).parent
 
 
 if sys.version_info < (3, 5):
     raise RuntimeError(
         "create-aio-app doesn't support Python version prior 3.5"
     )
+
+
+def get_text_from(f: str) -> str:
+    file_path = parent / f
+
+    with open(file_path) as f:
+        return f.read().strip()
 
 
 def package_files(directory):
@@ -41,7 +49,7 @@ def read_version():
 
 
 install_requires = [
-    'cookiecutter'
+    'cookiecutter',
 ]
 
 
@@ -60,7 +68,7 @@ classifiers = [
     'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7',
     'Operating System :: POSIX',
-    'Development Status :: 4 - Beta'
+    'Development Status :: 4 - Beta',
     'Framework :: AsyncIO',
 ]
 
@@ -68,9 +76,13 @@ classifiers = [
 setup(
     name="create-aio-app",
     version=read_version(),
-    description=("The tool that helps quickly create a basis for "
-                 "the microservice on aiohttp and prepare the development "
-                 "environment."),
+    description=(
+        "The tool that helps quickly create a basis for "
+        "the microservice on aiohttp and prepare the development "
+        "environment."
+    ),
+    long_description=get_text_from('README.md'),
+    long_description_content_type='text/markdown',
     classifiers=classifiers,
     platforms=["POSIX"],
     packages=find_packages(exclude=["tests"]),

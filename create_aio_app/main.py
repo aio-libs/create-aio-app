@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from cookiecutter.exceptions import OutputDirExistsException
 from cookiecutter.main import cookiecutter
 
 from create_aio_app.utils.config import parse_arguments
@@ -11,16 +12,23 @@ def main():
     args = parse_arguments()
     template_path = str(parent / 'template')
 
-    if not args.get('name'):
-        result = cookiecutter(template_path)
-    else:
-        ctx = {
-            'project_name': args.get('name'),
-            'use_postgres': 'n' if args.get('without_postgres') else 'y',
-            'use_redis': 'y' if args.get('redis') else 'n',
+    kwargs = {}
+
+    if args.get('name'):
+        kwargs = {
+            'no_input': True,
+            'extra_context': {
+                'project_name': args.get('name'),
+                'use_postgres': 'n' if args.get('without_postgres') else 'y',
+                'use_redis': 'y' if args.get('redis') else 'n',
+            },
         }
 
-        result = cookiecutter(template_path, no_input=True, extra_context=ctx)
+    try:
+        result = cookiecutter(template_path, **kwargs)
+    except OutputDirExistsException as exc:
+        print('\n\n\033[91mDirectory with such name already exists!\033[00m\n')
+        return
 
     folder = Path(result).name
 

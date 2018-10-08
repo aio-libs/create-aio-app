@@ -1,3 +1,4 @@
+from functools import partial
 from pathlib import Path
 
 import click
@@ -7,6 +8,8 @@ from cookiecutter.main import cookiecutter
 from create_aio_app.utils.config import parse_arguments
 
 parent = Path(__file__).parent
+
+echo = partial(click.echo, err=True)
 
 
 def main():
@@ -28,7 +31,7 @@ def main():
     try:
         result = cookiecutter(template_path, **kwargs)
     except OutputDirExistsException as exc:
-        print(click.style(
+        echo(click.style(
             '\n\nDirectory with such name already exists!\n',
             fg='red',
         ))
@@ -36,6 +39,9 @@ def main():
 
     folder = Path(result).name
 
-    print(click.style('\n\nSuccessfully generated!\n', fg='bright_green'))
-    print('cd ' + click.style(f'{folder}/', fg='bright_blue'))
-    print('make run\n\n')
+    echo(click.style(
+        '\n\nSuccessfully generated!\n',
+        fg='bright_green',
+    ))
+    echo('cd ' + click.style(f'{folder}/', fg='bright_blue'))
+    echo('make run\n\n')

@@ -91,12 +91,12 @@ setup(
     author_email="misha.gavela@gmail.com",
     install_requires=install_requires,
     license="MIT",
-    url="https://github.com/Arfey/create-aio-app",
+    url="https://github.com/aio-libs/create-aio-app",
     package_data={
         '': package_files(path),
     },
     entry_points={
-        'console_scripts': ['create-aio-app=create_aio_app:main.main'],
+        'console_scripts': ['create-aio-app=create_aio_app.main:main'],
     },
     keywords=['create-aio-app', 'cookiecutter', 'aiohttp'],
     zip_safe=True,

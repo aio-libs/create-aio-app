@@ -17,13 +17,13 @@ def main():
         ctx = {
             'project_name': args.get('name'),
             'use_postgres': 'n' if args.get('without_postgres') else 'y',
-            'use_redis': 'y' if args.get('without_postgres') else 'n',
+            'use_redis': 'y' if args.get('redis') else 'n',
         }
 
         result = cookiecutter(template_path, no_input=True, extra_context=ctx)
 
     folder = Path(result).name
 
-    print('\n\nSuccessfully generated!\n')
-    print(f'cd {folder}/')
+    print('\n\n\033[92mSuccessfully generated!\033[00m\n')
+    print(f'cd \33[94m{folder}/\033[00m')
     print('make run\n\n')

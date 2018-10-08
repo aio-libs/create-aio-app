@@ -1,5 +1,6 @@
 from pathlib import Path
 
+import click
 from cookiecutter.exceptions import OutputDirExistsException
 from cookiecutter.main import cookiecutter
 
@@ -27,11 +28,14 @@ def main():
     try:
         result = cookiecutter(template_path, **kwargs)
     except OutputDirExistsException as exc:
-        print('\n\n\033[91mDirectory with such name already exists!\033[00m\n')
+        print(click.style(
+            '\n\nDirectory with such name already exists!\n',
+            fg='red',
+        ))
         return
 
     folder = Path(result).name
 
-    print('\n\n\033[92mSuccessfully generated!\033[00m\n')
-    print(f'cd \33[94m{folder}/\033[00m')
+    print(click.style('\n\nSuccessfully generated!\n', fg='bright_green'))
+    print('cd ' + click.style(f'{folder}/', fg='bright_blue'))
     print('make run\n\n')

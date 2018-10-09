@@ -16,7 +16,7 @@ import aioredis
 import jinja2
 
 from {{ cookiecutter.project_name }}.routes import init_routes
-from {{ cookiecutter.project_name }}.utils import init_config
+from {{ cookiecutter.project_name }}.utils.common import init_config
 
 
 path = Path(__file__).parent

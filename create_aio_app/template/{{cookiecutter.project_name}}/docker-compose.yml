@@ -29,7 +29,7 @@ services:
     ports:
       - 8080:8080
       - 8081:8081
-    command: adev runserver ./{{ cookiecutter.project_name }}/__main__.py -p 8080
+    command: make adev
   {%- if cookiecutter.use_postgres == 'y' %}
 
   postgres:

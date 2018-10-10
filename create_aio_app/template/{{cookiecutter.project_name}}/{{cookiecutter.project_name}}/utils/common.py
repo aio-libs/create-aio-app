@@ -8,7 +8,7 @@ from aiohttp import web
 from trafaret_config import commandline
 
 
-PATH = pathlib.Path(__file__).parent.parent
+PATH = pathlib.Path(__file__).parent.parent.parent
 settings_file = os.environ.get('SETTINGS_FILE', 'api.dev.yaml')
 DEFAULT_CONFIG_PATH = PATH / 'config' / settings_file
 

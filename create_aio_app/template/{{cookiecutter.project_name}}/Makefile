@@ -43,7 +43,17 @@ migrations:
 
 migrate:
 	@docker exec -it {{ cookiecutter.project_name }} alembic -n alembic:dev upgrade head;
+
 {%- endif %}
 
 run_production:
 	@docker-compose -f docker-compose.yml -f docker-compose.production.yml up
+
+adev: {%- if cookiecutter.use_postgres == 'y' %} wait_resources {% endif %}
+	adev runserver ./{{ cookiecutter.project_name }}/__main__.py -p 8080
+
+
+{%- if cookiecutter.use_postgres == 'y' %}
+wait_resources:
+	python3 -m {{ cookiecutter.project_name }}.utils.wait_script
+{%- endif %}

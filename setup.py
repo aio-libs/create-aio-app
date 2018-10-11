@@ -50,6 +50,7 @@ def read_version():
 
 install_requires = [
     'cookiecutter',
+    'click',
 ]
 
 

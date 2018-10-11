@@ -19,10 +19,10 @@ bash:
 # Linters & tests
 
 mypy:
-	@docker-compose run --rm $(PROJECT_NAME)_app mypy $(PROJECT_NAME)
+	mypy $(PROJECT_NAME)
 
 lint:
-	@docker-compose run --rm $(PROJECT_NAME)_app flake8 $(PROJECT_NAME)
+	flake8 $(PROJECT_NAME)
 
 _test:
 	# todo: remove no:warnings

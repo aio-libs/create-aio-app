@@ -2,7 +2,8 @@ from functools import partial
 from pathlib import Path
 
 import click
-from cookiecutter.exceptions import OutputDirExistsException
+from cookiecutter.exceptions import (FailedHookException,
+                                     OutputDirExistsException)
 from cookiecutter.main import cookiecutter
 
 from create_aio_app.utils.config import parse_arguments
@@ -30,11 +31,12 @@ def main():
 
     try:
         result = cookiecutter(template_path, **kwargs)
-    except OutputDirExistsException as exc:
-        echo(click.style(
-            '\n\nDirectory with such name already exists!\n',
-            fg='red',
-        ))
+    except (FailedHookException, OutputDirExistsException) as exc:
+        if isinstance(exc, OutputDirExistsException):
+            echo(click.style(
+                '\n\nDirectory with such name already exists!\n',
+                fg='red',
+            ))
         return
 
     folder = Path(result).name

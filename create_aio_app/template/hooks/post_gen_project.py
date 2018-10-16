@@ -4,7 +4,8 @@ import os
 from create_aio_app.constants import (
     DATABASE_TEMPLATE_DIRS,
     DATABASE_TEMPLATE_FILES,
-    WAIT_SERVICES_FILES
+    WAIT_SERVICES_FILES,
+    TYPING_FILES,
 )
 
 
@@ -17,6 +18,9 @@ def remove_database_dirs_and_files() -> None:
 
     for wait_file in WAIT_SERVICES_FILES:
         os.remove(f'{{ cookiecutter.project_name }}/{wait_file}')
+
+    for typing_file in TYPING_FILES:
+        os.remove(f'{{ cookiecutter.project_name }}/{typing_file}')
 
 
 def main() -> None:

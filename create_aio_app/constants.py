@@ -13,3 +13,4 @@ TEMPLATE_DIR = pathlib.Path(__file__).parent / TEMPLATE_NAME
 DATABASE_TEMPLATE_DIRS = ['users', 'migrations', ]
 DATABASE_TEMPLATE_FILES = ['alembic.ini', ]
 WAIT_SERVICES_FILES = ['utils/wait_script.py', ]
+TYPING_FILES = ['types.py']

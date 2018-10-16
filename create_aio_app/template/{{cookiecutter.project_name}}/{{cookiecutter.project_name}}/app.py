@@ -103,7 +103,7 @@ def init_app(config: Optional[List[str]] = None) -> web.Application:
     ])
     app.on_cleanup.extend([
         close_redis,
-        init_database,
+        close_database,
     ])
     {%- elif cookiecutter.use_postgres == 'y' %}
 
@@ -111,7 +111,7 @@ def init_app(config: Optional[List[str]] = None) -> web.Application:
         init_database,
     ])
     app.on_cleanup.extend([
-        init_database,
+        close_database,
     ])
     {%- elif cookiecutter.use_redis == 'y' %}
 

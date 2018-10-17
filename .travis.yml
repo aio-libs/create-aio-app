@@ -1,6 +1,8 @@
 language: python
 sudo: required
 
+services:
+  - docker
 
 python:
   - '3.6'
@@ -11,3 +13,10 @@ install:
 
 script:
   - make flake
+  - make test
+
+before_script:
+  # Disable services enabled by default
+  # http://docs.travis-ci.com/user/database-setup/#MySQL
+  - sudo /etc/init.d/postgresql stop
+   # - sudo /etc/init.d/mysql stop

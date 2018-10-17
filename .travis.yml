@@ -1,6 +1,8 @@
 language: python
 sudo: required
 
+services:
+  - docker
 
 python:
   - '3.6'
@@ -11,3 +13,4 @@ install:
 
 script:
   - make flake
+  - make test

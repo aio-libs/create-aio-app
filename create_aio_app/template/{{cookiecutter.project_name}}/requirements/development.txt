@@ -1,6 +1,6 @@
 -e .
 
-mypy
+mypy==0.641
 flake8
 pytest
 pytest-cov

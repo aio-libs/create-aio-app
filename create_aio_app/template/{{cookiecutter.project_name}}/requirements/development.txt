@@ -2,7 +2,7 @@
 
 mypy==0.641
 flake8==3.5.0
-pytest
+pytest==3.9.1
 pytest-cov
 pytest-aiohttp
 

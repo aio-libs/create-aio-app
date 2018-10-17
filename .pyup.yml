@@ -1,0 +1,12 @@
+# Label PRs with `deps-update` label
+label_prs: deps-update
+
+schedule: every week
+
+requirements:
+  - requirements-dev.txt:
+      update: all
+      pin: True
+  - create_aio_app/template/{{cookiecutter.project_name}}/requirements/development.txt:
+      pin: False
+      update: False

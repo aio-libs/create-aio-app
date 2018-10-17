@@ -41,7 +41,7 @@ def main():
 
     echo(click.style(
         '\n\nSuccessfully generated!\n',
-        fg='bright_green',
+        fg='green',
     ))
-    echo('cd ' + click.style(f'{folder}/', fg='bright_blue'))
+    echo('cd ' + click.style(f'{folder}/', fg='blue'))
     echo('make run\n\n')

@@ -2,8 +2,10 @@ from functools import partial
 from pathlib import Path
 
 import click
-from cookiecutter.exceptions import (FailedHookException,
-                                     OutputDirExistsException)
+from cookiecutter.exceptions import (
+    FailedHookException,
+    OutputDirExistsException
+)
 from cookiecutter.main import cookiecutter
 
 from create_aio_app.utils.config import parse_arguments

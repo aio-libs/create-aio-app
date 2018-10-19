@@ -51,17 +51,13 @@ async def init_redis(app: web.Application) -> None:
     '''
     config = app['config']['redis']
 
-    sub = await aioredis.create_redis(
-        f'redis://{config["host"]}:{config["port"]}'
-    )
-    pub = await aioredis.create_redis(
-        f'redis://{config["host"]}:{config["port"]}'
-    )
-
     create_redis = partial(
         aioredis.create_redis,
         f'redis://{config["host"]}:{config["port"]}'
     )
+
+    sub = await create_redis()
+    pub = await create_redis()
 
     app['redis_sub'] = sub
     app['redis_pub'] = pub
@@ -86,6 +82,9 @@ async def close_redis(app: web.Application) -> None:
     '''
     app['redis_sub'].close()
     app['redis_pub'].close()
+
+    await app['redis_sub'].wait_closed()
+    await app['redis_pub'].wait_closed()
 {%- endif %}
 
 

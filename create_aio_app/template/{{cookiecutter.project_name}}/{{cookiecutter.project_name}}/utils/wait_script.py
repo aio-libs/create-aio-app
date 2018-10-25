@@ -14,9 +14,11 @@ if __name__ == '__main__':
         try:
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
                 sock.connect((postgres['host'], postgres['port']))
+                print('Successfully started postgres')
                 break
         except socket.error:
-            time.sleep(0.1 + (random.randint(0, 100) / 1000))
+            print('Waiting for postgres')
+            time.sleep(0.5 + (random.randint(0, 100) / 1000))
     {%- endif %}
     {%- if cookiecutter.use_redis == 'y' %}
     redis = config['redis']
@@ -24,8 +26,10 @@ if __name__ == '__main__':
         try:
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
                 sock.connect((redis['host'], redis['port']))
+                print('Successfully started redis')
                 break
         except socket.error:
-            time.sleep(0.1 + (random.randint(0, 100) / 1000))
+            print('Waiting for redis')
+            time.sleep(0.5 + (random.randint(0, 100) / 1000))
     {%- endif %}
 {%- endif %}

@@ -1,8 +1,8 @@
 -e .
 
 mypy==0.641
-flake8==3.5.0
-pytest==3.9.1
+flake8==3.6.0
+pytest==3.9.3
 pytest-cov==2.6.0
 pytest-aiohttp==0.3.0
 

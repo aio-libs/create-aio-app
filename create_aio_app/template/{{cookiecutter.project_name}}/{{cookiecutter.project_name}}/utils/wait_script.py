@@ -1,13 +1,11 @@
-{%- if cookiecutter.use_postgres == 'y' or cookiecutter.use_redis == 'y' %}import socket
+import socket
 import time
 import random
 
 from {{ cookiecutter.project_name }}.utils.common import get_config, DEFAULT_CONFIG_PATH
 
 if __name__ == '__main__':
-    {%- if cookiecutter.use_postgres == 'y' or cookiecutter.use_redis == 'y' %}
     config = get_config(['-c', DEFAULT_CONFIG_PATH.as_posix()])
-    {%- endif %}
     {%- if cookiecutter.use_postgres == 'y' %}
     postgres = config['postgres']
     while True:
@@ -32,4 +30,3 @@ if __name__ == '__main__':
             print('Waiting for redis')
             time.sleep(0.5 + (random.randint(0, 100) / 1000))
     {%- endif %}
-{%- endif %}

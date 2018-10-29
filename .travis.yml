@@ -20,3 +20,18 @@ before_script:
   # http://docs.travis-ci.com/user/database-setup/#MySQL
   - sudo /etc/init.d/postgresql stop
    # - sudo /etc/init.d/mysql stop
+
+cache: pip
+
+deploy:
+    provider: pypi
+    user: misha.gavela
+    distributions: bdist_wheel
+    password:
+        # Encrypted with `travis encrypt -r aio-libs/create-aio-app --api-endpoint 'https://api.travis-ci.com/'`:
+        secure: SHLywtmqL1/xBlrxIErE63uvSzTMcg80seyhPDMtL7PsUS7znuAeSn2pTgCrM4e7uJoTqOu2vx5RWAw9AziTzlJaB2FqDuSMA697IePMHy7VsCLYQurnlQcuoYlFJPAP06ZTnOM0o8uF4G26UHHcEbqQ0TFoSew/MeXhGubBpnXMa5mMl7QhncqwBo3lUUJfu1VdkpaFBfIVmcEwv7PKTlNAVn5DP2TQKK0v1+JXVMMC0vjpuerx8ckoCEfiavxI/Ho7gF32q2iikXIKD9kejpfjWesPAexkfn7E1rDASz0tQKeMuFJzwuc68S2Z/pn0YhKBNSdV0hFAfiLjUWYA6YSSZIAQ8sJVH8IaK4PrLwT5D83yunIRLBt8ac1onqaX7SKHc38srdmTy3aFHT9w0gM5qdZ+616uGihEuotem69Z6A9jNfqD5jEWreAtwokvwFm5/hXn8WQiHUzj5QmvRW3qx5hZKS173TbomocJXz6Ti279fFwJUebDgFMGX33G5GPJ98XpgP/FMgiAVJ2kQ01EUNdcVVagOX1NCxqOEPze5+lOE+UOSP0Y0wAYHrz/UObkbXJyQcArVpM5h25KSV9QXi/Thio7nepPalUi9KAtJbg9CjOUUApuPXqrltj4CUUQIHrivNcLeBhI0rAKBzQ3uvGPAwAZv16HOMAMi34=
+    on:
+        tags: true
+        repo: aio-libs/create-aio-app
+        all_branches: true
+        python: 3.6

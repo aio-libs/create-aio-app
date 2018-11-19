@@ -63,4 +63,4 @@ and open in your browser `http://localhost:8080/`
 
 ## License
 
-Create aio App is open source software <a href="https://github.com/aio-libs/create-aio-app/blob/master/LICENSE">licensed as MIT</a>. 
+Create aio App is an open source software <a href="https://github.com/aio-libs/create-aio-app/blob/master/LICENSE">available under the MIT license</a>. 

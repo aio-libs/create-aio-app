@@ -2,9 +2,9 @@
 
 mypy==0.641
 flake8==3.6.0
-pytest==3.10.1
+pytest==4.0.1
 pytest-cov==2.6.0
 pytest-aiohttp==0.3.0
 
-aiohttp-devtools==0.10.3
+aiohttp-devtools==0.10.4
 git+https://github.com/Arfey/aiohttp-debugtoolbar.git

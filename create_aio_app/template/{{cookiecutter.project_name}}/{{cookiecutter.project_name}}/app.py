@@ -35,13 +35,16 @@ def init_jinja2(app: web.Application) -> None:
 
 async def database(app: web.Application) -> None:
     '''
-    This is signal for success creating connection with database
+    A function that, when the aiohttp server is started, connects to postgresql,
+    and after stopping it breaks the connection (after yield)
     '''
     config = app['config']['postgres']
 
     engine = await aiopg.sa.create_engine(**config)
     app['db'] = engine
+
     yield
+
     app['db'].close()
     await app['db'].wait_closed()
 {%- endif %}
@@ -50,7 +53,8 @@ async def database(app: web.Application) -> None:
 
 async def redis(app: web.Application) -> None:
     '''
-    This is signal for success creating connection with redis
+    A function that, when the aiohttp server is started, connects to redis,
+    and after stopping it breaks the connection (after yield)
     '''
     config = app['config']['redis']
 

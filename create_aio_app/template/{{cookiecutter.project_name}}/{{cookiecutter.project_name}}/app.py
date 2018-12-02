@@ -33,21 +33,28 @@ def init_jinja2(app: web.Application) -> None:
 {%- if cookiecutter.use_postgres == 'y' %}
 
 
-async def init_database(app: web.Application) -> None:
+async def database(app: web.Application) -> None:
     '''
-    This is signal for success creating connection with database
+    A function that, when the aiohttp server is started, connects to postgresql,
+    and after stopping it breaks the connection (after yield)
     '''
     config = app['config']['postgres']
 
     engine = await aiopg.sa.create_engine(**config)
     app['db'] = engine
+
+    yield
+
+    app['db'].close()
+    await app['db'].wait_closed()
 {%- endif %}
 {%- if cookiecutter.use_redis == 'y' %}
 
 
-async def init_redis(app: web.Application) -> None:
+async def redis(app: web.Application) -> None:
     '''
-    This is signal for success creating connection with redis
+    A function that, when the aiohttp server is started, connects to redis,
+    and after stopping it breaks the connection (after yield)
     '''
     config = app['config']['redis']
 
@@ -62,24 +69,9 @@ async def init_redis(app: web.Application) -> None:
     app['redis_sub'] = sub
     app['redis_pub'] = pub
     app['create_redis'] = create_redis
-{%- endif %}
-{%- if cookiecutter.use_postgres == 'y' %}
 
+    yield
 
-async def close_database(app: web.Application) -> None:
-    '''
-    This is signal for success closing connection with database before shutdown
-    '''
-    app['db'].close()
-    await app['db'].wait_closed()
-{%- endif %}
-{%- if cookiecutter.use_redis == 'y' %}
-
-
-async def close_redis(app: web.Application) -> None:
-    '''
-    This is signal for success closing connection with redis before shutdown
-    '''
     app['redis_sub'].close()
     app['redis_pub'].close()
 
@@ -96,29 +88,19 @@ def init_app(config: Optional[List[str]] = None) -> web.Application:
     init_routes(app)
     {%- if cookiecutter.use_postgres == 'y' and cookiecutter.use_redis == 'y' %}
 
-    app.on_startup.extend([
-        init_redis,
-        init_database,
-    ])
-    app.on_cleanup.extend([
-        close_redis,
-        close_database,
+    app.cleanup_ctx.extend([
+        redis,
+        database,
     ])
     {%- elif cookiecutter.use_postgres == 'y' %}
 
-    app.on_startup.extend([
-        init_database,
-    ])
-    app.on_cleanup.extend([
-        close_database,
+    app.cleanup_ctx.extend([
+        database,
     ])
     {%- elif cookiecutter.use_redis == 'y' %}
 
-    app.on_startup.extend([
-        init_redis,
-    ])
-    app.on_cleanup.extend([
-        close_redis,
+    app.cleanup_ctx.extend([
+        redis,
     ])
     {%- endif %}
 

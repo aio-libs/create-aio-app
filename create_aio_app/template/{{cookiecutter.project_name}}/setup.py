@@ -1,6 +1,7 @@
 import os
 import re
 from pathlib import Path
+
 from setuptools import find_packages, setup
 
 REGEXP = re.compile(r"^__version__\W*=\W*'([\d.abrc]+)'")

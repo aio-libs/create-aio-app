@@ -1,10 +1,10 @@
--e .
+-r production.txt
 
-mypy==0.641
-flake8==3.6.0
-pytest==4.0.1
-pytest-cov==2.6.0
-pytest-aiohttp==0.3.0
+mypy
+flake8
+pytest
+pytest-cov
+pytest-aiohttp
 
-aiohttp-devtools==0.10.4
+aiohttp-devtools
 git+https://github.com/Arfey/aiohttp-debugtoolbar.git

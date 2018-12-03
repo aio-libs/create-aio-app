@@ -1,1 +1,15 @@
--e .
+aiohttp
+aiohttp_jinja2
+trafaret_config
+markdown2
+{%- if cookiecutter.use_postgres == 'y' %}
+aiopg[sa]
+psycopg2-binary
+alembic
+{%- endif %}
+{%- if cookiecutter.use_redis == 'y' %}
+aioredis
+{%- endif %}
+pytest
+pytest-cov
+pytest-aiohttp

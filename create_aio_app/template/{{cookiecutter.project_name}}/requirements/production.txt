@@ -1,15 +1,12 @@
-aiohttp
-aiohttp_jinja2
-trafaret_config
-markdown2
+aiohttp==3.4.4
+aiohttp_jinja2==1.1.0
+trafaret_config==2.0.2
+markdown2==0.3.1
 {%- if cookiecutter.use_postgres == 'y' %}
-aiopg[sa]
-psycopg2-binary
-alembic
+aiopg[sa]==0.15.0
+psycopg2-binary==2.7.6.1
+alembic==1.0.5
 {%- endif %}
 {%- if cookiecutter.use_redis == 'y' %}
-aioredis
+aioredis==1.2.0
 {%- endif %}
-pytest
-pytest-cov
-pytest-aiohttp

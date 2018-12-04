@@ -1,10 +1,12 @@
 import os
 import re
-from pathlib import Path
+import pathlib
+from typing import List
 
 from setuptools import find_packages, setup
 
 REGEXP = re.compile(r"^__version__\W*=\W*'([\d.abrc]+)'")
+PARENT = pathlib.Path(__file__).parent
 
 
 def read_version():
@@ -24,11 +26,10 @@ def read_version():
             raise RuntimeError(msg)
 
 
-def read_requirements():
-    my_file = Path("requirements/production.txt")
-    if my_file.is_file():
-        with open(my_file) as req:
-            return req.read().split('\n')
+def read_requirements(path: str) -> List[str]:
+    file_path = PARENT / path
+    with open(file_path) as f:
+        return f.read().split('\n')
 
 
 setup(
@@ -41,6 +42,6 @@ setup(
         '': ['config/*.*']
     },
     include_package_data=True,
-    install_requires=read_requirements(),
+    install_requires=read_requirements('requirements/production.txt'),
     zip_safe=False,
 )

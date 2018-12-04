@@ -35,7 +35,7 @@ def init_jinja2(app: web.Application) -> None:
 
 async def database(app: web.Application) -> None:
     '''
-    A function that, when the aiohttp server is started, connects to postgresql,
+    A function that, when the server is started, connects to postgresql,
     and after stopping it breaks the connection (after yield)
     '''
     config = app['config']['postgres']
@@ -53,7 +53,7 @@ async def database(app: web.Application) -> None:
 
 async def redis(app: web.Application) -> None:
     '''
-    A function that, when the aiohttp server is started, connects to redis,
+    A function that, when the server is started, connects to redis,
     and after stopping it breaks the connection (after yield)
     '''
     config = app['config']['redis']

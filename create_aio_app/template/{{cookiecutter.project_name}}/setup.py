@@ -1,14 +1,15 @@
 import os
 import re
+import pathlib
+from typing import List
 
 from setuptools import find_packages, setup
 
-
 REGEXP = re.compile(r"^__version__\W*=\W*'([\d.abrc]+)'")
+PARENT = pathlib.Path(__file__).parent
 
 
 def read_version():
-
     init_py = os.path.join(
         os.path.dirname(__file__),
         '{{ cookiecutter.project_name }}',
@@ -25,24 +26,10 @@ def read_version():
             raise RuntimeError(msg)
 
 
-install_requires = [
-    'aiohttp',
-    'aiohttp_jinja2',
-    'trafaret_config',
-    'markdown2',
-    {%- if cookiecutter.use_postgres == 'y' %}
-    'aiopg[sa]',
-    'psycopg2-binary',
-    'alembic',
-    {%- endif %}
-    {%- if cookiecutter.use_redis == 'y' %}
-    'aioredis',
-    {%- endif %}
-    # todo: remove test requirements
-    'pytest',
-    'pytest-cov',
-    'pytest-aiohttp',
-]
+def read_requirements(path: str) -> List[str]:
+    file_path = PARENT / path
+    with open(file_path) as f:
+        return f.read().split('\n')
 
 
 setup(
@@ -55,6 +42,6 @@ setup(
         '': ['config/*.*']
     },
     include_package_data=True,
-    install_requires=install_requires,
+    install_requires=read_requirements('requirements/production.txt'),
     zip_safe=False,
 )

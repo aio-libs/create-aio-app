@@ -1,6 +1,6 @@
 -r production.txt
 
-mypy==0.641
+mypy==0.650
 flake8==3.6.0
 pytest==4.0.1
 pytest-cov==2.6.0

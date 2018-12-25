@@ -40,31 +40,18 @@ and open in your browser `http://localhost:8080/`
 
 ## Features
 
-- aiohttp
-- mypy
-- pytest
-- flake8
-- trafaret
-- docker-compose
-- aio devtools
-- aiohttp debug toolbar
-- postgres
-- alembic
-- aiopg
-- sqlAlchemy
-
-   - [aiohttp](https://aiohttp.readthedocs.io/en/stable/) - the best python framework :)
-   - [mypy](https://mypy.readthedocs.io/en/latest/) - for optional static typing
-   - [pytest](https://pytest.readthedocs.io/en/latest/) - for run unit tests
-   - [flake8](https://flake8.readthedocs.io/en/latest/) - for linting
-   - [trafaret](https://trafaret.readthedocs.io/en/latest/) - for validation input data
-   - [aio devtools](https://github.com/aio-libs/aiohttp-devtools) - helpful tool for develop
-   - [aiohttp debug toolbar](https://github.com/aio-libs/aiohttp-debugtoolbar) - helpful tool for debugging
-   - [postgres](https://www.postgresql.org/) - storage
-   - [alembic](https://alembic.sqlalchemy.org/en/latest/tutorial.html) - tool for create migration
-   - [sqlAlchemy](https://www.sqlalchemy.org/) - orm
-   - [sphinx](http://www.sphinx-doc.org/en/master/) - for generate docs
-   - [docker-compose](https://docs.docker.com/compose/) - for running develop environment and deploy
+- [aiohttp](https://aiohttp.readthedocs.io/en/stable/) - the best python framework :)
+- [mypy](https://mypy.readthedocs.io/en/latest/) - for optional static typing
+- [pytest](https://pytest.readthedocs.io/en/latest/) - for run unit tests
+- [flake8](https://flake8.readthedocs.io/en/latest/) - for linting
+- [trafaret](https://trafaret.readthedocs.io/en/latest/) - for validation input data
+- [aio devtools](https://github.com/aio-libs/aiohttp-devtools) - helpful tool for develop
+- [aiohttp debug toolbar](https://github.com/aio-libs/aiohttp-debugtoolbar) - helpful tool for debugging
+- [postgres](https://www.postgresql.org/) - storage
+- [alembic](https://alembic.sqlalchemy.org/en/latest/tutorial.html) - tool for create migration
+- [sqlAlchemy](https://www.sqlalchemy.org/) - orm
+- [sphinx](http://www.sphinx-doc.org/en/master/) - for generate docs
+- [docker-compose](https://docs.docker.com/compose/) - for running develop environment and deploy
 
 
 

@@ -59,6 +59,13 @@ Interactive work inside container
 make bash # the command must be running after `make run` 
 ```
 
+### Docs
+
+For generate sphinx docs
+```
+make doc
+```
+
 ### Linters
 To run flake8, run the following command:
 

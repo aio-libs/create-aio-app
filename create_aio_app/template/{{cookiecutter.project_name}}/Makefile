@@ -16,6 +16,11 @@ clean:
 bash:
 	@docker exec -it {{ cookiecutter.project_name }} bash
 
+# Docs
+
+doc:
+	cd docs && make html
+
 # Linters & tests
 
 mypy:

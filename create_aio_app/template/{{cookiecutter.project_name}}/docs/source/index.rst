@@ -55,3 +55,10 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+.. This part only for the main site https://create-aio-app.readthedocs.io/
+.. you can remove this block
+.. meta::
+   :google-site-verification: j1mO2aGrv4_nqNpK6bz7R-8cxCIvQ356YCUT8NVnbKs
+   :description: The aiohttp boilerplate for quick start
+   :keywords: aiohttp, boilerplate, aio, quick start

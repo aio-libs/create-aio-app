@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Create aio app!
-==========================
+The aiohttp boilerplate. A quick start for your aiohttp application.
+====================================================================
 
 What is a `create aio app`? This project is designed to quickly and simply
 creating a web application based on `aiohttp` with use best practices.
@@ -60,5 +60,5 @@ Indices and tables
 .. you can remove this block
 .. meta::
    :google-site-verification: j1mO2aGrv4_nqNpK6bz7R-8cxCIvQ356YCUT8NVnbKs
-   :description: The aiohttp boilerplate for quick start
-   :keywords: aiohttp, boilerplate, aio, quick start
+   :description: The aiohttp boilerplate for quick start your aiohttp application.
+   :keywords: aiohttp, boilerplate, aio, quick start, cookiecutter, python3, pytest, sqlAlchemy, alembic

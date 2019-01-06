@@ -1,31 +1,58 @@
 Make commands
 =============
 
-The commands which exist in `Makefile`.
+The commands which exist in ``Makefile``.
 
 Common
 ------
 
-To start the project in develop mode, run the following command:
 
-.. code-block:: bash
+.. csv-table::
+   :header: "command", "description"
+   :widths: 20, 20
 
-    make run
+   ``make run (make)``, To start the project in develop mode
+   ``make stop``, To stop work of docker containers
+   ``make stop``, To clean up of docker containers
+   ``make bash``, Interactive work inside container (the command must be running after ``make run`` )
 
-To run `flake8`, run the following command:
 
-.. code-block:: bash
 
-    make lint
+Testing
+-------
 
-To run mypy for type checking run the following command:
 
-.. code-block:: bash
 
-    make mypy
+.. csv-table::
+   :header: "command", "description"
+   :widths: 20, 20
 
-For running tests:
+   ``make test``, To start the ``pytest`` with docker
+   ``make mypy``, To run ``mypy`` for type checking
+   ``make lint``, To run flake8 (The all settings connected with a ``flake8`` you can customize in ``.flake8``)
 
-.. code-block:: bash
 
-    make test
+
+Database
+--------
+If u have ``postgres``
+
+
+.. csv-table::
+   :header: "command", "description"
+   :widths: 20, 20
+
+   ``make migrations``, To generate a new migration
+   ``make migrate``, To apply migrations
+   ``make psql``, To connect to postgres
+
+
+Other
+-----
+
+.. csv-table::
+   :header: "command", "description"
+   :widths: 20, 20
+
+   ``make doc``, To generate a sphinx documentation
+

@@ -19,7 +19,10 @@ bash:
 # Docs
 
 doc:
-	cd docs && make html
+	@docker-compose run --rm $(PROJECT_NAME)_app make _doc
+
+_doc:
+	@cd docs && make html
 
 # Linters & tests
 

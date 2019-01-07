@@ -1,4 +1,5 @@
 -r production.txt
+-r documentation.txt
 
 mypy==0.650
 flake8==3.6.0

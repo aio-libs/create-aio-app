@@ -22,6 +22,7 @@ doc:
 	@docker-compose run --rm $(PROJECT_NAME)_app make _doc
 
 _doc:
+	@doc8 docs
 	@cd docs && make html
 
 # Linters & tests

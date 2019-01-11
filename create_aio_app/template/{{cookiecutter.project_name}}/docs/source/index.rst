@@ -52,6 +52,12 @@ Features
 
 .. toctree::
    :maxdepth: 2
+   :caption: Tests:
+
+   pages/tests.rst
+
+.. toctree::
+   :maxdepth: 2
    :caption: Contents:
 
 

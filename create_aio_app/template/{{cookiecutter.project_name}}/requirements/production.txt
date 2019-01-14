@@ -1,11 +1,11 @@
-aiohttp==3.5.1
+aiohttp==3.5.4
 aiohttp_jinja2==1.1.0
 trafaret_config==2.0.2
 markdown2==2.3.7
 {%- if cookiecutter.use_postgres == 'y' %}
 aiopg[sa]==0.15.0
 psycopg2-binary==2.7.6.1
-alembic==1.0.5
+alembic==1.0.6
 {%- endif %}
 {%- if cookiecutter.use_redis == 'y' %}
 aioredis==1.2.0

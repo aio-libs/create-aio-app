@@ -1,7 +1,7 @@
 -r production.txt
 -r documentation.txt
 
-mypy==0.650
+mypy==0.660
 flake8==3.6.0
 pytest==4.1.1
 pytest-cov==2.6.1

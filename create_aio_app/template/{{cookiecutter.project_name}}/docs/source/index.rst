@@ -40,6 +40,12 @@ Features
 
 .. toctree::
    :maxdepth: 2
+   :caption: Quick start:
+
+   pages/quick_start.rst
+
+.. toctree::
+   :maxdepth: 2
    :caption: Developing:
 
    pages/commands.rst

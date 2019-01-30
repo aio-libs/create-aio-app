@@ -36,8 +36,19 @@ All settings for mypy are in the mypy.ini file.
 Read more:
 ----------
 
-    - `pytest <https://docs.pytest.org/en/latest/contents.html>`_ -
-        the official documentation for `pytest`
+.. raw:: html
 
-    - `mypy <https://mypy.readthedocs.io/en/latest/>`_ -
-        the official documentation for `mypy`
+    <ul>
+       <li>
+         <a href="https://docs.pytest.org/en/latest/contents.html" rel="nofollow">
+            pytest
+         </a>
+         - the official documentation for pytest
+       </li>
+       <li>
+         <a href="https://mypy.readthedocs.io/en/latest/" rel="nofollow">
+            mypy
+         </a>
+         - the official documentation for mypy
+       </li>
+    </ul>

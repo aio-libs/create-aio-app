@@ -25,18 +25,82 @@ For start with `create aio app` you need to have:
 Features
 --------
 
-   - `aiohttp <https://aiohttp.readthedocs.io/en/stable/>`_ - the best python framework :)
-   - `mypy <https://mypy.readthedocs.io/en/latest/>`_ - for optional static typing
-   - `pytest <https://pytest.readthedocs.io/en/latest/>`_ - for run unit tests
-   - `flake8 <https://flake8.readthedocs.io/en/latest/>`_ - for linting
-   - `trafaret <https://trafaret.readthedocs.io/en/latest/>`_ - for validation input data
-   - `aio devtools <https://github.com/aio-libs/aiohttp-devtools>`_ - helpful tool for develop
-   - `aiohttp debug toolbar <https://github.com/aio-libs/aiohttp-debugtoolbar>`_ - helpful tool for debugging
-   - `postgres <https://www.postgresql.org/>`_ - storage
-   - `alembic <https://alembic.sqlalchemy.org/en/latest/tutorial.html>`_ - tool for create migration
-   - `sqlAlchemy <https://www.sqlalchemy.org/>`_ - orm
-   - `sphinx <http://www.sphinx-doc.org/en/master/>`_ - for generate docs
-   - `docker-compose <https://docs.docker.com/compose/>`_ - for running develop environment and deploy
+.. raw:: html
+
+    <ul>
+       <li>
+         <a href="https://aiohttp.readthedocs.io/en/stable/" rel="nofollow">
+            aiohttp
+         </a>
+         - the best python framework :)
+       </li>
+       <li>
+         <a href="https://mypy.readthedocs.io/en/latest/" rel="nofollow">
+            mypy
+         </a>
+         - for optional static typing
+       </li>
+       <li>
+         <a href="https://pytest.readthedocs.io/en/latest/" rel="nofollow">
+            pytest
+         </a>
+         - for run unit tests
+       </li>
+       <li>
+         <a href="https://flake8.readthedocs.io/en/latest/" rel="nofollow">
+            flake8
+         </a>
+         - for linting
+       </li>
+       <li>
+         <a href="https://trafaret.readthedocs.io/en/latest/" rel="nofollow">
+            trafaret
+         </a>
+         - for validation input data
+       </li>
+       <li>
+         <a href="https://github.com/aio-libs/aiohttp-devtools" rel="nofollow">
+            aio devtools
+         </a>
+         - helpful tool for develop
+       </li>
+       <li>
+         <a href="https://github.com/aio-libs/aiohttp-debugtoolbar" rel="nofollow">
+            aiohttp debugtoolbar
+         </a>
+         - aiohttp debug toolbar
+       </li>
+       <li>
+         <a href="https://www.postgresql.org/" rel="nofollow">
+            postgres
+         </a>
+         - storage
+       </li>
+       <li>
+         <a href="https://alembic.sqlalchemy.org/en/latest/tutorial.html" rel="nofollow">
+            alembic
+         </a>
+         - tool for create migration
+       </li>
+       <li>
+         <a href="https://www.sqlalchemy.org/" rel="nofollow">
+            sqlAlchemy
+         </a>
+         - orm
+       </li>
+       <li>
+         <a href="http://www.sphinx-doc.org/en/master/" rel="nofollow">
+            sphinx
+         </a>
+         - for generate docs
+       </li>
+      <li>
+         <a href="https://docs.docker.com/compose/" rel="nofollow">
+            docker-compose
+         </a>
+         - for running develop environment and deploy
+       </li>
+    </ul>
 
 .. toctree::
    :maxdepth: 2

@@ -104,9 +104,9 @@ Features
 
 .. toctree::
    :maxdepth: 2
-   :caption: Quick start:
+   :caption: Aiohttp Quick start:
 
-   pages/quick_start.rst
+   pages/aiohttp_quick_start.rst
 
 .. toctree::
    :maxdepth: 2

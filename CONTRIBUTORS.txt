@@ -1,6 +1,7 @@
 - Contributors -
 ----------------
 Jintao Zhang
+Michail Shatalov
 Mykhailo Havelia
 Nikolay Novik
 Oleh Kuchuk

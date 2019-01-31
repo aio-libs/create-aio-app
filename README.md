@@ -63,9 +63,9 @@ and open in your browser `http://localhost:8080/`
 `--redis` - add redis to the template
 
 ## Contributing
-The `create-aio-app` it's boilerplate from aiohttp community for aiohttp 
+The `create-aio-app` it's a boilerplate from aiohttp community for aiohttp 
 community. So, feel free to make some suggestion in the issue or make 
-pull requests. We will be happy 😀. See CONTRIBUTING.md for more information on 
+pull requests. We will be happy 😀. See CONTRIBUTING.md for more information about 
 how to contribute to `create-aio-app`.
 
 ## License

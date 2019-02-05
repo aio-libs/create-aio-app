@@ -65,7 +65,7 @@ and open in your browser `http://localhost:8080/`
 ## Contributing
 The `create-aio-app` it's a boilerplate from aiohttp community for aiohttp 
 community. So, feel free to make some suggestion in the issue or make 
-pull requests. We will be happy 😀. See CONTRIBUTING.md for more information about 
+pull requests. We will be happy 😀. See [CONTRIBUTING.md](https://github.com/aio-libs/create-aio-app/blob/master/CONTRIBUTING.md) for more information about 
 how to contribute to `create-aio-app`.
 
 ## License

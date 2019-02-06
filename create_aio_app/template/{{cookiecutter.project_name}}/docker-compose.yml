@@ -12,6 +12,7 @@ services:
       # use in code
       - DEBUG=True
       - SETTINGS_FILE=api.dev.yml
+      - PYTHONUNBUFFERED=1
     restart: always
     volumes:
       - .:/app:delegated

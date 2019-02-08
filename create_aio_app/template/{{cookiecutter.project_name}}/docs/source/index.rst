@@ -12,6 +12,10 @@ creating a web application based on `aiohttp` with use best practices.
 A `create aio app` provide testing, documentation, deploying and a lot of
 helpful boilerplate code for quickly start with `aiohttp`.
 
+.. image:: https://raw.githubusercontent.com/aio-libs/create-aio-app/master/assets/assets.png
+   :height: 300px
+   :align: center
+
 
 Requirements
 ------------

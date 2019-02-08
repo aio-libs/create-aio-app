@@ -38,7 +38,6 @@ After that it will create new directory `my_project`.
 Now, u can open in your browser `http://localhost:8080/`
 
 .. image:: https://raw.githubusercontent.com/aio-libs/create-aio-app/master/assets/assets.png
-   :height: 300px
    :align: center
 
 .. meta::

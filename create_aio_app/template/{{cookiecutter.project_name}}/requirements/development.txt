@@ -1,8 +1,8 @@
 -r production.txt
 -r documentation.txt
 
-mypy==0.660
-flake8==3.7.4
+mypy==0.670
+flake8==3.7.5
 pytest==4.2.0
 pytest-cov==2.6.1
 pytest-aiohttp==0.3.0

@@ -3,6 +3,7 @@ version: '3.2'
 services:
 
   {{ cookiecutter.project_name }}_app: &app
+    tty: true
     build:
       context: .
       args:

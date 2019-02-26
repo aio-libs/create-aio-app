@@ -43,6 +43,7 @@ and open in your browser `http://localhost:8080/`
 - [aiohttp](https://aiohttp.readthedocs.io/en/stable/) - the best python framework :)
 - [mypy](https://mypy.readthedocs.io/en/latest/) - for optional static typing
 - [pytest](https://pytest.readthedocs.io/en/latest/) - for run unit tests
+- [black](https://black.readthedocs.io/en/latest/) - code formatter
 - [flake8](https://flake8.readthedocs.io/en/latest/) - for linting
 - [trafaret](https://trafaret.readthedocs.io/en/latest/) - for validation input data
 - [aio devtools](https://github.com/aio-libs/aiohttp-devtools) - helpful tool for develop

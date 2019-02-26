@@ -12,4 +12,5 @@ click==7.0
 cookiecutter==1.6.0
 doc8==0.8.0
 Pygments==2.3.1
+black==18.9b0
 -e .

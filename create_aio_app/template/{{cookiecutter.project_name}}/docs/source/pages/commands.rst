@@ -29,7 +29,8 @@ Testing
 
    ``make test``, To start the ``pytest`` with docker
    ``make mypy``, To run ``mypy`` for type checking
-   ``make lint``, To run flake8 (The all settings connected with a ``flake8`` you can customize in ``.flake8``)
+   ``make format``, To run ``black`` for auto formatting code
+   ``make lint``, To run flake8 (The all settings connected with a ``flake8`` you can customize in ``.flake8``) and black
 
 
 

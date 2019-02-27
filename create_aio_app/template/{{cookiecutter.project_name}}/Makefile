@@ -27,6 +27,9 @@ _doc:
 
 # Linters & tests
 
+black:
+	@docker-compose run --rm $(PROJECT_NAME)_app black $(PROJECT_NAME) --exclude $(PROJECT_NAME)/migrations -l 79
+
 mypy:
 	@docker-compose run --rm $(PROJECT_NAME)_app mypy $(PROJECT_NAME)
 

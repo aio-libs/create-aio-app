@@ -1,6 +1,5 @@
 - Contributors -
 ----------------
-Bakhtiyor Ruziev
 Filatov Pavel
 Jintao Zhang
 Michail Shatalov

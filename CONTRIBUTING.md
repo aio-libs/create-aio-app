@@ -12,6 +12,19 @@ Below we will talk about how to do that.
 5. Make pull request
 6. If you change some `ui` of project, do not forget to add a screenshot with the changes
 
+```bash
+git clone https://github.com/aio-libs/create-aio-app.git
+cd create-aio-app   
+pip install -r requirements-dev.txt
+
+make test
+
+cd project_new 
+make
+
+open http://localhost:8080
+```
+
 ## Some possible ideas for the pull requests
 
  - [good first issue](https://github.com/aio-libs/create-aio-app/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) - list of easy issues with description what need to do

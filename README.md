@@ -6,7 +6,7 @@
 
 The tool that helps quickly create a basis for the microservice on aiohttp and prepare the development environment.
 
-![Example](assets/assets.png)
+![Example](https://raw.githubusercontent.com/aio-libs/create-aio-app/master/assets/assets.png)
 
 ## Installation
 

@@ -1,5 +1,6 @@
 - Contributors -
 ----------------
+Andriy Yatsynyak
 Bakhtiyor Ruziev
 Filatov Pavel
 Jintao Zhang
@@ -9,4 +10,4 @@ Mykhailo Havelia
 Nikolay Novik
 Oleh Kuchuk
 Sviatoslav Sydorenko
-Andriy Yatsynyak
+Vladyslav Ovchynnykov

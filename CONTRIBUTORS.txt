@@ -11,5 +11,6 @@ Mykhailo Havelia
 Nikolay Novik
 Oleh Kuchuk
 Sviatoslav Sydorenko
+Vasyl Navrotsky
 Helen Shmyrko
 Vladyslav Ovchynnykov

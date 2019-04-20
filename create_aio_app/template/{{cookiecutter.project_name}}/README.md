@@ -59,6 +59,13 @@ Interactive work inside container
 make bash # the command must be running after `make run` 
 ```
 
+### Help
+
+If needed a list of available commands
+```
+make help
+```
+
 ### Docs
 
 For generate sphinx docs

@@ -26,7 +26,7 @@ def main():
             'no_input': True,
             'extra_context': {
                 'project_name': args.get('name'),
-                'use_postgres': 'n' if args.get('without_postgres') else args['postgres_engine'],
+                'use_postgres': 'n' if args.get('without_postgres') else args['postgres_engine'],  # noqa
                 'use_redis': 'y' if args.get('redis') else 'n',
             },
         }

@@ -138,7 +138,6 @@ Indices and tables
 ------------------
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
 
 .. This part only for the main site https://create-aio-app.readthedocs.io/

@@ -17,7 +17,7 @@ ___
 - docker-compose
 - aio devtools
 - aiohttp debug toolbar
-{%- if cookiecutter.use_postgres == 'y' %}
+{%- if cookiecutter.use_postgres != 'n' %}
 - postgres
 - alembic
 - aiopg
@@ -85,7 +85,7 @@ make mypy
 The all settings connected with a `mypy` you can customize in `mypy.ini`.
 ___
 
-{%- if cookiecutter.use_postgres == 'y' %}
+{%- if cookiecutter.use_postgres != 'n' %}
 
 ### Testing
 ```

@@ -46,5 +46,11 @@ def parse_arguments() -> dict:
         action='store_true',
         help='generate project without postgres settings'
     )
+    parser.add_argument(
+        '--postgres_engine',
+        default='aiopg',
+        choices=['aiopg', 'asyncpg'],
+        help='choose which postgres engine to use',
+    )
 
     return parser.parse_args().__dict__

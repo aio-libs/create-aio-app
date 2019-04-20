@@ -1,15 +1,16 @@
 import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
-from {{ cookiecutter.project_name }}.migrations import metadata
-from {{ cookiecutter.project_name }}.users.enums import UserGender
+from {{cookiecutter.project_name}}.migrations import metadata
+from {{cookiecutter.project_name}}.users.enums import UserGender
 
 
-__all__ = ['users', 'gender_enum', ]
+__all__ = ['users', 'gender_enum', 'dialect', ]
 
 
 gender_enum = postgresql.ENUM(UserGender)
 
+dialect = postgresql.dialect()
 
 users = sa.Table(
     'users', metadata,

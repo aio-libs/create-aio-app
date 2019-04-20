@@ -19,7 +19,7 @@ CONFIG_TRAFARET = trafaret.Dict({
             'host': trafaret.String(),
             'port': trafaret.Int(),
         }),
-    {%- if cookiecutter.use_postgres == 'y' %}
+    {%- if cookiecutter.use_postgres != 'n' %}
     trafaret.Key('postgres'):
         trafaret.Dict({
             'host': trafaret.String(),

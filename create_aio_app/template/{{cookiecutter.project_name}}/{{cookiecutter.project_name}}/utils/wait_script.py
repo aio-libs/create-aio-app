@@ -6,7 +6,7 @@ from {{ cookiecutter.project_name }}.utils.common import get_config, DEFAULT_CON
 
 if __name__ == '__main__':
     config = get_config(['-c', DEFAULT_CONFIG_PATH.as_posix()])
-    {%- if cookiecutter.use_postgres == 'y' %}
+    {%- if cookiecutter.use_postgres != 'n' %}
     postgres = config['postgres']
     while True:
         try:

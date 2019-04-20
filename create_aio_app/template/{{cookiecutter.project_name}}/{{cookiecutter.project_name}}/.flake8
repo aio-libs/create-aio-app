@@ -1,3 +1,3 @@
 [flake8]
 max-line-length = 79
-exclude = env/* {% if cookiecutter.use_postgres == 'y' %}migrations/*{% endif %}
+exclude = env/* {% if cookiecutter.use_postgres != 'n' %}migrations/*{% endif %}

@@ -2,7 +2,7 @@
 app:
   host: 0.0.0.0
   port: 8000
-{%- if cookiecutter.use_postgres == 'y' %}
+{%- if cookiecutter.use_postgres != 'n' %}
 
 # postgres
 postgres:

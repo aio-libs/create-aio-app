@@ -10,3 +10,6 @@ alembic==1.0.7
 {%- if cookiecutter.use_redis == 'y' %}
 aioredis==1.2.0
 {%- endif %}
+{%- if cookiecutter.use_uvloop == 'y' %}
+uvloop==0.12.2
+{%- endif %}

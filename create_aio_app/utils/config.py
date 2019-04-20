@@ -46,5 +46,10 @@ def parse_arguments() -> dict:
         action='store_true',
         help='generate project without postgres settings'
     )
+    parser.add_argument(
+        '--uvloop',
+        action='store_true',
+        help='use uvloop event loop for aiohttp'
+    )
 
     return parser.parse_args().__dict__

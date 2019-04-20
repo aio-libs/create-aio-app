@@ -1,5 +1,6 @@
 {
     "project_name": "app",
     "use_postgres": "y",
-    "use_redis": "n"
+    "use_redis": "n",
+    "use_uvloop": "n",
 }

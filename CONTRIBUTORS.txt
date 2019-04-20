@@ -9,3 +9,4 @@ Mykhailo Havelia
 Nikolay Novik
 Oleh Kuchuk
 Sviatoslav Sydorenko
+Vladyslav Ovchynnykov

@@ -5,7 +5,7 @@ PROJECT_NAME={{ cookiecutter.project_name }}
 all: run
 
 run:
-	@docker-compose up {{ cookiecutter.project_name }}_app
+	@docker-compose up $(PROJECT_NAME)_app
 
 stop:
 	@docker-compose stop
@@ -14,7 +14,7 @@ clean:
 	@docker-compose down
 
 bash:
-	@docker exec -it {{ cookiecutter.project_name }} bash
+	@docker exec -it $(PROJECT_NAME) bash
 
 # Docs
 
@@ -48,13 +48,13 @@ test: lint
 # Database
 
 psql:
-	@docker exec -it {{ cookiecutter.project_name }}_postgres psql -U postgres
+	@docker exec -it $(PROJECT_NAME)_postgres psql -U postgres
 
 migrations:
-	@docker exec -it {{ cookiecutter.project_name }} alembic -n alembic:dev revision --autogenerate;
+	@docker exec -it $(PROJECT_NAME) alembic -n alembic:dev revision --autogenerate;
 
 migrate:
-	@docker exec -it {{ cookiecutter.project_name }} alembic -n alembic:dev upgrade head;
+	@docker exec -it $(PROJECT_NAME) alembic -n alembic:dev upgrade head;
 
 {%- endif %}
 
@@ -62,10 +62,10 @@ run_production:
 	@docker-compose -f docker-compose.yml -f docker-compose.production.yml up
 
 adev: {%- if cookiecutter.use_postgres != 'n' or cookiecutter.use_redis == 'y' %} wait_resources {% endif %}
-	adev runserver ./{{ cookiecutter.project_name }}/__main__.py -p 8080
+	adev runserver ./$(PROJECT_NAME)/__main__.py -p 8080
 
 
 {%- if cookiecutter.use_postgres != 'n' or cookiecutter.use_redis == 'y' %}
 wait_resources:
-	python3 -m {{ cookiecutter.project_name }}.utils.wait_script
+	python3 -m $(PROJECT_NAME).utils.wait_script
 {%- endif %}

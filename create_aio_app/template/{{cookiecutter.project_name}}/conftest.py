@@ -1,14 +1,14 @@
 import pytest
-{%- if cookiecutter.use_postgres == 'y' %}
+{%- if cookiecutter.use_postgres == 'aiopg' %}
 from sqlalchemy import create_engine
 import aiopg.sa
 {%- endif %}
 
-from {{ cookiecutter.project_name }}.utils.common import PATH, get_config
-from {{ cookiecutter.project_name }}.app import init_app
-{%- if cookiecutter.use_postgres == 'y' %}
-from {{ cookiecutter.project_name }}.migrations import metadata
-from {{ cookiecutter.project_name }}.users.tables import users
+from {{cookiecutter.project_name}}.utils.common import PATH, get_config
+from {{cookiecutter.project_name}}.app import init_app
+{%- if cookiecutter.use_postgres != 'n' %}
+from {{cookiecutter.project_name}}.migrations import metadata
+from {{cookiecutter.project_name}}.users.tables import users
 {%- endif %}
 
 
@@ -20,9 +20,8 @@ config = get_config(['-c', CONFIG_PATH.as_posix()])
 test_config = get_config(['-c', TEST_CONFIG_PATH.as_posix()])
 
 
-{%- if cookiecutter.use_postgres == 'y' %}
+{%- if cookiecutter.use_postgres != 'n' %}
 # helpers
-
 
 def get_db_url(config: dict) -> str:
     '''
@@ -58,7 +57,7 @@ def init_sample_data(engine) -> None:
                     'username': f'test#{idx}',
                     'email': f'test#{idx}',
                     'password': f'{idx}'} for idx in range(10)
-                ])
+            ])
 
         conn.execute(query)
 
@@ -138,11 +137,20 @@ async def sa_engine(loop):
     '''
 
     return await aiopg.sa.create_engine(**test_config['postgres'])
+
+
+@pytest.fixture
+async def postgres_engine(loop):
+    {%- if cookiecutter.use_postgres == 'aiopg' %}
+    import asyncpg
+    return await asyncpg.connect(**test_config['postgres'])
+    {%- endif %}
+
 {%- endif %}
 
 
 @pytest.fixture
-async def client(aiohttp_client{% if cookiecutter.use_postgres == 'y' %}, tables{% endif %}):
+async def client(aiohttp_client {% if cookiecutter.use_postgres != 'n' %} , tables{% endif %}):
     '''
     The fixture for the initialize client.
     '''

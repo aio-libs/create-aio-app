@@ -6,7 +6,10 @@ from functools import partial
 {%- endif %}
 
 import aiohttp_jinja2
-{%- if cookiecutter.use_postgres == 'y' %}
+{%- if cookiecutter.use_postgres == 'asyncpg' %}
+import asyncpg
+{%- endif %}
+{%- if cookiecutter.use_postgres == 'aiopg' %}
 import aiopg.sa
 {%- endif %}
 from aiohttp import web
@@ -30,7 +33,7 @@ def init_jinja2(app: web.Application) -> None:
         app,
         loader=jinja2.FileSystemLoader(str(path / 'templates'))
     )
-{%- if cookiecutter.use_postgres == 'y' %}
+{%- if cookiecutter.use_postgres != 'n' %}
 
 
 async def database(app: web.Application) -> None:
@@ -40,7 +43,11 @@ async def database(app: web.Application) -> None:
     '''
     config = app['config']['postgres']
 
+    {%- if cookiecutter.use_postgres == 'aiopg' %}
     engine = await aiopg.sa.create_engine(**config)
+    {%- elif cookiecutter.use_postgres == 'asyncpg' %}
+    engine = await asyncpg.connect(**config)
+    {%- endif %}
     app['db'] = engine
 
     yield
@@ -86,13 +93,13 @@ def init_app(config: Optional[List[str]] = None) -> web.Application:
     init_jinja2(app)
     init_config(app, config=config)
     init_routes(app)
-    {%- if cookiecutter.use_postgres == 'y' and cookiecutter.use_redis == 'y' %}
+    {%- if cookiecutter.use_postgres != 'n' and cookiecutter.use_redis == 'y' %}
 
     app.cleanup_ctx.extend([
         redis,
         database,
     ])
-    {%- elif cookiecutter.use_postgres == 'y' %}
+    {%- elif cookiecutter.use_postgres != 'n' %}
 
     app.cleanup_ctx.extend([
         database,

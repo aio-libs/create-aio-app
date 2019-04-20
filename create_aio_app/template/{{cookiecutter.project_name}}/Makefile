@@ -14,7 +14,7 @@ all: run
 
 ## Runs application. Builds, creates, starts, and attaches to containers for a service. | Common
 run:
-	@docker-compose up {{ cookiecutter.project_name }}_app
+	@docker-compose up $(PROJECT_NAME)_app
 
 ## Stops application. Stops running container without removing them.
 stop:
@@ -26,7 +26,7 @@ clean:
 
 ## Runs command `bash` commands in docker container.
 bash:
-	@docker exec -it {{ cookiecutter.project_name }} bash
+	@docker exec -it $(PROJECT_NAME) bash
 
 # Help
 
@@ -94,15 +94,15 @@ test: lint
 
 ## Runs PostgreSQL UI. | Database
 psql:
-	@docker exec -it {{ cookiecutter.project_name }}_postgres psql -U postgres
+	@docker exec -it $(PROJECT_NAME)_postgres psql -U postgres
 
 ## Makes migration.
 migrations:
-	@docker exec -it {{ cookiecutter.project_name }} alembic -n alembic:dev revision --autogenerate;
+	@docker exec -it $(PROJECT_NAME) alembic -n alembic:dev revision --autogenerate;
 
 ## Upgrades database.
 migrate:
-	@docker exec -it {{ cookiecutter.project_name }} alembic -n alembic:dev upgrade head;
+	@docker exec -it $(PROJECT_NAME) alembic -n alembic:dev upgrade head;
 
 {%- endif %}
 
@@ -112,12 +112,12 @@ run_production:
 
 ## Runs application with development config.
 adev: {%- if cookiecutter.use_postgres == 'y' or cookiecutter.use_redis == 'y' %} wait_resources {% endif %}
-	adev runserver ./{{ cookiecutter.project_name }}/__main__.py -p 8080
+	adev runserver ./$(PROJECT_NAME)/__main__.py -p 8080
 
 
 {%- if cookiecutter.use_postgres == 'y' or cookiecutter.use_redis == 'y' %}
 
 ## Runs application with specified postgres and redis.
 wait_resources:
-	python3 -m {{ cookiecutter.project_name }}.utils.wait_script
+	python3 -m $(PROJECT_NAME).utils.wait_script
 {%- endif %}

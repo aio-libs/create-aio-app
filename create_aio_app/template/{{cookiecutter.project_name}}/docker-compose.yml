@@ -42,14 +42,14 @@ services:
           - POSTGRES_PASSWORD=postgres
           - POSTGRES_DB=postgres
       ports:
-          - 5432:5432
+          - 5432
   {%- endif %}
   {%- if cookiecutter.use_redis == 'y' %}
 
   redis:
     image: redis:4
     ports:
-        - 6379:6379
+        - 6379
   {%- endif %}
 
   test:

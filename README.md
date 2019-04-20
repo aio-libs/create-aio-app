@@ -64,6 +64,8 @@ and open in your browser `http://localhost:8080/`
 
 `--redis` - add redis to the template
 
+`--uvloop` - use uvloop event loop for aiohttp
+
 ## Contributing
 The `create-aio-app` it's a boilerplate from aiohttp community for aiohttp 
 community. So, feel free to make some suggestion in the issue or make 

@@ -4,6 +4,7 @@ Alexandr Hladyshenko
 Andriy Yatsynyak
 Bakhtiyor Ruziev
 Filatov Pavel
+Helen Shmyrko
 Jintao Zhang
 Michail Shatalov
 Mykhailo Antonkin
@@ -12,5 +13,4 @@ Nikolay Novik
 Oleh Kuchuk
 Sviatoslav Sydorenko
 Vasyl Navrotsky
-Helen Shmyrko
 Vladyslav Ovchynnykov

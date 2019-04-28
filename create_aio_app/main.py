@@ -28,6 +28,7 @@ def main():
                 'project_name': args.get('name'),
                 'use_postgres': 'n' if args.get('without_postgres') else 'y',
                 'use_redis': 'y' if args.get('redis') else 'n',
+                'use_uvloop': 'y' if args.get('uvloop') else 'n',
             },
         }
 

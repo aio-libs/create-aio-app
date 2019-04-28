@@ -1,3 +1,6 @@
+{%- if cookiecutter.use_uvloop == 'y' %}
+import uvloop
+{%- endif %}
 from aiohttp import web
 
 from .app import init_app
@@ -16,6 +19,9 @@ def main() -> None:
     app = init_app()
     app_settings = app['config']['app']
 
+    { % - if cookiecutter.use_uvloop == 'y' %}
+    uvloop.install()
+    { % - endif %}
     web.run_app(
         app,
         host=app_settings['host'],

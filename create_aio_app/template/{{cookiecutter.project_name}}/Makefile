@@ -28,6 +28,10 @@ clean:
 bash:
 	@docker exec -it $(PROJECT_NAME) bash
 
+## Runs script for upgrade dependencies:
+upgrade:
+	python3 -m $(PROJECT_NAME).utils.check-requirements.py
+
 # Help
 
 ## Shows help.

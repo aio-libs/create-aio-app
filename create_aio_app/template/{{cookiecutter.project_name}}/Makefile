@@ -30,7 +30,7 @@ bash:
 
 ## Runs script for upgrade dependencies:
 upgrade:
-	python3 -m $(PROJECT_NAME).utils.check-requirements.py
+	docker-compose --rm run app python3 -m $(PROJECT_NAME).utils.check-requirements.py
 
 # Help
 

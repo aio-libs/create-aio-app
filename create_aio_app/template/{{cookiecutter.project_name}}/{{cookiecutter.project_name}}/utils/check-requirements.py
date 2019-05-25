@@ -7,6 +7,7 @@ from pathlib import Path
 req_dir = Path('.').parent.parent / 'requirements'
 pip_list = "pip list -o --format=freeze"
 
+
 def upgrade_requirements() -> None:
     warning_message = False
     req_files = [
@@ -19,7 +20,7 @@ def upgrade_requirements() -> None:
             fresh_version = subprocess\
                 .check_output(
                     pip_list,
-                    shell=True # nosec
+                    shell=True  # nosec
                 )\
                 .decode("utf-8").split("\n")
 

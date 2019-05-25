@@ -25,11 +25,12 @@ cache: pip
 
 deploy:
     provider: pypi
-    user: misha.gavela
-    distributions: bdist_wheel
+    user: aio-libs-bot
+    distributions: sdist bdist_wheel
     password:
         # Encrypted with `travis encrypt -r aio-libs/create-aio-app --api-endpoint 'https://api.travis-ci.com/'`:
-        secure: SHLywtmqL1/xBlrxIErE63uvSzTMcg80seyhPDMtL7PsUS7znuAeSn2pTgCrM4e7uJoTqOu2vx5RWAw9AziTzlJaB2FqDuSMA697IePMHy7VsCLYQurnlQcuoYlFJPAP06ZTnOM0o8uF4G26UHHcEbqQ0TFoSew/MeXhGubBpnXMa5mMl7QhncqwBo3lUUJfu1VdkpaFBfIVmcEwv7PKTlNAVn5DP2TQKK0v1+JXVMMC0vjpuerx8ckoCEfiavxI/Ho7gF32q2iikXIKD9kejpfjWesPAexkfn7E1rDASz0tQKeMuFJzwuc68S2Z/pn0YhKBNSdV0hFAfiLjUWYA6YSSZIAQ8sJVH8IaK4PrLwT5D83yunIRLBt8ac1onqaX7SKHc38srdmTy3aFHT9w0gM5qdZ+616uGihEuotem69Z6A9jNfqD5jEWreAtwokvwFm5/hXn8WQiHUzj5QmvRW3qx5hZKS173TbomocJXz6Ti279fFwJUebDgFMGX33G5GPJ98XpgP/FMgiAVJ2kQ01EUNdcVVagOX1NCxqOEPze5+lOE+UOSP0Y0wAYHrz/UObkbXJyQcArVpM5h25KSV9QXi/Thio7nepPalUi9KAtJbg9CjOUUApuPXqrltj4CUUQIHrivNcLeBhI0rAKBzQ3uvGPAwAZv16HOMAMi34=
+        secure: >-
+          ktCdEw9PQO9orA7BmhCn71yOIPK3seomRkJi8+ea54lQsT8cCe+sKZgaXRTBwkcKnKqz11gQl7P11qPNLIWr4cNeVrF6RsDix5YFDxpfqy+x6IPNvpArhkB8/2u2SpFbjzTOh0jT2d4ucSUDV+axjSRPymHK+8lYEMKXucNrzsao8qrExpCMkVJA5rNKeLC537ZN53tVbhwYNih+LsGPXGTvoQoMSQPRk83NfselIper1bPwioUYzIaJCygrOKQKqs/nKOlygMFmPyg4uFoDBh3idG66r8Q9Zmt7DrCAaCxJyGFmjNYHkMzLLh8kl2VuXk+lREbmPDIfNEGzoAM4mX6Jd+LGNvbOOqntRYpW+K4A01qe+YnI142uA7tfxWl1qOqknb0bT6EXKq3iCB4ZXxLdukCcaBAUJP0ctj5wyVpcJ7TAst4SDKLYuZ06I+kx2n51HO5DsfuUQBvkKuMzAHXv0jxXcv8ez2ZS5kBpgQuemNm1NOsrWhtyWzvhlcD2+VMNaYNII63GvAUiwgO8QCf/JNaW12Fdp/nceVUhJWlsmfvQQ1erKqugtecrowh9XWTO5kx7CMrpZJCDdWXMoUMC7aRmJuYaSiz1xCHa44v6xFlMv7bv2UzelRbnpgolCCTzCGXnC6ozct58b/dtGiHKbPJ+cJSOjH513kxRSaM=
     on:
         tags: true
         repo: aio-libs/create-aio-app

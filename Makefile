@@ -1,6 +1,6 @@
 
 bandit:
-	bandit -r ./create_aio_app -x create_aio_app/template
+	bandit -r ./create_aio_app -x create_aio_app/template -s B101
 
 checkrst:
 	python setup.py check --restructuredtext

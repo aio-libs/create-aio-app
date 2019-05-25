@@ -1,4 +1,4 @@
-import subprocess
+import subprocess  # nosec
 import click
 import re
 from functools import partial
@@ -17,9 +17,11 @@ def upgrade_requirements() -> None:
         with req_file.open() as f:
             old_req = f.read()
             fresh_version = subprocess\
-                .check_output("pip list -o --format=freeze", shell=True)\
-                .decode("utf-8")\
-                .split("\n")
+                .check_output(
+                    "pip list -o --format=freeze",
+                    shell=True  # nosec
+                )\
+                .decode("utf-8").split("\n")
 
             packages = dict(
                 package.split('==') for package in fresh_version if package)

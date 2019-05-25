@@ -5,7 +5,7 @@ from functools import partial
 from pathlib import Path
 
 req_dir = Path('.').parent.parent / 'requirements'
-
+pip_list = "pip list -o --format=freeze"
 
 def upgrade_requirements() -> None:
     warning_message = False
@@ -18,8 +18,8 @@ def upgrade_requirements() -> None:
             old_req = f.read()
             fresh_version = subprocess\
                 .check_output(
-                    "pip list -o --format=freeze",
-                    shell=True  # nosec
+                    pip_list,
+                    shell=True # nosec
                 )\
                 .decode("utf-8").split("\n")
 

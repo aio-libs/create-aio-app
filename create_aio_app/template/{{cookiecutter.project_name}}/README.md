@@ -59,6 +59,13 @@ Interactive work inside container
 make bash # the command must be running after `make run` 
 ```
 
+### Upgrade
+To upgrade dependencies:
+
+```
+make upgrade
+```
+
 ### Help
 
 If needed a list of available commands

@@ -14,7 +14,8 @@ Common
    ``make run (make)``, To start the project in develop mode
    ``make stop``, To stop work of docker containers
    ``make stop``, To clean up of docker containers
-   ``make bash``, Interactive work inside container (the command must be running after ``make run`` )
+   ``make bash``, Interactive work inside container (the command must be running after ``make run``)
+   ``make upgrade``, To upgrade dependencies
 
 
 

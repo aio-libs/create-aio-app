@@ -4,7 +4,7 @@ import re
 from functools import partial
 from pathlib import Path
 
-req_dir = Path('../../requirements/test/')
+req_dir = Path('.').parent.parent / 'requirements'
 
 
 def upgrade_requirements() -> None:
@@ -27,8 +27,11 @@ def upgrade_requirements() -> None:
         with req_file.open('w') as f:
             new_req = old_req
             for name, version in packages.items():
-                new_req = re.sub(f'{name}==[\d .]*', f'{name}=={version}',
-                                 new_req)
+                new_req = re.sub(
+                    fr'{name}==[\d .]*',
+                    f'{name}=={version}',
+                    new_req,
+                )
             f.seek(0)
             f.write(new_req)
             f.truncate()
@@ -42,7 +45,7 @@ def upgrade_requirements() -> None:
             click.style(
                 "Please rebuild your docker container with ",
                 fg='bright_green') +
-            click.style("'docker-compose up --build'", fg='bright_blue'))
+            click.style("'make build'", fg='bright_blue'))
 
 
 if __name__ == '__main__':

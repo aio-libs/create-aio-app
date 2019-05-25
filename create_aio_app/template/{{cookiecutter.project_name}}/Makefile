@@ -16,6 +16,10 @@ all: run
 run:
 	@docker-compose up $(PROJECT_NAME)_app
 
+## Rebuild {{ cookiecutter.project_name }}_app container
+build:
+	@docker-compose build $(PROJECT_NAME)_app
+
 ## Stops application. Stops running container without removing them.
 stop:
 	@docker-compose stop
@@ -28,9 +32,9 @@ clean:
 bash:
 	@docker exec -it $(PROJECT_NAME) bash
 
-## Runs script for upgrade dependencies:
+## Upgrade your python's dependencies:
 upgrade:
-	docker-compose --rm run app python3 -m $(PROJECT_NAME).utils.check-requirements.py
+	docker-compose run --rm $(PROJECT_NAME)_app python3 -m $(PROJECT_NAME).utils.check-requirements
 
 # Help
 

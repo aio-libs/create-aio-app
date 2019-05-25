@@ -19,9 +19,9 @@ def main() -> None:
     app = init_app()
     app_settings = app['config']['app']
 
-    { % - if cookiecutter.use_uvloop == 'y' %}
+    {%- if cookiecutter.use_uvloop == 'y' %}
     uvloop.install()
-    { % - endif %}
+    {%- endif %}
     web.run_app(
         app,
         host=app_settings['host'],

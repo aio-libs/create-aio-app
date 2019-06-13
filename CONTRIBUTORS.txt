@@ -15,3 +15,4 @@ Oleh Kuchuk
 Sviatoslav Sydorenko
 Vasyl Navrotsky
 Vladyslav Ovchynnykov
+Alexey Dyatlov

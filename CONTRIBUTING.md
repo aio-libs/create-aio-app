@@ -8,7 +8,7 @@ Below we will talk about how to do that.
 1. Clone this github repo
 2. Make changes
 3. The `make test` command must exit without errors
-4. Add your name to [CONTRIBUTING.md](https://github.com/aio-libs/create-aio-app/blob/master/CONTRIBUTING.md) to leave a trace in history 😀
+4. Add your name to [CONTRIBUTORS.txt](https://github.com/aio-libs/create-aio-app/blob/master/CONTRIBUTORS.txt) to leave a trace in history 😀
 5. Make pull request
 6. If you change some `ui` of project, do not forget to add a screenshot with the changes
 

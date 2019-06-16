@@ -83,7 +83,8 @@ setup(
     project_urls={
         'Source Code': 'https://github.com/aio-libs/create-aio-app',
         'GitHub Issues': 'https://github.com/aio-libs/create-aio-app/issues',
-        'Documentation': 'https://create-aio-app.readthedocs.io/'
+        'Documentation': 'https://create-aio-app.readthedocs.io/',
+        'CI: Travis': 'https://travis-ci.com/aio-libs/create-aio-app',
     },
     package_data={
         '': package_files(path),

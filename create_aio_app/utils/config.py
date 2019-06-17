@@ -51,5 +51,10 @@ def parse_arguments() -> dict:
         action='store_true',
         help='use uvloop event loop for aiohttp'
     )
+    parser.add_argument(
+        '--sentry',
+        action='store_true',
+        help='add sentry support to the generating project'
+    )
 
     return parser.parse_args().__dict__

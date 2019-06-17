@@ -29,6 +29,7 @@ def main():
                 'use_postgres': 'n' if args.get('without_postgres') else 'y',
                 'use_redis': 'y' if args.get('redis') else 'n',
                 'use_uvloop': 'y' if args.get('uvloop') else 'n',
+                'use_sentry': 'y' if args.get('sentry') else 'n',
             },
         }
 

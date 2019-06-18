@@ -3,7 +3,6 @@ from typing import Optional, List
 
 {%- if cookiecutter.use_redis == 'y' %}
 from functools import partial
-import aioredis
 {%- endif %}
 
 import aiohttp_jinja2
@@ -11,11 +10,13 @@ import aiohttp_jinja2
 import aiopg.sa
 {%- endif %}
 from aiohttp import web
+{%- if cookiecutter.use_redis == 'y' %}
+import aioredis
+{%- endif %}
 {%- if cookiecutter.use_sentry == 'y' %}
 import sentry_sdk
 from sentry_sdk.integrations.aiohttp import AioHttpIntegration
 {%- endif %}
-
 import jinja2
 
 from {{ cookiecutter.project_name }}.routes import init_routes
@@ -90,7 +91,7 @@ def init_sentry(app: web.Application) -> None:
     '''
     config = app['config']['sentry']
     sentry_sdk.init(
-        dsn=f'https://{configp["key"]}@sentry.io/{config["project"]}',
+        dsn=config["dsn"],
         integrations=[AioHttpIntegration()]
     )
 {%- endif %}

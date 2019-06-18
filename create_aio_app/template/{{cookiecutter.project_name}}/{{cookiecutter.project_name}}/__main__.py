@@ -2,8 +2,9 @@
 import uvloop
 {%- endif %}
 from aiohttp import web
+
 from .app import init_app
-    {%- if cookiecutter.use_sentry == 'y' %}
+{%- if cookiecutter.use_sentry == 'y' %}
 from .app import init_sentry
 {%- endif %}
 

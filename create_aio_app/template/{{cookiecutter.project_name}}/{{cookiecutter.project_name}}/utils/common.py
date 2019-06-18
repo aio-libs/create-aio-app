@@ -39,8 +39,7 @@ CONFIG_TRAFARET = trafaret.Dict({
 {%- if cookiecutter.use_sentry == 'y' %}
     trafaret.Key('sentry'):
         trafaret.Dict({
-            'key': trafaret.String(),
-            'project': trafaret.String(),
+            'dsn': trafaret.String(),
         }),
     {%- endif %}
 })

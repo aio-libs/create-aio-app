@@ -4,7 +4,7 @@ Quick start for aiohttp
 Before you create an application using `create-aio-app` you should be sure
 that you have some requirements:
 
- - python>=3.5
+ - python>=3.6
  - docker-compose
 
 Install

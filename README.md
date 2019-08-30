@@ -11,7 +11,7 @@ The tool that helps quickly create a basis for the microservice on aiohttp and p
 
 ## Installation
 
-Requires python3.5 - python3.7 and docker-compose
+Requires python3.6 - python3.7 and docker-compose
 
 ```bash
 pip install create-aio-app

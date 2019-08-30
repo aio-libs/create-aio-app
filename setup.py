@@ -7,9 +7,9 @@ from setuptools import find_packages, setup
 parent = pathlib.Path(__file__).parent
 
 
-if sys.version_info < (3, 5):
+if sys.version_info < (3, 6):
     raise RuntimeError(
-        "create-aio-app doesn't support Python version prior 3.5"
+        "create-aio-app doesn't support Python version prior 3.6"
     )
 
 
@@ -51,7 +51,6 @@ classifiers = [
     'License :: OSI Approved :: MIT License',
     'Intended Audience :: Developers',
     'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.5',
     'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7',
     'Operating System :: POSIX',

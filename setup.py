@@ -93,4 +93,5 @@ setup(
     },
     keywords=['create-aio-app', 'cookiecutter', 'aiohttp'],
     zip_safe=True,
+    python_requires='>=3.6',
 )

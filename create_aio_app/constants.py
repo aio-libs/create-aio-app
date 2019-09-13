@@ -4,7 +4,7 @@ __all__ = [
     'TEMPLATE_DIR',
     'DATABASE_TEMPLATE_DIRS',
     'DATABASE_TEMPLATE_FILES',
-    'WAIT_SCRIPT_FILE'
+    'WAIT_SCRIPT_FILE',
 ]
 
 

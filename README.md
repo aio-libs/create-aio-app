@@ -1,4 +1,5 @@
 # Create aio app
+
 [![Build Status](https://travis-ci.com/aio-libs/create-aio-app.svg?branch=master)](https://travis-ci.com/aio-libs/create-aio-app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Gitter chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aio-libs/Lobby)
@@ -28,7 +29,7 @@ or if u wanna use manual mode, enter only command below
 
 ```bash
 create-aio-app
-``` 
+```
 
 After that it will create new directory `my_project`.
 
@@ -36,6 +37,31 @@ After that it will create new directory `my_project`.
 cd my_project
 
 make run # start your project
+
+Commands
+
+    Common
+
+run - run the application
+stop - stop the application
+bash - run commands under `bash` in docker container
+test - run tests
+help - shows help
+clean - remove service from the container
+doc - generate html documentation
+
+    Linters
+
+black - formats the code with black
+mypy - checks types with mypy
+lint - formats the code with flake8
+
+    Database
+
+psql - run the application
+migrations - stop the application
+migrate - run tests
+adev - shows help
 ```
 
 and open in your browser `http://localhost:8080/`
@@ -56,9 +82,6 @@ and open in your browser `http://localhost:8080/`
 - [sphinx](http://www.sphinx-doc.org/en/master/) - for generate docs
 - [docker-compose](https://docs.docker.com/compose/) - for running develop environment and deploy
 
-
-
-
 ## Options
 
 `--without-postgres` - remove postgres and all helpful libs connected with db from template
@@ -68,11 +91,12 @@ and open in your browser `http://localhost:8080/`
 `--uvloop` - use uvloop event loop for aiohttp
 
 ## Contributing
-The `create-aio-app` it's a boilerplate from aiohttp community for aiohttp 
-community. So, feel free to make some suggestion in the issue or make 
-pull requests. We will be happy 😀. See [CONTRIBUTING.md](https://github.com/aio-libs/create-aio-app/blob/master/CONTRIBUTING.md) for more information about 
+
+The `create-aio-app` it's a boilerplate from aiohttp community for aiohttp
+community. So, feel free to make some suggestion in the issue or make
+pull requests. We will be happy 😀. See [CONTRIBUTING.md](https://github.com/aio-libs/create-aio-app/blob/master/CONTRIBUTING.md) for more information about
 how to contribute to `create-aio-app`.
 
 ## License
 
-Create aio App is an open source software <a href="https://github.com/aio-libs/create-aio-app/blob/master/LICENSE">available under the MIT license</a>. 
+Create aio App is an open source software <a href="https://github.com/aio-libs/create-aio-app/blob/master/LICENSE">available under the MIT license</a>.

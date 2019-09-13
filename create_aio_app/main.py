@@ -66,6 +66,4 @@ def main():
         fg='bright_green',
     ))
     echo('cd ' + click.style(f'{folder}/', fg='bright_blue'))
-    # echo('make run\n\n')
-    echo(click.style('\nCommands'))
-    echo(click.style('\n    General commands', fg='cyan'))
+    echo('make run\nCommands')

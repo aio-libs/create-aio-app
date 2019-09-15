@@ -3,13 +3,13 @@ bandit:
 	bandit -r ./create_aio_app -x create_aio_app/template -s B101
 
 checkrst:
-	python setup.py check --restructuredtext
+	python -c 'import setuptools; setuptools.setup()' check
 
 pyroma:
 	pyroma -d .
 
 flake: checkrst bandit pyroma
-	flake8 create_aio_app setup.py --exclude create_aio_app/template
+	flake8 create_aio_app --exclude create_aio_app/template
 
 test:
 	rm -rf project_new/

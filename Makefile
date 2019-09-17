@@ -6,7 +6,9 @@ checkrst:
 	python -c 'import setuptools; setuptools.setup()' check
 
 pyroma:
+	echo 'import setuptools; setuptools.setup()' > setup.py
 	pyroma -d .
+	rm setup.py
 
 flake: checkrst bandit pyroma
 	flake8 create_aio_app --exclude create_aio_app/template

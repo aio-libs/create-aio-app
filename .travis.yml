@@ -24,6 +24,8 @@ before_script:
 cache: pip
 
 deploy:
+    env:
+        PYPI_UPLOAD: true
     provider: pypi
     user: aio-libs-bot
     distributions: sdist bdist_wheel

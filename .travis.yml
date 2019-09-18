@@ -8,7 +8,7 @@ python:
   - '3.6'
 
 install:
-  - pip install --upgrade pip setuptools
+  - pip install --upgrade pip setuptools pep517
   - pip install -r requirements-dev.txt
 
 script:
@@ -23,12 +23,15 @@ before_script:
 
 cache: pip
 
+before_deploy:
+  - python -m pep517.build --source --binary --out-dir dist .
+  - echo > setup.py
+
 deploy:
-    env:
-        PYPI_UPLOAD: true
     provider: pypi
     user: aio-libs-bot
     distributions: sdist bdist_wheel
+    skip-cleanup: true
     password:
         # Encrypted with `travis encrypt -r aio-libs/create-aio-app --api-endpoint 'https://api.travis-ci.com/'`:
         secure: >-

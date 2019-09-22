@@ -3,7 +3,7 @@ bandit:
 	bandit -r ./create_aio_app -x create_aio_app/template -s B101
 
 checkrst:
-	python -c 'import setuptools; setuptools.setup()' check
+	python -m pep517.build . && python -m twine check dist/*
 
 pyroma:
 	echo 'import setuptools; setuptools.setup()' > setup.py

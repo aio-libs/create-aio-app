@@ -27,7 +27,8 @@ cache: pip
 
 jobs:
   include:
-    - stage: Upload a new version of python package to PYPI
+    - &deploy_job
+      stage: Upload a new version of python package to PYPI
       name: Publishing current Git tagged version of dist to PyPI
       if: repo == "aio-libs/create-aio-app" AND tag IS present
       install: []
@@ -38,7 +39,7 @@ jobs:
         - python -m pep517.build --source --binary --out-dir dist .
         - echo > setup.py
 
-      deploy:
+      deploy: &deploy_step
         provider: pypi
         user: aio-libs-bot
         skip-cleanup: true
@@ -48,3 +49,18 @@ jobs:
             ktCdEw9PQO9orA7BmhCn71yOIPK3seomRkJi8+ea54lQsT8cCe+sKZgaXRTBwkcKnKqz11gQl7P11qPNLIWr4cNeVrF6RsDix5YFDxpfqy+x6IPNvpArhkB8/2u2SpFbjzTOh0jT2d4ucSUDV+axjSRPymHK+8lYEMKXucNrzsao8qrExpCMkVJA5rNKeLC537ZN53tVbhwYNih+LsGPXGTvoQoMSQPRk83NfselIper1bPwioUYzIaJCygrOKQKqs/nKOlygMFmPyg4uFoDBh3idG66r8Q9Zmt7DrCAaCxJyGFmjNYHkMzLLh8kl2VuXk+lREbmPDIfNEGzoAM4mX6Jd+LGNvbOOqntRYpW+K4A01qe+YnI142uA7tfxWl1qOqknb0bT6EXKq3iCB4ZXxLdukCcaBAUJP0ctj5wyVpcJ7TAst4SDKLYuZ06I+kx2n51HO5DsfuUQBvkKuMzAHXv0jxXcv8ez2ZS5kBpgQuemNm1NOsrWhtyWzvhlcD2+VMNaYNII63GvAUiwgO8QCf/JNaW12Fdp/nceVUhJWlsmfvQQ1erKqugtecrowh9XWTO5kx7CMrpZJCDdWXMoUMC7aRmJuYaSiz1xCHa44v6xFlMv7bv2UzelRbnpgolCCTzCGXnC6ozct58b/dtGiHKbPJ+cJSOjH513kxRSaM=
         on:
           all_branches: true
+    - <<: *deploy_job
+      name: >-
+        Publishing current (unstable) Git revision of dist to Test PyPI
+        on every commit
+      if: >-  # Always run, except if PR or cron
+        repo == "aio-libs/create-aio-app" AND
+        branch == "master" AND
+        type == "push"
+      deploy:
+        <<: *deploy_step
+        server: https://test.pypi.org/legacy/
+        user: <test-pypi-user>
+        password:
+          secure: >-
+            <encrypted-test-pypi-user-password>

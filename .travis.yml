@@ -30,6 +30,7 @@ jobs:
     - &deploy_job
       stage: Upload a new version of python package to PYPI
       name: Publishing current Git tagged version of dist to PyPI
+      env: PYPI_UPLOAD=true
       if: repo == "aio-libs/create-aio-app" AND tag IS present
       install: []
       script: skip

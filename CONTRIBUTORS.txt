@@ -1,12 +1,14 @@
 - Contributors -
 ----------------
 Alexandr Hladyshenko
+Alexey Dyatlov
 Andrey Zhabsky
 Andriy Yatsynyak
 Bakhtiyor Ruziev
 Filatov Pavel
 Helen Shmyrko
 Jintao Zhang
+Max Tyulin
 Michail Shatalov
 Mykhailo Antonkin
 Mykhailo Havelia

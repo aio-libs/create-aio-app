@@ -3,7 +3,7 @@
 
 mypy==0.670
 flake8==3.7.5
-pytest==4.2.0
+pytest==5.2.0
 pytest-cov==2.6.1
 pytest-aiohttp==0.3.0
 black==18.9b0

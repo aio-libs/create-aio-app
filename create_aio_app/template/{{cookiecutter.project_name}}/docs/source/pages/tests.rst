@@ -19,7 +19,8 @@ For running tests you should use this command:
 
 This command running flake8 and after success run test by `pytest`
 
-If you want to run a single test, you can pass an argument to `docker-compose` like this:
+If you want to run a single test, you can pass an argument
+to `docker-compose` like this:
 
 .. code-block:: bash
 

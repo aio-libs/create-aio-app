@@ -88,10 +88,6 @@ mypy:
 lint:
 	@docker-compose run --rm $(PROJECT_NAME)_app flake8 $(PROJECT_NAME)
 
-_test:
-	# todo: remove no:warnings
-	@py.test -p no:warnings --cov
-
 ## Runs tests. | Tests
 test: lint
 	@docker-compose up test

@@ -62,7 +62,7 @@ jobs:
       deploy:
         <<: *deploy_step
         server: https://test.pypi.org/legacy/
-        user: <test-pypi-user>
+        user: __token__
         password:
           secure: >-
             <encrypted-test-pypi-user-password>

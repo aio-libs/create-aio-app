@@ -52,7 +52,7 @@ jobs:
     - <<: *deploy_job
       name: >-
         Publishing current (unstable) Git revision of dist to Test PyPI
-        on every commit
+        on every push to master
       env:
         PYPI_UPLOAD: true
       if: >-  # Always run, except if PR or cron

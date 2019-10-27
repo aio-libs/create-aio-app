@@ -41,12 +41,12 @@ jobs:
 
       deploy: &deploy_step
         provider: pypi
-        user: aio-libs-bot
+        user: __token__
         skip-cleanup: true
         password:
           # Encrypted with `travis encrypt -r aio-libs/create-aio-app --api-endpoint 'https://api.travis-ci.com/'`:
           secure: >-
-            ktCdEw9PQO9orA7BmhCn71yOIPK3seomRkJi8+ea54lQsT8cCe+sKZgaXRTBwkcKnKqz11gQl7P11qPNLIWr4cNeVrF6RsDix5YFDxpfqy+x6IPNvpArhkB8/2u2SpFbjzTOh0jT2d4ucSUDV+axjSRPymHK+8lYEMKXucNrzsao8qrExpCMkVJA5rNKeLC537ZN53tVbhwYNih+LsGPXGTvoQoMSQPRk83NfselIper1bPwioUYzIaJCygrOKQKqs/nKOlygMFmPyg4uFoDBh3idG66r8Q9Zmt7DrCAaCxJyGFmjNYHkMzLLh8kl2VuXk+lREbmPDIfNEGzoAM4mX6Jd+LGNvbOOqntRYpW+K4A01qe+YnI142uA7tfxWl1qOqknb0bT6EXKq3iCB4ZXxLdukCcaBAUJP0ctj5wyVpcJ7TAst4SDKLYuZ06I+kx2n51HO5DsfuUQBvkKuMzAHXv0jxXcv8ez2ZS5kBpgQuemNm1NOsrWhtyWzvhlcD2+VMNaYNII63GvAUiwgO8QCf/JNaW12Fdp/nceVUhJWlsmfvQQ1erKqugtecrowh9XWTO5kx7CMrpZJCDdWXMoUMC7aRmJuYaSiz1xCHa44v6xFlMv7bv2UzelRbnpgolCCTzCGXnC6ozct58b/dtGiHKbPJ+cJSOjH513kxRSaM=
+            IfpGrZVE9XYV2ti/3FeGjoN0OTZNv012yM+btdkQpK23HaeUV3qHh20e8QLqYnr5FYTQmFDExgzY9CVBp9qWsjdr+ZiMRwfW06CQ0WakWfWv7m35X8BUzs2zrYe0nifo9usi3f5fcyDZl7RRBdvdp3tjehkd4IpA4McMDrE0VPb/nwRHddh0IkB8uE0SZ+4gGl6Un5WRJvCzqslNyhow24TycrRBDTxUYiKQRs5LfoSD+yRidznlpJWm4S41naX55aXQqCTY8x7waE47XzmpMosg1KErqH05ag75qVPEs3k24q4ShjsRhPp8duThig0ZKQkSExeB1aeIojJHRl9p7O8rMZY27LagKNlUqhYAJu6ZLBMkCY0nNAM788Co/TNKEe9W+VPpREFyOszEfY0kKeUitsS3uWUv9klX+pTw2YoHUoBImMqT5goSd91jEy2ZovetbI+z6zlVcb2F1rx1jT1hkevzAvbwcaSXM3yEiCAGOmB+4XgJ+rYQD63dnjiJ30E+KarKfDYRq+vt0HYis4OKjyxhwP/3wutWxYk15fjTKNzxDnZc7vPkKrw+iKmZZE9GpUqzeC9k655q/la278OnRxAiLf9Is0d6QVFrqC4IP0+DTIMHNer7UO7dDdcLzpZ3ZrcfU3zsM0qXVxfMIbJcNnzzcGr3HLOgN9hsu9A=
         on:
           all_branches: true
     - <<: *deploy_job
@@ -62,7 +62,6 @@ jobs:
       deploy:
         <<: *deploy_step
         server: https://test.pypi.org/legacy/
-        user: __token__
         password:
           secure: >-
             rfpMPtYl0ipSV2ckqiiLPwfx28esAf4zybAGk2imd5zRVI2TudaHPna0mcLQCJ0Rn5rdl3eBdRfTFoFl+V60+5d98SpwE8PCxlY5hAwXd/CirmpjjKj3N8pvIUrs1KHll0gxaMCXEPmEatiWlkF8av4ZUX/ycytQZE3men+Nw4wVMbruKcMoRkTMm1AJ3u1g0lOd4Dr8Gv2mc4vlKvk6a4v8abKsi8mfHOxUDoq5dQdIl+Ghht/eCSb3lGop5o8D1E+7jZv4wj5k2JVpU0ulb7sOKMdzKls0XKINekOroIg3sgIpdzuEyKfW64tIv8PZGYaZrQgb4jIKmwtklbfC6fCY/LkchsdskPO/1QsuLiOIp+JsmAuDfZNZvZu8xSIvmMhmkHPY9ioxZydHWtwvcrfoAXHvCX90v7xlzqqSruAbYfyoZpsDKnJ+FcRVr6x1h+BQHT0kg9k39bGWOyzdJhDt4WaifiM81G5t7zeQTVKiTGWaNRuaE0xFe1kyY4vMYj63snQuAuw8i2zbJ4AubQSHyf4X+9Emgna+/wnNIbVZAaXsf8PJyXP+9JOusGvIg0I3q/cW0v21eXUj4+AIDTXOhdovndurbkHw5otDpRfD4vt0Hdh+YaYmOiOEOh4yBFlnMuQlV5QJwwb50QJDgipExrkYHq7cfNifoPLHWhw=

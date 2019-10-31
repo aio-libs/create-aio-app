@@ -8,6 +8,6 @@
 3.
 
 ##Specifications
-- Version:
-- Platform:
-- Subsystem:
+- Python / Docker Version:
+
+<!-- Please describe your problem and why the fix is important. -->

@@ -46,7 +46,7 @@ help:
 	@echo '  ${YELLOW}make${RESET} ${GREEN}<target>${RESET}'
 	@echo ''
 	@echo 'Targets:'
-	@awk '/^[a-zA-Z\-]+:/ { \
+	@awk '/^[a-zA-Z\-\_]+:/ { \
 		helpMessage = match(lastLine, /^## (.*)/); \
 		if (helpMessage) { \
 		    if (index(lastLine, "|") != 0) { \

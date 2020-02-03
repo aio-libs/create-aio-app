@@ -7,7 +7,7 @@ flake8-comprehensions==3.2.2
 flake8-debugger==3.2.1
 flake8-mutable==1.2.0
 flake8-tuple==0.4.0
-pyroma==2.5
+pyroma==2.6
 click==7.0
 cookiecutter==1.6.0
 doc8==0.8.0

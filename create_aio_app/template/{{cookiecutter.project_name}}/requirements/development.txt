@@ -9,4 +9,4 @@ pytest-aiohttp==0.3.0
 black==18.9b0
 
 aiohttp-devtools==0.11
-git+https://github.com/Arfey/aiohttp-debugtoolbar.git
+aiohttp-debugtoolbar==0.6.0

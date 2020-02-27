@@ -1,6 +1,7 @@
 - Contributors -
 ----------------
 Alexandr Hladyshenko
+Alexandre Menezes
 Alexey Dyatlov
 Andrey Zhabsky
 Andriy Yatsynyak

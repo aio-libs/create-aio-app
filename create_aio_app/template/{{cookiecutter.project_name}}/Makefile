@@ -110,10 +110,6 @@ migrate:
 
 {%- endif %}
 
-## Runs application with production config.
-run_production:
-	@docker-compose -f docker-compose.yml -f docker-compose.production.yml up
-
 ## Runs application with development config.
 adev: {%- if cookiecutter.use_postgres == 'y' or cookiecutter.use_redis == 'y' %} wait_resources {% endif %}
 	adev runserver ./$(PROJECT_NAME)/__main__.py -p 8080

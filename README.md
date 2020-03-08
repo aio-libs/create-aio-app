@@ -45,6 +45,7 @@ Navigate in your browser to `http://localhost:8080/`
 - [mypy](https://mypy.readthedocs.io/en/latest/) - optional static typing
 - [pytest](https://pytest.readthedocs.io/en/latest/) - unit tests
 - [flake8](https://flake8.readthedocs.io/en/latest/) - linter
+- [black](https://black.readthedocs.io/en/latest/) - code formatter
 - [trafaret](https://trafaret.readthedocs.io/en/latest/) - data validation
 - [aio devtools](https://github.com/aio-libs/aiohttp-devtools) - developer tools
 - [aiohttp debug toolbar](https://github.com/aio-libs/aiohttp-debugtoolbar) - tool for debugging

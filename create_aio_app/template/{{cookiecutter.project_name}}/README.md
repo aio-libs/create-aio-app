@@ -16,6 +16,7 @@ ___
 - trafaret
 - docker-compose
 - aio devtools
+- black
 - aiohttp debug toolbar
 {%- if cookiecutter.use_postgres == 'y' %}
 - postgres

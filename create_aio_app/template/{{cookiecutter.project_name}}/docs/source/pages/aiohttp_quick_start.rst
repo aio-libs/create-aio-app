@@ -1,8 +1,7 @@
 Quick start for aiohttp
 =======================
 
-Before you create an application using `create-aio-app` you should be sure
-that you have some requirements:
+To use `create-aio-app` you have to meet the next requirements:
 
  - python>=3.6
  - docker-compose
@@ -21,13 +20,13 @@ Usage
 
     create-aio-app my_project
 
-or if u wanna use manual mode, enter only command below
+If you want to use interactive mode enter the next command:
 
 .. code-block:: bash
 
     create-aio-app
 
-After that it will create new directory `my_project`.
+This will create a new directory called `my_project`.
 
 .. code-block:: bash
 
@@ -35,7 +34,7 @@ After that it will create new directory `my_project`.
 
     make run # start your project
 
-Now, u can open in your browser `http://localhost:8080/`
+Navigate in your browser to `http://localhost:8080/`
 
 .. image:: https://raw.githubusercontent.com/aio-libs/create-aio-app/master/assets/assets.png
    :align: center

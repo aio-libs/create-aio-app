@@ -1,29 +1,28 @@
 Documentation
 =============
 
-The best thing that you can do for yourself in future it's written test and
-documentation about your web service. Here we will talk about how organization
-documentation in your project.
+The best thing you can do for future self is to write both tests and
+documentation about your project. This section explains how to
+structure and organize documentation in your project.
 
 Structure
 ---------
 
-For this boilerplate we use this structure:
+We use the next structure:
 
    - **pages/** -
-     the directory for all `*.rst` files connected with boilerplate
+     the directory for all `*.rst` files about the boilerplate.
    - **project/** -
-     the directory should include `*.rst` files which include info
-     about your project (auto generated docs, business logic etc.)
+     this directory is for `*.rst` files associated with your project
+     (this can include auto-generated docs, business logic, etc.)
 
-All new files you should add to *index.rst*.
+All new files should be added to *index.rst*.
 
 Linter
 ------
 
-`Doc8` is an opinionated style checker
-for *rst* styles of documentation. We use this linter as the default in this
-boilerplate.
+`Doc8 <https://github.com/openstack/doc8>`_ is an opinionated style checker
+for *rst* styles of documentation. This linter used by default.
 
 Read more:
 ----------

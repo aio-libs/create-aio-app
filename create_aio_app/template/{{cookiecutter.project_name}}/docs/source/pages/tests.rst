@@ -1,44 +1,45 @@
 Testing
 =======
 
-The code without any tests is a code that will be rewritten. Pleace remember
-this and write tests ;)
+Code without tests is broken by design. Please remember this and write
+tests;)
 
-For running tests we use docker. It's the best way for running your tests
-locally with maximum isolation from environment. Also docker give simple way
-for add test resources in one line.
+This project runs tests inside Docker. It allows you to run tests
+locally with maximum isolation from the environment. It also
+gives you a simple way of adding new resources required for your tests.
 
 Pytest
 ------
 
-For running tests you should use this command:
+Use this command to run the tests:
 
 .. code-block:: bash
 
     make test
 
-This command running flake8 and after success run test by `pytest`
+This will run flake8 and after successful execution, the command will
+run a test suite with  `pytest`
 
 If you want to run a single test, you can pass an argument
 to `docker-compose` like this:
 
 .. code-block:: bash
-
     docker-compose run test project_name/main/tests/test_views.py::test_view
 
 
 mypy
 ----
-Mypy is static type checker for Python. We recommend used mypy because this
-type checker make your code more safe and make refactoring easier.
+Mypy is an optional static type checker for Python. We suggest you
+try it out as it allows you to catch some errors, write safer
+code and make refactoring of the code easier in the future.
 
-For running mypy you should use this command:
+To run mypy use this command:
 
 .. code-block:: bash
 
     make mypy
 
-All settings for mypy are in the mypy.ini file.
+Settings for mypy resides inside the mypy.ini file.
 
 Read more:
 ----------

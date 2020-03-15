@@ -1,15 +1,15 @@
-aiohttp==3.5.4
-aiohttp_jinja2==1.1.0
+aiohttp==3.6.2
+aiohttp_jinja2==1.2.0
 trafaret_config==2.0.2
 markdown2==2.3.7
 {%- if cookiecutter.use_postgres == 'y' %}
-aiopg[sa]==0.16.0
-psycopg2-binary==2.7.7
-alembic==1.0.7
+aiopg[sa]==1.0.0
+psycopg2-binary==2.8.4
+alembic==1.4.1
 {%- endif %}
 {%- if cookiecutter.use_redis == 'y' %}
-aioredis==1.2.0
+aioredis==1.3.1
 {%- endif %}
 {%- if cookiecutter.use_uvloop == 'y' %}
-uvloop==0.12.2
+uvloop==0.14.0
 {%- endif %}

@@ -1,5 +1,9 @@
 from pathlib import Path
-from typing import Optional, List
+from typing import (
+    Optional,
+    List,
+    AsyncGenerator,
+)
 
 {%- if cookiecutter.use_redis == 'y' %}
 from functools import partial
@@ -33,7 +37,7 @@ def init_jinja2(app: web.Application) -> None:
 {%- if cookiecutter.use_postgres == 'y' %}
 
 
-async def database(app: web.Application) -> None:
+async def database(app: web.Application) -> AsyncGenerator[None, None]:
     '''
     A function that, when the server is started, connects to postgresql,
     and after stopping it breaks the connection (after yield)

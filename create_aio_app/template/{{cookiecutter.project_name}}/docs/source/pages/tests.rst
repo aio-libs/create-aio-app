@@ -24,6 +24,7 @@ If you want to run a single test, you can pass an argument
 to `docker-compose` like this:
 
 .. code-block:: bash
+
     docker-compose run test project_name/main/tests/test_views.py::test_view
 
 

@@ -1,3 +1,4 @@
+from typing import Dict
 import subprocess  # nosec
 import click
 import re
@@ -24,8 +25,10 @@ def upgrade_requirements() -> None:
                 )\
                 .decode("utf-8").split("\n")
 
-            packages = dict(
-                package.split('==') for package in fresh_version if package)
+            packages: Dict[str, str] = dict(
+                package.split('==')  # type: ignore
+                for package in fresh_version if package
+            )
 
         with req_file.open('w') as f:
             new_req = old_req

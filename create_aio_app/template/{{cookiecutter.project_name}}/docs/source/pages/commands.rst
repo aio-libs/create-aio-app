@@ -37,7 +37,8 @@ Testing
 
 Database
 --------
-Next commands are available if you have not disabled ``postgres`` option when creating a project:
+Next commands are available if you have not disabled ``postgres`` option when
+creating a project:
 
 
 .. csv-table::

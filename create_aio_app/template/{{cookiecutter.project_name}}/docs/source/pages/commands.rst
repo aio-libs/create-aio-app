@@ -1,7 +1,7 @@
 Make commands
 =============
 
-The commands which exist in ``Makefile``.
+The set of commands available in the ``Makefile``.
 
 Common
 ------
@@ -11,11 +11,11 @@ Common
    :header: "command", "description"
    :widths: 20, 20
 
-   ``make run (make)``, To start the project in develop mode
-   ``make stop``, To stop work of docker containers
-   ``make stop``, To clean up of docker containers
-   ``make bash``, Interactive work inside container (the command must be running after ``make run``)
-   ``make upgrade``, To upgrade dependencies
+   ``make run (make)``, Start the development server
+   ``make stop``, Stop docker containers
+   ``make clean``, Clean up of docker containers
+   ``make bash``, Interactive shell inside the running container (the command can be executed only if the server is running e.g. after ``make run``)
+   ``make upgrade``, Upgrade dependencies
 
 
 
@@ -28,25 +28,26 @@ Testing
    :header: "command", "description"
    :widths: 20, 20
 
-   ``make test``, To start the ``pytest`` with docker
-   ``make mypy``, To run ``mypy`` for type checking
-   ``make black``, To run ``black`` for formatting code
-   ``make lint``, To run flake8 (The all settings connected with a ``flake8`` you can customize in ``.flake8``)
+   ``make test``, Run the ``pytest`` suite inside docker
+   ``make mypy``, Run ``mypy`` for type checking
+   ``make black``, Run ``black`` code formatter
+   ``make lint``, Run flake8 (All the settings for `flake8` can be customized in `.flake8` file)
 
 
 
 Database
 --------
-If u have ``postgres``
+Next commands are available if you have not disabled ``postgres`` option when
+creating a project:
 
 
 .. csv-table::
    :header: "command", "description"
    :widths: 20, 20
 
-   ``make migrations``, To generate a new migration
-   ``make migrate``, To apply migrations
-   ``make psql``, To connect to postgres
+   ``make migrations``, Generate a new migration
+   ``make migrate``, Apply migrations
+   ``make psql``, Connect to the postgres inside running container
 
 
 Other
@@ -56,5 +57,5 @@ Other
    :header: "command", "description"
    :widths: 20, 20
 
-   ``make doc``, To generate a sphinx documentation
+   ``make doc``, Generate a sphinx documentation
 

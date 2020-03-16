@@ -1,12 +1,12 @@
 -r production.txt
 -r documentation.txt
 
-mypy==0.670
-flake8==3.7.5
-pytest==4.2.0
-pytest-cov==2.6.1
+mypy==0.770
+flake8==3.7.9
+pytest==5.4.1
+pytest-cov==2.8.1
 pytest-aiohttp==0.3.0
-black==18.9b0
+black==19.10b0
 
-aiohttp-devtools==0.11
-git+https://github.com/Arfey/aiohttp-debugtoolbar.git
+aiohttp-devtools==0.13.1
+aiohttp-debugtoolbar==0.6.0

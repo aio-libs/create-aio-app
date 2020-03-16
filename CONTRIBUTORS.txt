@@ -1,6 +1,7 @@
 - Contributors -
 ----------------
 Alexandr Hladyshenko
+Alexandre Menezes
 Alexey Dyatlov
 Andrey Zhabsky
 Andriy Yatsynyak
@@ -17,5 +18,6 @@ Oleh Kuchuk
 Sviatoslav Sydorenko
 Vasyl Navrotsky
 Vladyslav Ovchynnykov
+Toufeeq Ockards
 Alexey Dyatlov
 Rafael Cascalho

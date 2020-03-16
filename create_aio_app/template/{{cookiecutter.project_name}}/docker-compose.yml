@@ -57,4 +57,5 @@ services:
     container_name: {{ cookiecutter.project_name }}_test
     ports:
       - 8082:8082
-    command: make _test
+    entrypoint: py.test -v -p no:warnings
+    command: ''

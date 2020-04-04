@@ -17,6 +17,10 @@ from aiohttp import web
 {%- if cookiecutter.use_redis == 'y' %}
 import aioredis
 {%- endif %}
+{%- if cookiecutter.use_sentry == 'y' %}
+import sentry_sdk
+from sentry_sdk.integrations.aiohttp import AioHttpIntegration
+{%- endif %}
 import jinja2
 
 from {{ cookiecutter.project_name }}.routes import init_routes
@@ -81,6 +85,19 @@ async def redis(app: web.Application) -> None:
 
     await app['redis_sub'].wait_closed()
     await app['redis_pub'].wait_closed()
+{%- endif %}
+{%- if cookiecutter.use_sentry == 'y' %}
+
+
+def init_sentry(app: web.Application) -> None:
+    '''
+    Initialize sentry sdk for aiohttp
+    '''
+    config = app['config']['sentry']
+    sentry_sdk.init(
+        dsn=config["dsn"],
+        integrations=[AioHttpIntegration()]
+    )
 {%- endif %}
 
 

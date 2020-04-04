@@ -2,5 +2,6 @@
     "project_name": "app",
     "use_postgres": "y",
     "use_redis": "n",
-    "use_uvloop": "n"
+    "use_uvloop": "n",
+    "use_sentry": "n"
 }

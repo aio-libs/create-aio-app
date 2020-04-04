@@ -36,6 +36,12 @@ CONFIG_TRAFARET = trafaret.Dict({
             'port': trafaret.Int(),
         }),
     {%- endif %}
+{%- if cookiecutter.use_sentry == 'y' %}
+    trafaret.Key('sentry'):
+        trafaret.Dict({
+            'dsn': trafaret.String(),
+        }),
+    {%- endif %}
 })
 
 

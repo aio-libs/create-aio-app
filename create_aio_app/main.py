@@ -16,9 +16,8 @@ echo = partial(click.echo, err=True)
 
 def show_commands(folder):
     try:
-        # nosec
-        os.chdir(f"{folder}/")
-        os.system(f"make help")
+        os.chdir(f"{folder}/")  # nosec
+        os.system(f"make help")  # nosec
     except expression as identifier:
         pass
 

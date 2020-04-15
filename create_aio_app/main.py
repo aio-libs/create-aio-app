@@ -18,7 +18,7 @@ def show_commands(folder):
     try:
         os.chdir(f"{folder}/")  # nosec
         os.system(f"make help")  # nosec
-    except expression as identifier:
+    except:
         pass
 
 

@@ -18,8 +18,9 @@ def show_commands(folder):
     try:
         os.chdir(f"{folder}/")  # nosec
         os.system(f"make help")  # nosec
-    except:
-        pass
+    except Exception as e:
+        echo(f'{e}')
+        echo(click.style("\nFailed to show commands\n", fg="red",))
 
 
 def main():

@@ -19,5 +19,4 @@ Sviatoslav Sydorenko
 Vasyl Navrotsky
 Vladyslav Ovchynnykov
 Toufeeq Ockards
-Alexey Dyatlov
 Rafael Cascalho

@@ -4,7 +4,8 @@ from pathlib import Path
 import click
 import os
 
-from cookiecutter.exceptions import FailedHookException, OutputDirExistsException
+from cookiecutter.exceptions import FailedHookException
+from cookiecutter.exceptions import OutputDirExistsException
 from cookiecutter.main import cookiecutter
 
 from create_aio_app.utils.config import parse_arguments
@@ -45,7 +46,8 @@ def main():
     except (FailedHookException, OutputDirExistsException) as exc:
         if isinstance(exc, OutputDirExistsException):
             echo(
-                click.style("\n\nDirectory with such name already exists!\n", fg="red",)
+                click.style(
+                    "\n\nDirectory with such name already exists!\n", fg="red")
             )
         return
 

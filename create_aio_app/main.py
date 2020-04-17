@@ -56,6 +56,3 @@ def main():
     echo(click.style("\n\nSuccessfully generated!\n", fg="bright_green",))
     echo("cd " + click.style(f"{folder}/", fg="bright_blue"))
     show_commands(folder)
-
-
-main()

@@ -1,4 +1,5 @@
 # Create aio app
+
 [![Build Status](https://travis-ci.com/aio-libs/create-aio-app.svg?branch=master)](https://travis-ci.com/aio-libs/create-aio-app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Gitter chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aio-libs/Lobby)
@@ -27,9 +28,10 @@ If you want to use interactive mode enter the next command:
 
 ```bash
 create-aio-app
-``` 
+```
 
 This will create a new directory called `my_project`.
+To start you new project run the next commands:
 
 ```bash
 cd my_project
@@ -37,7 +39,10 @@ cd my_project
 make run # start your project
 ```
 
-Navigate in your browser to `http://localhost:8080/`
+[Here is a link to all the make commands.](https://create-aio-app.readthedocs.io/pages/commands.html)
+
+
+Then, navigate in your browser to `http://localhost:8080/`
 
 ## Features
 
@@ -54,8 +59,6 @@ Navigate in your browser to `http://localhost:8080/`
 - [sqlAlchemy](https://www.sqlalchemy.org/) - orm
 - [sphinx](http://www.sphinx-doc.org/en/master/) - docs
 - [docker-compose](https://docs.docker.com/compose/) - tool for defining and running multi-container Docker applications
-
-
 
 ## Options
 
@@ -75,4 +78,4 @@ how to contribute to `create-aio-app`.
 
 ## License
 
-Create aio App is an open source software <a href="https://github.com/aio-libs/create-aio-app/blob/master/LICENSE">available under the MIT license</a>. 
+Create aio App is an open source software <a href="https://github.com/aio-libs/create-aio-app/blob/master/LICENSE">available under the MIT license</a>.

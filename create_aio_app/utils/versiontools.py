@@ -48,8 +48,7 @@ def version_check():
     PYPI_URL = "https://pypi.org/pypi/create-aio-app/json"
 
     try: 
-        request = urllib.request.Request(PYPI_URL)
-        with urllib.request.urlopen(req) as response:
+        with urllib.request.Request(PYPI_URL) as response:
             res = json.loads(response.read())
 
         code_version_long = create_aio_app.__version__
@@ -60,4 +59,4 @@ def version_check():
             print ("You are running an old version", code_version_installed,"upgrade with ", end='')
             click.secho('pip install --upgrade create-aio-app',fg='yellow')
     except:
-        pass
+        print ("Failed to retrieve version information")

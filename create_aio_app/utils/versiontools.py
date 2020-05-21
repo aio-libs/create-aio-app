@@ -1,7 +1,6 @@
 """Version tools set."""
 
 import os
-import create_aio_app
 import re
 import click 
 import json

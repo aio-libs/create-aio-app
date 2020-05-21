@@ -50,7 +50,7 @@ def version_check():
     try: 
         request = urllib.request.Request(PYPI_URL)
         with urllib.request.urlopen(req) as response:
-        res = json.loads(response.read())
+            res = json.loads(response.read())
 
         code_version_long = create_aio_app.__version__
         code_version_installed = re.sub(r'([0-9].[0-9].[0-9]).*', r'\1',code_version_long)

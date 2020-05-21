@@ -4,6 +4,7 @@ import os
 import re
 import click 
 import json
+import create_aio_app
 import urllib.request
 from typing import Callable, Optional, Union
 
@@ -47,8 +48,9 @@ def version_check():
     PYPI_URL = "https://pypi.org/pypi/create-aio-app/json"
 
     try: 
-        with urllib.request.urlopen(PYPI_URL, timeout=0.1) as req:
-            res = json.loads(req.read())
+        request = urllib.request.Request(PYPI_URL)
+        with urllib.request.urlopen(req) as response:
+        res = json.loads(response.read())
 
         code_version_long = create_aio_app.__version__
         code_version_installed = re.sub(r'([0-9].[0-9].[0-9]).*', r'\1',code_version_long)

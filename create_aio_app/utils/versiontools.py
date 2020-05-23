@@ -60,5 +60,6 @@ def version_check():
         if code_version_latest > code_version_installed:
             print ("You are running an old version", code_version_installed,"upgrade with ", end='')
             click.secho('pip install --upgrade create-aio-app',fg='yellow')
-    except:
+    
+    except failcheck:
         print ("Failed to retrieve version information")

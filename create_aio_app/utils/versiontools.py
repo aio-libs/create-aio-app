@@ -2,10 +2,8 @@
 
 import os
 import subprocess
-import re
 import click 
 import json
-import sys
 import urllib.request
 from typing import Callable, Optional, Union
 

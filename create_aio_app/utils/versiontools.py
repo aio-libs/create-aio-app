@@ -54,7 +54,7 @@ def version_check():
             res = json.loads(response.read())
         code_version_latest = res['info']['version']
     
-        pip_freeze_output = subprocess.Popen(('pip', 'freeze'), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        pip_freeze_output = subprocess.Popen(('pip', 'freeze'), stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=False)
         version = (subprocess.check_output(('grep', 'create-aio-app'), stdin=pip_freeze_output.stdout)).decode("utf-8")
         pip_freeze_output.wait()
         code_version_installed = version.split("==")[1]

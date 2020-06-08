@@ -8,7 +8,7 @@ flake8-debugger==3.2.1
 flake8-mutable==1.2.0
 flake8-tuple==0.4.0
 pyroma==2.6
-click==7.0
+click==7.1.2
 cookiecutter==1.7.0
 doc8==0.8.1
 Pygments==2.5.2

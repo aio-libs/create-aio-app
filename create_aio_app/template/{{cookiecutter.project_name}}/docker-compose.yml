@@ -4,6 +4,8 @@ services:
 
   {{ cookiecutter.project_name }}_app: &app
     tty: true
+    cap_add:
+     - SYS_PTRACE
     build:
       context: .
       args:

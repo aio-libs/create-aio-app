@@ -59,6 +59,7 @@ Then, navigate in your browser to `http://localhost:8080/`
 - [sqlAlchemy](https://www.sqlalchemy.org/) - orm
 - [sphinx](http://www.sphinx-doc.org/en/master/) - docs
 - [docker-compose](https://docs.docker.com/compose/) - tool for defining and running multi-container Docker applications
+- [py-spy](https://github.com/benfred/py-spy) - Sampling profiler for Python programs
 
 ## Options
 

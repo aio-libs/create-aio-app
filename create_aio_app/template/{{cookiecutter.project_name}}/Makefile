@@ -1,4 +1,5 @@
 PROJECT_NAME={{ cookiecutter.project_name }}
+TIME=60
 
 # colors
 GREEN = $(shell tput -Txterm setaf 2)
@@ -121,3 +122,7 @@ adev: {%- if cookiecutter.use_postgres == 'y' or cookiecutter.use_redis == 'y' %
 wait_resources:
 	python3 -m $(PROJECT_NAME).utils.wait_script
 {%- endif %}
+
+## Create profile of application.
+profile:
+	@docker exec -it $(PROJECT_NAME) py-spy record -d $(TIME) -o $(PROJECT_NAME)_profile.svg --pid 7

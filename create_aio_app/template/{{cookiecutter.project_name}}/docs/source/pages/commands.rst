@@ -32,6 +32,7 @@ Testing
    ``make mypy``, Run ``mypy`` for type checking
    ``make black``, Run ``black`` code formatter
    ``make lint``, Run flake8 (All the settings for `flake8` can be customized in `.flake8` file)
+   ``make profile``, Run ``py-spy`` sampling profiler. It defaults to 60 seconds. Can be change by adding the ``TIME`` variable. eg ``make profile TIME=30``
 
 
 

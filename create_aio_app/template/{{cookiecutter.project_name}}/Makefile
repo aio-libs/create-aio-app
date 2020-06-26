@@ -37,6 +37,10 @@ bash:
 upgrade:
 	docker-compose run --rm $(PROJECT_NAME)_app python3 -m $(PROJECT_NAME).utils.check-requirements
 
+## Create profile sampling of application.
+profile:
+	@docker exec -it $(PROJECT_NAME) py-spy record -d $(TIME) -o $(PROJECT_NAME)_profile.svg --pid 7
+
 # Help
 
 ## Shows help.
@@ -122,7 +126,3 @@ adev: {%- if cookiecutter.use_postgres == 'y' or cookiecutter.use_redis == 'y' %
 wait_resources:
 	python3 -m $(PROJECT_NAME).utils.wait_script
 {%- endif %}
-
-## Create profile of application.
-profile:
-	@docker exec -it $(PROJECT_NAME) py-spy record -d $(TIME) -o $(PROJECT_NAME)_profile.svg --pid 7

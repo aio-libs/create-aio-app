@@ -1,4 +1,5 @@
 PROJECT_NAME={{ cookiecutter.project_name }}
+TIME=60
 
 # colors
 GREEN = $(shell tput -Txterm setaf 2)
@@ -35,6 +36,10 @@ bash:
 ## Upgrade your python's dependencies:
 upgrade:
 	docker-compose run --rm $(PROJECT_NAME)_app python3 -m $(PROJECT_NAME).utils.check-requirements
+
+## Create profile sampling of application.
+profile:
+	@docker exec -it $(PROJECT_NAME) py-spy record -d $(TIME) -o $(PROJECT_NAME)_profile.svg --pid 7
 
 # Help
 

@@ -1,6 +1,6 @@
 # Create aio app
 
-**Here is a screenshot of our interface**
+
 [![Build Status](https://travis-ci.com/aio-libs/create-aio-app.svg?branch=master)](https://travis-ci.com/aio-libs/create-aio-app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Gitter chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aio-libs/Lobby)
@@ -8,7 +8,7 @@
 [![PyPI version](https://badge.fury.io/py/create-aio-app.svg)](https://badge.fury.io/py/create-aio-app)
 
 The tool that lets you bootstrap aiohttp application with best practices ready for development.
-
+**Here is a screenshot of our interfaces**
 ![Example](https://raw.githubusercontent.com/aio-libs/create-aio-app/master/assets/assets.png)
 
 ## Installation

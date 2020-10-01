@@ -45,7 +45,7 @@ make run # start your project
 
 Then, navigate in your browser to `http://localhost:8080/`
 
-## Features
+## Salient Features
 
 - [aiohttp](https://aiohttp.readthedocs.io/en/stable/) - the best python framework :)
 - [mypy](https://mypy.readthedocs.io/en/latest/) - optional static typing

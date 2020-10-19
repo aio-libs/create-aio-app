@@ -1,4 +1,4 @@
 Sphinx==3.2.1
 sphinx-autodoc-typehints==1.11.1
 sphinxcontrib-websupport==1.2.4
-doc8==0.8.0
+doc8==0.8.1

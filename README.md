@@ -1,5 +1,6 @@
 # Create aio app
 
+
 [![Build Status](https://travis-ci.com/aio-libs/create-aio-app.svg?branch=master)](https://travis-ci.com/aio-libs/create-aio-app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Gitter chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aio-libs/Lobby)
@@ -8,6 +9,7 @@
 
 The tool that lets you bootstrap aiohttp application with best practices ready for development.
 
+**Here is a screenshot of our interfaces**
 ![Example](https://raw.githubusercontent.com/aio-libs/create-aio-app/master/assets/assets.png)
 
 ## Installation
@@ -44,7 +46,7 @@ make run # start your project
 
 Then, navigate in your browser to `http://localhost:8080/`
 
-## Features
+## Salient Features
 
 - [aiohttp](https://aiohttp.readthedocs.io/en/stable/) - the best python framework :)
 - [mypy](https://mypy.readthedocs.io/en/latest/) - optional static typing

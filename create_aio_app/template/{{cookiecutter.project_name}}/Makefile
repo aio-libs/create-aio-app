@@ -35,7 +35,9 @@ bash:
 
 ## Upgrade your python's dependencies:
 upgrade:
-	docker-compose run --rm $(PROJECT_NAME)_app python3 -m $(PROJECT_NAME).utils.check-requirements
+	docker-compose run --rm $(PROJECT_NAME)_app python3 -m piptools compile $(PROJECT_NAME)/requirements/development.in --output-file=$(PROJECT_NAME)/requirements/development.txt
+	docker-compose run --rm $(PROJECT_NAME)_app python3 -m piptools compile $(PROJECT_NAME)/requirements/production.in --output-file=$(PROJECT_NAME)/requirements/production.txt
+	docker-compose run --rm $(PROJECT_NAME)_app python3 -m piptools compile $(PROJECT_NAME)/requirements/documentation.in --output-file=$(PROJECT_NAME)/requirements/documentation.txt
 
 ## Create profile sampling of application.
 profile:

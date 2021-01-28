@@ -15,7 +15,7 @@ all: run
 
 ## Runs application. Builds, creates, starts, and attaches to containers for a service. | Common
 run:
-	@docker-compose up $(PROJECT_NAME)_app
+	@docker-compose up $(PROJECT_NAME)_app $(ARGS)
 
 ## Rebuild {{ cookiecutter.project_name }}_app container
 build:
@@ -31,15 +31,15 @@ clean:
 
 ## Runs command `bash` commands in docker container.
 bash:
-	@docker exec -it $(PROJECT_NAME) bash
+	@docker exec -it $(PROJECT_NAME) bash $(ARGS)
 
 ## Upgrade your python's dependencies:
 upgrade:
-	docker-compose run --rm $(PROJECT_NAME)_app python3 -m $(PROJECT_NAME).utils.check-requirements
+	docker-compose run --rm $(PROJECT_NAME)_app python3 -m $(PROJECT_NAME).utils.check-requirements $(ARGS)
 
 ## Create profile sampling of application.
 profile:
-	@docker exec -it $(PROJECT_NAME) py-spy record -d $(TIME) -o $(PROJECT_NAME)_profile.svg --pid 7
+	@docker exec -it $(PROJECT_NAME) py-spy record -d $(TIME) -o $(PROJECT_NAME)_profile.svg --pid 7 $(ARGS)
 
 # Help
 
@@ -73,7 +73,7 @@ help:
 
 ## Generate html documentation. | Documentation
 doc:
-	@docker-compose run --rm $(PROJECT_NAME)_app make _doc
+	@docker-compose run --rm $(PROJECT_NAME)_app make _doc $(ARGS)
 
 _doc:
 	@doc8 docs
@@ -83,15 +83,15 @@ _doc:
 
 ## Formats code with `black`. | Linters
 black:
-	@docker-compose run --rm $(PROJECT_NAME)_app black $(PROJECT_NAME) --exclude $(PROJECT_NAME)/migrations -l 79
+	@docker-compose run --rm $(PROJECT_NAME)_app black $(PROJECT_NAME) --exclude $(PROJECT_NAME)/migrations -l 79 $(ARGS)
 
 ## Checks types with `mypy`.
 mypy:
-	@docker-compose run --rm $(PROJECT_NAME)_app mypy $(PROJECT_NAME)
+	@docker-compose run --rm $(PROJECT_NAME)_app mypy $(PROJECT_NAME) $(ARGS)
 
 ## Formats code with `flake8`.
 lint:
-	@docker-compose run --rm $(PROJECT_NAME)_app flake8 $(PROJECT_NAME)
+	@docker-compose run --rm $(PROJECT_NAME)_app flake8 $(PROJECT_NAME) $(ARGS)
 
 ## Runs tests. | Tests
 test: lint
@@ -103,15 +103,15 @@ test: lint
 
 ## Runs PostgreSQL UI. | Database
 psql:
-	@docker exec -it $(PROJECT_NAME)_postgres psql -U postgres
+	@docker exec -it $(PROJECT_NAME)_postgres psql -U postgres $(ARGS)
 
 ## Makes migration.
 migrations:
-	@docker exec -it $(PROJECT_NAME) alembic -n alembic:dev revision --autogenerate;
+	@docker exec -it $(PROJECT_NAME) alembic -n alembic:dev revision --autogenerate $(ARGS);
 
 ## Upgrades database.
 migrate:
-	@docker exec -it $(PROJECT_NAME) alembic -n alembic:dev upgrade head;
+	@docker exec -it $(PROJECT_NAME) alembic -n alembic:dev upgrade head $(ARGS);
 
 {%- endif %}
 

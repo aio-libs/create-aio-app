@@ -60,3 +60,11 @@ Other
 
    ``make doc``, Generate a sphinx documentation
 
+Add params
+-----
+
+.. csv-table::
+   :header: "command", "description"
+   :widths: 20, 20
+
+   ``make target ARGS="arg1 arg2 arg..."``, allow to put some arguments for make commands

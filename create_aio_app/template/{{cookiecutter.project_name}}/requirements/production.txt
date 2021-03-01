@@ -1,5 +1,5 @@
 aiohttp==3.7.4
-aiohttp_jinja2==1.2.0
+aiohttp_jinja2==1.4.2
 trafaret_config==2.0.2
 markdown2==2.3.7
 {%- if cookiecutter.use_postgres == 'y' %}

@@ -15,8 +15,8 @@ def validate_project_name(project_name: str) -> None:
 
 
 def main() -> None:
-    validate_project_name('{{ cookiecutter.project_name }}')
+    validate_project_name("{{ cookiecutter.project_name }}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

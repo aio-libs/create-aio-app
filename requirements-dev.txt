@@ -11,6 +11,6 @@ pyroma==2.6
 click==7.0
 cookiecutter==1.7.0
 doc8==0.8.0
-Pygments==2.5.2
+Pygments==2.7.4
 twine==3.1.1
 pep517==0.6.0

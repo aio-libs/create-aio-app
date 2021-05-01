@@ -22,4 +22,7 @@ test:
 
 ci: flake test
 
+changelog:
+	auto-changelog
+
 .PHONY: all flake test vtest cov clean doc ci

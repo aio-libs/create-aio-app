@@ -7,7 +7,7 @@ pytest==6.2.4
 pytest-cov==2.12.1
 pytest-aiohttp==0.3.0
 black==21.6b0
-py-spy==0.3.3
+py-spy==0.3.7
 
 aiohttp-devtools==0.13.1
 aiohttp-debugtoolbar==0.6.0

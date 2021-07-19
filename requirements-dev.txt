@@ -13,4 +13,4 @@ cookiecutter==1.7.3
 doc8==0.9.0
 Pygments==2.9.0
 twine==3.4.1
-pep517==0.6.0
+pep517==0.11.0

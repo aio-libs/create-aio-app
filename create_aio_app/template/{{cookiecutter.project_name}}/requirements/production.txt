@@ -11,5 +11,5 @@ alembic==1.6.5
 aioredis==2.0.0
 {%- endif %}
 {%- if cookiecutter.use_uvloop == 'y' %}
-uvloop==0.14.0
+uvloop==0.15.3
 {%- endif %}

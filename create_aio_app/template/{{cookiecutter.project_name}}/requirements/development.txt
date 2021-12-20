@@ -6,7 +6,7 @@ flake8==4.0.1
 pytest==6.2.5
 pytest-cov==3.0.0
 pytest-aiohttp==0.3.0
-black==19.10b0
+black==21.12b0
 py-spy==0.3.3
 
 aiohttp-devtools==0.13.1

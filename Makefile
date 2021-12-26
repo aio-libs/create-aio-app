@@ -19,7 +19,3 @@ test:
 	create-aio-app project_new
 	doc8 project_new/docs/
 	cd project_new/ && make lint && make mypy && docker-compose up test && docker-compose stop
-
-ci: flake test
-
-.PHONY: all flake test vtest cov clean doc ci

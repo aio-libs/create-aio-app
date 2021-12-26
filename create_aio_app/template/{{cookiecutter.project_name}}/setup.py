@@ -5,7 +5,7 @@ from typing import List
 
 from setuptools import find_packages, setup
 
-REGEXP = re.compile(r"^__version__\W*=\W*'([\d.abrc]+)'")
+REGEXP = re.compile(r'^__version__\W*=\W*"([\d.abrc]+)"')
 PARENT = pathlib.Path(__file__).parent
 
 

@@ -15,7 +15,7 @@ flake: checkrst bandit pyroma
 
 test:
 	rm -rf project_new/
-	pip install .
+	pip install -e .
 	create-aio-app project_new
 	doc8 project_new/docs/
 	cd project_new/ && make lint && make mypy && docker-compose up test && docker-compose stop

@@ -18,7 +18,7 @@ echo = partial(click.echo, err=True)
 def show_commands(folder):
     try:
         os.chdir(f"{folder}/")  # nosec
-        os.system(f"make help")  # nosec
+        os.system("make help")  # nosec
     except Exception as e:
         echo(f'{e}')
         echo(click.style("\nFailed to show commands\n", fg="red",))

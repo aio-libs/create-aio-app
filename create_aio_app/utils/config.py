@@ -11,7 +11,7 @@ def name_type(name: str) -> str:
 
     if not re.match(r"^[a-zA-Z0-9_]*$", name):
         raise argparse.ArgumentTypeError(
-            f"The format of the project name is incorrect."
+            "The format of the project name is incorrect."
         )
 
     return name

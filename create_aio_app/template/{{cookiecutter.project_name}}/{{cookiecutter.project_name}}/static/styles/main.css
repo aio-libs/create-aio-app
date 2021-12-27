@@ -13,14 +13,14 @@ body {
 
 .header {
     flex: initial;
-    padding: 50px 0;
     color: #fff;
     text-align: center;
     background: #20232a;
+    height: 100vh;
+    display: flex;
 }
 
-.banner-logo {
-    display: block;
+.header div {
     margin: auto;
 }
 
@@ -30,28 +30,15 @@ body {
     font-size: 55px;
 }
 
-/* content */
-
-main {
-    flex: 1;
-    max-width: 1000px;
-    width: 100%;
-    margin: auto;
-    color: black;
+a {
+    color: white;
+    text-decoration: none;
 }
 
-/* footer */
+/* debug */
 
-.footer {
-    flex: initial;
-    height: 50px;
-    background: #20232a;
-}
-
-/* github link */
-
-.fork-me-on-github {
-    position: absolute;
-    top: 0;
-    right: 0;
+#pDebug #pDebugToolbarHandle {
+    border: none !important;
+    top: 10% !important;
+    filter: grayscale(100%);
 }

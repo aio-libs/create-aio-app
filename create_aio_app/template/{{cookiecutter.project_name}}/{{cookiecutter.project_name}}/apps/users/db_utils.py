@@ -1,7 +1,7 @@
 from aiopg.sa import SAConnection
 from aiopg.sa.result import RowProxy
 
-from {{ cookiecutter.project_name }}.users.tables import users
+from {{ cookiecutter.project_name }}.apps.users.tables import users
 
 
 __all__ = ['select_user_by_id', ]

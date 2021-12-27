@@ -8,7 +8,7 @@ from {{ cookiecutter.project_name }}.utils.common import PATH, get_config
 from {{ cookiecutter.project_name }}.app import init_app
 {%- if cookiecutter.use_postgres == 'y' %}
 from {{ cookiecutter.project_name }}.migrations import metadata
-from {{ cookiecutter.project_name }}.users.tables import users
+from {{ cookiecutter.project_name }}.apps.users.tables import users
 {%- endif %}
 
 

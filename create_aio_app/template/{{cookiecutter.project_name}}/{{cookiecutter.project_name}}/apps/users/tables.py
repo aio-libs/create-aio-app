@@ -2,7 +2,7 @@ import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
 from {{ cookiecutter.project_name }}.migrations import metadata
-from {{ cookiecutter.project_name }}.users.enums import UserGender
+from {{ cookiecutter.project_name }}.apps.users.enums import UserGender
 
 
 __all__ = ['users', 'gender_enum', ]

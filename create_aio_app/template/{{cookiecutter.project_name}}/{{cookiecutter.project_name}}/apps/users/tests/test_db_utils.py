@@ -2,7 +2,7 @@ import typing as t
 
 import pytest
 
-from {{ cookiecutter.project_name }}.users.db_utils import select_user_by_id
+from {{ cookiecutter.project_name }}.apps.users.db_utils import select_user_by_id
 
 
 @pytest.mark.asyncio

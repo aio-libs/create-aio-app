@@ -2,7 +2,7 @@ import pathlib
 
 from aiohttp import web
 
-from {{ cookiecutter.project_name }}.main.views import index
+from {{ cookiecutter.project_name }}.apps.main.views import index
 
 PROJECT_PATH = pathlib.Path(__file__).parent
 

@@ -9,5 +9,5 @@ pytest-aiohttp==1.0.3
 black==22.1.0
 py-spy==0.3.11
 
-aiohttp-devtools==0.13.1
+aiohttp-devtools==1.0.post0
 aiohttp-debugtoolbar==0.6.0

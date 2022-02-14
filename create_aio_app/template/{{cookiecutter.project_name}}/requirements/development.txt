@@ -5,7 +5,7 @@ mypy==0.931
 flake8==4.0.1
 pytest==7.0.1
 pytest-cov==3.0.0
-pytest-aiohttp==0.3.0
+pytest-aiohttp==1.0.4
 black==21.12b0
 py-spy==0.3.11
 

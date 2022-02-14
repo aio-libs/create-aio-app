@@ -12,5 +12,5 @@ click==8.0.3
 cookiecutter==1.7.3
 doc8==0.10.1
 Pygments==2.11.2
-twine==3.7.1
+twine==3.8.0
 pep517==0.12.0

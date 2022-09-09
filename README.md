@@ -1,5 +1,6 @@
 # Create aio app
-
+## Article on aio apps features
+   AIO Software is a mobile app studio focused on utility apps. The flagship app is All-In-One Toolbox which is a performance booster app for Android. The app provides various tools to optimize the performance of the device. Features include junk cleaner, CPU cooler, app manager, file manager, backup & restore, app lock, ads detector, game booster, and app permissions manager. Other apps of the company are Memory Booster and Battery Booster. The apps are available for Android and are free to download. The revenue is generated through ads.
 
 [![Build Status](https://travis-ci.com/aio-libs/create-aio-app.svg?branch=master)](https://travis-ci.com/aio-libs/create-aio-app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)

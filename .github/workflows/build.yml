@@ -37,3 +37,7 @@ jobs:
 
     - name: Run pyroma
       run: make pyroma
+
+    - name: Check create_aio_app installation and get_self_version import
+      run: |
+        python -c "import create_aio_app.utils.versiontools as vt; print(vt.get_self_version())"

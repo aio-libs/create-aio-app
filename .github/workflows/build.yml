@@ -19,7 +19,9 @@ jobs:
         python-version: '3.x'
 
     - name: Install Python dependencies
-      run: pip install -r requirements-dev.txt
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements-dev.txt
 
     - name: Run tests
       run: make test

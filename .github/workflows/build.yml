@@ -1,0 +1,41 @@
+name: Build Status
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Run tests, linters, and type checkers
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out Git repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
+
+    - name: Install Python dependencies
+      run: pip install -r requirements-dev.txt
+
+    - name: Run tests
+      run: make test
+
+    - name: Run flake8 linter
+      run: make flake
+
+    - name: Run bandit
+      run: make bandit
+
+    - name: Check reStructuredText
+      run: make checkrst
+
+    - name: Run pyroma
+      run: make pyroma

@@ -26,14 +26,6 @@ jobs:
     - name: Run tests
       run: make test
 
-    - name: Check create_aio_app installation and get_self_version import
-      run: |
-        python -c "import create_aio_app.utils.versiontools as vt; print(vt.get_self_version())"
-
-    - name: Check create_aio_app.utils contents
-      run: |
-        ls -l $(python -c "import create_aio_app.utils; print(create_aio_app.utils.__path__[0])")
-
     - name: Run flake8 linter
       run: make flake
 

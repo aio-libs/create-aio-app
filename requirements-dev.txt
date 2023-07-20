@@ -11,7 +11,7 @@ pyroma==3.2
 click==8.0.3
 cookiecutter==1.7.3
 doc8==0.10.1
-Pygments==2.10.0
+Pygments==2.15.0
 twine==3.7.1
 pep517==0.12.0
 setuptools_scm_git_archive==1.4

@@ -7,10 +7,10 @@ The aiohttp boilerplate. A quick start for your aiohttp application.
 ====================================================================
 
 What is a `create aio app`? This project is designed to quickly and simply
-creating a web application based on `aiohttp` with use best practices.
+create a web application based on `aiohttp` using best practices.
 
-A `create aio app` provide testing, documentation, deploying and a lot of
-helpful boilerplate code for quickly start with `aiohttp`.
+A `create aio app` provides testing, documentation, deploying and a lot of
+other helpful boilerplate code for quickly start with `aiohttp`.
 
 .. image:: https://raw.githubusercontent.com/aio-libs/create-aio-app/master/assets/assets.png
    :align: center
@@ -19,7 +19,7 @@ helpful boilerplate code for quickly start with `aiohttp`.
 Requirements
 ------------
 
-For start with `create aio app` you need to have:
+To start with `create aio app` you need to have:
 
    - docker
    - docker-compose
@@ -47,7 +47,7 @@ Features
          <a href="https://pytest.readthedocs.io/en/latest/" rel="nofollow">
             pytest
          </a>
-         - for run unit tests
+         - for running unit tests
        </li>
        <li>
          <a href="https://flake8.readthedocs.io/en/latest/" rel="nofollow">
@@ -59,13 +59,13 @@ Features
          <a href="https://trafaret.readthedocs.io/en/latest/" rel="nofollow">
             trafaret
          </a>
-         - for validation input data
+         - for validating input data
        </li>
        <li>
          <a href="https://github.com/aio-libs/aiohttp-devtools" rel="nofollow">
             aio devtools
          </a>
-         - helpful tool for develop
+         - helpful tool for development
        </li>
        <li>
          <a href="https://github.com/aio-libs/aiohttp-debugtoolbar" rel="nofollow">
@@ -77,13 +77,13 @@ Features
          <a href="https://www.postgresql.org/" rel="nofollow">
             postgres
          </a>
-         - storage
+         - for storage
        </li>
        <li>
          <a href="https://alembic.sqlalchemy.org/en/latest/tutorial.html" rel="nofollow">
             alembic
          </a>
-         - tool for create migration
+         - for migration
        </li>
        <li>
          <a href="https://www.sqlalchemy.org/" rel="nofollow">

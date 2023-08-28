@@ -20,7 +20,7 @@ Usage
 
     create-aio-app my_project
 
-If you want to use interactive mode enter the next command:
+If you want to use interactive mode, enter the following command:
 
 .. code-block:: bash
 

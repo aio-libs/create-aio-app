@@ -1,19 +1,19 @@
 Documentation
 =============
 
-The best thing you can do for future self is to write both tests and
-documentation about your project. This section explains how to
+The best thing you can do for future self and fellow contributors is to write
+both tests and documentation about your project. This section explains how to
 structure and organize documentation in your project.
 
 Structure
 ---------
 
-We use the next structure:
+We use the following structure:
 
    - **pages/** -
-     the directory for all `*.rst` files about the boilerplate.
+     The directory for all `*.rst` files about the boilerplate.
    - **project/** -
-     this directory is for `*.rst` files associated with your project
+     This directory is for `*.rst` files associated with your project
      (this can include auto-generated docs, business logic, etc.)
 
 All new files should be added to *index.rst*.
@@ -34,13 +34,13 @@ Read more:
          <a href="http://www.sphinx-doc.org/en/master/usage/quickstart.html" rel="nofollow">
             Sphinx
          </a>
-         - the official documentation for sphinx
+         - official sphinx documentation
        </li>
        <li>
-         <a href="https://documentation-style-guide-sphinx.readthedocs.io/en/latest/style-guide.html" rel="nofollow">
+         <a hef="https://documentation-style-guide-sphinx.readthedocs.io/en/latest/style-guide.html" rel="nofollow">
             Documentation style guide
          </a>
-        - the recommended style guide
+        - recommended style guide
        </li>
        <li>
          <a href="https://github.com/openstack/doc8" rel="nofollow">

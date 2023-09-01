@@ -40,7 +40,7 @@ To run mypy use this command:
 
     make mypy
 
-Settings for mypy resides inside the mypy.ini file.
+Settings for mypy reside inside the mypy.ini file.
 
 Read more:
 ----------
@@ -52,12 +52,12 @@ Read more:
          <a href="https://docs.pytest.org/en/latest/contents.html" rel="nofollow">
             pytest
          </a>
-         - the official documentation for pytest
+         - official documentation for pytest
        </li>
        <li>
          <a href="https://mypy.readthedocs.io/en/latest/" rel="nofollow">
             mypy
          </a>
-         - the official documentation for mypy
+         - official documentation for mypy
        </li>
     </ul>

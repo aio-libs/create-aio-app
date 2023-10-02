@@ -17,6 +17,8 @@ The tool involves following best practices to ensure code maintainability, perfo
 * Proper Project Structure
 * Middleware Usage for common tasks like authentication, CORS handling, request/response logging, and error handling.
 * Unit tests using aiohttp's built-in testing framework or libraries like pytest-aiohttp.
+* WebSocket Support, includes built-in WebSocket support
+* Support for serving static files such as CSS, JavaScript, and images.
 
 **Here is a screenshot of our interfaces**
 ![Example](https://raw.githubusercontent.com/aio-libs/create-aio-app/master/assets/assets.png)

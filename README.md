@@ -9,8 +9,26 @@
 
 The tool that lets you bootstrap aiohttp application with best practices ready for development.
 
+### What is an aiohttp application?
+
+An aiohttp application is a web application or API built using the aiohttp framework, designed for asynchronous programming in Python. It is capable of handling concurrent requests efficiently and is well-suited for building modern, high-performance web applications and services.
+
+The tool involves following best practices to ensure code maintainability, performance, security, and scalability, such as:
+* Proper Project Structure
+* Middleware Usage for common tasks like authentication, CORS handling, request/response logging, and error handling.
+* Unit tests using aiohttp's built-in testing framework or libraries like pytest-aiohttp.
+
 **Here is a screenshot of our interfaces**
 ![Example](https://raw.githubusercontent.com/aio-libs/create-aio-app/master/assets/assets.png)
+
+## Table of Contents
+[Installation](#Installation)  
+[Usage](#Usage)  
+[Salient Features](#Salient-Features)  
+[Options](#Options)  
+[Contributing](#Contributing)  
+
+<a name="Installation"/>
 
 ## Installation
 
@@ -19,6 +37,8 @@ Requires python3.6 - python3.7 and docker-compose
 ```bash
 pip install create-aio-app
 ```
+
+<a name="Usage"/>
 
 ## Usage
 
@@ -46,6 +66,8 @@ make run # start your project
 
 Then, navigate in your browser to `http://localhost:8080/`
 
+<a name="Salient-Features"/>
+
 ## Salient Features
 
 - [aiohttp](https://aiohttp.readthedocs.io/en/stable/) - the best python framework :)
@@ -63,6 +85,8 @@ Then, navigate in your browser to `http://localhost:8080/`
 - [docker-compose](https://docs.docker.com/compose/) - tool for defining and running multi-container Docker applications
 - [py-spy](https://github.com/benfred/py-spy) - Sampling profiler for Python programs
 
+<a name="Options"/>
+
 ## Options
 
 `--without-postgres` - remove postgres and all of its requirements
@@ -70,6 +94,8 @@ Then, navigate in your browser to `http://localhost:8080/`
 `--redis` - add redis to the template
 
 `--uvloop` - uvloop event loop for aiohttp
+
+<a name="Contributing"/>
 
 ## Contributing
 

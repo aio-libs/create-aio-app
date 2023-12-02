@@ -9,7 +9,7 @@ flake8-mutable==1.2.0
 flake8-tuple==0.4.0
 pyroma==3.2
 click==8.0.3
-cookiecutter==1.7.3
+cookiecutter==2.1.1
 doc8==0.10.1
 Pygments==2.10.0
 twine==3.7.1

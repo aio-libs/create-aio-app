@@ -1,9 +1,9 @@
-bandit==1.7.1
+bandit==1.7.2
 flake8==4.0.1
-flake8-bugbear==21.11.29
+flake8-bugbear==22.1.11
 flake8-builtins-unleashed==1.3.1
 flake8-class-newline==1.6.0
-flake8-comprehensions==3.7.0
+flake8-comprehensions==3.8.0
 flake8-debugger==4.0.0
 flake8-mutable==1.2.0
 flake8-tuple==0.4.0
@@ -11,8 +11,8 @@ pyroma==3.2
 click==8.0.3
 cookiecutter==1.7.3
 doc8==0.10.1
-Pygments==2.10.0
-twine==3.7.1
+Pygments==2.11.2
+twine==3.8.0
 pep517==0.12.0
 setuptools_scm_git_archive==1.4
 setuptools_scm>=3.4

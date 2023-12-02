@@ -110,3 +110,6 @@ venv.bak/
 project_new/
 
 .vscode/
+
+# Default Project
+my_project/

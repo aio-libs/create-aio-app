@@ -9,6 +9,7 @@ from cookiecutter.exceptions import OutputDirExistsException
 from cookiecutter.main import cookiecutter
 
 from create_aio_app.utils.config import parse_arguments
+from create_aio_app.utils.versiontools import version_check
 
 parent = Path(__file__).parent
 
@@ -27,6 +28,8 @@ def show_commands(folder):
 def main():
     args = parse_arguments()
     template_path = str(parent / "template")
+
+    version_check()
 
     kwargs = {}
 
